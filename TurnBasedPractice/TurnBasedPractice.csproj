@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51373C0F-5E9E-409C-8E35-87DA73E023C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TurnBasedPractice</RootNamespace>
+    <AssemblyName>TurnBasedPractice</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GameTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\GameTools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestLib">
+      <HintPath>..\..\TestLib\TestLib\bin\Release\TestLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityClasses\EntityAbstract.cs" />
+    <Compile Include="EntityClasses\EntityTemplate.cs" />
+    <Compile Include="EntityClasses\EntityWrapper.cs" />
+    <Compile Include="GameClasses\Battle.cs" />
+    <Compile Include="GameClasses\BattleV2.cs" />
+    <Compile Include="GameClasses\Game.cs" />
+    <Compile Include="RandomInt.cs" />
+    <Compile Include="GuiClasses\ControlWithID.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ItemClasses\Item.cs" />
+    <Compile Include="ItemClasses\Potion.cs" />
+    <Compile Include="ItemClasses\Weapon.cs" />
+    <Compile Include="ItemClasses\ItemWrapper.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityClasses\Party.cs" />
+    <Compile Include="EntityClasses\Entity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\BattleSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BattleSetup.Designer.cs">
+      <DependentUpon>BattleSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BattleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BattleTest.Designer.cs">
+      <DependentUpon>BattleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BattleTest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BattleTest2.Designer.cs">
+      <DependentUpon>BattleTest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\NewEntity.Designer.cs">
+      <DependentUpon>NewEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewEntityTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\NewEntityTemplate.Designer.cs">
+      <DependentUpon>NewEntityTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\NewItem.Designer.cs">
+      <DependentUpon>NewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WeaponSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WeaponSearch.Designer.cs">
+      <DependentUpon>WeaponSearch.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Windows\BattleSetup.resx">
+      <DependentUpon>BattleSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BattleTest.resx">
+      <DependentUpon>BattleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BattleTest2.resx">
+      <DependentUpon>BattleTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\NewEntity.resx">
+      <DependentUpon>NewEntity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\NewEntityTemplate.resx">
+      <DependentUpon>NewEntityTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\NewItem.resx">
+      <DependentUpon>NewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WeaponSearch.resx">
+      <DependentUpon>WeaponSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="lib\GameTools.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

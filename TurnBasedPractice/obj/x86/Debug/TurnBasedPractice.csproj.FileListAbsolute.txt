@@ -1,0 +1,34 @@
+C:\Users\jallison\Documents\Visual Studio 2010\Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe.config
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe.config
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.pdb
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\GameTools.dll
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TestLib.pdb
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.MainMenu.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Properties.Resources.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewItem.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.exe
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.pdb
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe.config
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.exe
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.pdb
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.pdb
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\bin\Debug\GameTools.dll
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\bin\Debug\TestLib.pdb
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.MainMenu.resources
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Properties.Resources.resources
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewEntity.resources
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewItem.resources
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.csproj.GenerateResource.Cache
+C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewEntity.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewEntityTemplate.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetup.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest2.resources
