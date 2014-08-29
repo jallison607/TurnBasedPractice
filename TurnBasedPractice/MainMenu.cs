@@ -68,5 +68,10 @@ namespace TurnBasedPractice
         {
             new BattleSetup().Show();
         }
+
+        private void btnSetup_Click(object sender, EventArgs e)
+        {
+            new BattleSetupV2().Show();
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.btnTemplate = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnBattle = new System.Windows.Forms.Button();
+            this.btnSetup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNewItem
@@ -85,11 +86,22 @@
             this.btnBattle.UseVisualStyleBackColor = true;
             this.btnBattle.Click += new System.EventHandler(this.btnBattle_Click);
             // 
+            // btnSetup
+            // 
+            this.btnSetup.Location = new System.Drawing.Point(107, 115);
+            this.btnSetup.Name = "btnSetup";
+            this.btnSetup.Size = new System.Drawing.Size(75, 23);
+            this.btnSetup.TabIndex = 5;
+            this.btnSetup.Text = "Setup";
+            this.btnSetup.UseVisualStyleBackColor = true;
+            this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnSetup);
             this.Controls.Add(this.btnBattle);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnTemplate);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button btnTemplate;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnBattle;
+        private System.Windows.Forms.Button btnSetup;
     }
 }
 
