@@ -7,18 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TurnBasedPractice.Windows
+namespace TurnBasedPractice.NewWindows
 {
-    public partial class UpdateAbilityWindow : Form
+    public partial class UpdateWeaponsWindow : Form
     {
-        public UpdateAbilityWindow()
+        public UpdateWeaponsWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
     }

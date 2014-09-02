@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.Windows
+﻿namespace TurnBasedPractice.NewWindows
 {
     partial class BattleSetupV2
     {
@@ -52,9 +52,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnUpdateTypeList = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnUpdateRaceList = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnUpdateWeaponList = new System.Windows.Forms.Button();
@@ -410,9 +410,9 @@
             // 
             this.panel1.Controls.Add(this.button18);
             this.panel1.Controls.Add(this.button20);
-            this.panel1.Controls.Add(this.button17);
+            this.panel1.Controls.Add(this.btnUpdateTypeList);
             this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.btnUpdateRaceList);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.btnUpdateWeaponList);
@@ -441,14 +441,15 @@
             this.button20.Text = "Update Effect List";
             this.button20.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnUpdateTypeList
             // 
-            this.button17.Location = new System.Drawing.Point(38, 90);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(123, 23);
-            this.button17.TabIndex = 6;
-            this.button17.Text = "Update Type List";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnUpdateTypeList.Location = new System.Drawing.Point(38, 90);
+            this.btnUpdateTypeList.Name = "btnUpdateTypeList";
+            this.btnUpdateTypeList.Size = new System.Drawing.Size(123, 23);
+            this.btnUpdateTypeList.TabIndex = 6;
+            this.btnUpdateTypeList.Text = "Update Type List";
+            this.btnUpdateTypeList.UseVisualStyleBackColor = true;
+            this.btnUpdateTypeList.Click += new System.EventHandler(this.btnUpdateTypeList_Click);
             // 
             // button16
             // 
@@ -459,14 +460,15 @@
             this.button16.Text = "Update Class List";
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnUpdateRaceList
             // 
-            this.button13.Location = new System.Drawing.Point(38, 61);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(123, 23);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Update Race List";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnUpdateRaceList.Location = new System.Drawing.Point(38, 61);
+            this.btnUpdateRaceList.Name = "btnUpdateRaceList";
+            this.btnUpdateRaceList.Size = new System.Drawing.Size(123, 23);
+            this.btnUpdateRaceList.TabIndex = 4;
+            this.btnUpdateRaceList.Text = "Update Race List";
+            this.btnUpdateRaceList.UseVisualStyleBackColor = true;
+            this.btnUpdateRaceList.Click += new System.EventHandler(this.btnUpdateRaceList_Click);
             // 
             // button8
             // 
@@ -1561,9 +1563,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnUpdateRaceList;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnUpdateTypeList;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Panel panel3;

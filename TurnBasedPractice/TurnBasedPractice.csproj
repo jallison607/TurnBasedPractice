@@ -60,6 +60,7 @@
     <Compile Include="GameClasses\Battle.cs" />
     <Compile Include="GameClasses\BattleV2.cs" />
     <Compile Include="GameClasses\Game.cs" />
+    <Compile Include="NewGameClasses\Effect.cs" />
     <Compile Include="RandomInt.cs" />
     <Compile Include="GuiClasses\ControlWithID.cs">
       <SubType>Component</SubType>
@@ -84,10 +85,10 @@
     <Compile Include="Windows\BattleSetup.Designer.cs">
       <DependentUpon>BattleSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\BattleSetupV2.cs">
+    <Compile Include="NewWindows\BattleSetupV2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\BattleSetupV2.Designer.cs">
+    <Compile Include="NewWindows\BattleSetupV2.Designer.cs">
       <DependentUpon>BattleSetupV2.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\BattleTest.cs">
@@ -120,17 +121,29 @@
     <Compile Include="Windows\NewItem.Designer.cs">
       <DependentUpon>NewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\UpdateAbilityWindow.cs">
+    <Compile Include="NewWindows\UpdateAbilityWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\UpdateAbilityWindow.Designer.cs">
+    <Compile Include="NewWindows\UpdateAbilityWindow.Designer.cs">
       <DependentUpon>UpdateAbilityWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\UpdateWeaponsWindow.cs">
+    <Compile Include="NewWindows\UpdateRaceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\UpdateWeaponsWindow.Designer.cs">
+    <Compile Include="NewWindows\UpdateRaceWindow.Designer.cs">
+      <DependentUpon>UpdateRaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWindows\UpdateWeaponsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWindows\UpdateWeaponsWindow.Designer.cs">
       <DependentUpon>UpdateWeaponsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWindows\EffectsBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewWindows\EffectsBox.Designer.cs">
+      <DependentUpon>EffectsBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\WeaponSearch.cs">
       <SubType>Form</SubType>
@@ -154,7 +167,7 @@
     <EmbeddedResource Include="Windows\BattleSetup.resx">
       <DependentUpon>BattleSetup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BattleSetupV2.resx">
+    <EmbeddedResource Include="NewWindows\BattleSetupV2.resx">
       <DependentUpon>BattleSetupV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BattleTest.resx">
@@ -173,11 +186,17 @@
     <EmbeddedResource Include="Windows\NewItem.resx">
       <DependentUpon>NewItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\UpdateAbilityWindow.resx">
+    <EmbeddedResource Include="NewWindows\UpdateAbilityWindow.resx">
       <DependentUpon>UpdateAbilityWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\UpdateWeaponsWindow.resx">
+    <EmbeddedResource Include="NewWindows\UpdateRaceWindow.resx">
+      <DependentUpon>UpdateRaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\UpdateWeaponsWindow.resx">
       <DependentUpon>UpdateWeaponsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\EffectsBox.resx">
+      <DependentUpon>EffectsBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WeaponSearch.resx">
       <DependentUpon>WeaponSearch.cs</DependentUpon>

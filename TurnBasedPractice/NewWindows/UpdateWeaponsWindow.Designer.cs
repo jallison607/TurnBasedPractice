@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.Windows
+﻿namespace TurnBasedPractice.NewWindows
 {
     partial class UpdateWeaponsWindow
     {

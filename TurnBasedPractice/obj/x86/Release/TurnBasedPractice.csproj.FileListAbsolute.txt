@@ -22,3 +22,14 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Relea
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.NewItem.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\GenerateResource.read.1.tlog
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\GenerateResource.write.1.tlog
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleSetup.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleSetupV2.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleTest.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleTest2.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.NewEntity.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.NewEntityTemplate.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateAbilityWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateRaceWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.EffectsBox.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.WeaponSearch.resources

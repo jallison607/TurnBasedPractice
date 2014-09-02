@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TurnBasedPractice.Windows
+namespace TurnBasedPractice.NewWindows
 {
     public partial class BattleSetupV2 : Form
     {
@@ -30,6 +30,16 @@ namespace TurnBasedPractice.Windows
         private void btnUpdateWeaponList_Click(object sender, EventArgs e)
         {
             new UpdateWeaponsWindow().Show();
+        }
+
+        private void btnUpdateRaceList_Click(object sender, EventArgs e)
+        {
+            new UpdateRaceWindow().Show();
+        }
+
+        private void btnUpdateTypeList_Click(object sender, EventArgs e)
+        {
+
         }
 
 

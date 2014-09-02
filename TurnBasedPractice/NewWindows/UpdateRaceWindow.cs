@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TurnBasedPractice.Windows
+namespace TurnBasedPractice.NewWindows
 {
-    public partial class UpdateWeaponsWindow : Form
+    public partial class UpdateRaceWindow : Form
     {
-        public UpdateWeaponsWindow()
+        public UpdateRaceWindow()
         {
             InitializeComponent();
         }
-
     }
 }
