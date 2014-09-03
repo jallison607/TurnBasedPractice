@@ -18,7 +18,7 @@ namespace TurnBasedPractice.Windows
         private BattleV2 _currentBattle;
         private bool _baseMenu = true;
         private bool _playerTurn = true;
-        private bool _updateInfo = false;
+        //private bool _updateInfo = false;
         private bool _updatingInfo = false;
         private bool _inPlace = true;
         private Point ActiveLocation = new Point(0, 0);

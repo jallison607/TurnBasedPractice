@@ -8,9 +8,12 @@ namespace TurnBasedPractice.EntityClasses
 {
     public abstract class EntityAbstract
     {
-        public readonly int id;
-        public readonly string name;
-
+        public int id;
+        public string name;
+        public int constitution;
+        public int dexterity;
+        public int strength;
+        public int magi;
 
         public EntityAbstract(string EString)
         {

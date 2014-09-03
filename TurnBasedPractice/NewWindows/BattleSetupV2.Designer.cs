@@ -61,21 +61,21 @@
             this.btnUpdateAbilityList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnFight = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.button27 = new System.Windows.Forms.Button();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.cmbEntityAllies = new System.Windows.Forms.ComboBox();
+            this.btnDeleteAlly = new System.Windows.Forms.Button();
+            this.btnAddAlly = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSavePreMadeA = new System.Windows.Forms.Button();
+            this.btnRemoveAlly = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtAllyClass = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
@@ -86,31 +86,34 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnASaveChanges = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nudAllyLevel = new System.Windows.Forms.NumericUpDown();
+            this.txtAllyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPlayerParty = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.rTemplates = new System.Windows.Forms.RadioButton();
+            this.rBosses = new System.Windows.Forms.RadioButton();
+            this.btnGenerateTemplateFoe = new System.Windows.Forms.Button();
+            this.cmbEntityFoes = new System.Windows.Forms.ComboBox();
+            this.btnDeleteFoe = new System.Windows.Forms.Button();
+            this.btnAddFoe = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnSavePreMadeF = new System.Windows.Forms.Button();
+            this.btnRemoveFoe = new System.Windows.Forms.Button();
+            this.btnPCommit = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.txtFoeRace = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -121,14 +124,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnFSaveChanges = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nudFoeLevel = new System.Windows.Forms.NumericUpDown();
+            this.txtFoeName = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.cmbFoeParty = new System.Windows.Forms.ComboBox();
             this.grpFoeInventory = new System.Windows.Forms.GroupBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -149,6 +152,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.lstFoeInventory = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
@@ -166,11 +171,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAllyLevel)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.btnPCommit.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -179,7 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
             this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).BeginInit();
             this.grpFoeInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
             this.SuspendLayout();
@@ -228,6 +233,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(3, 439);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(460, 229);
@@ -425,6 +431,7 @@
             // 
             // button18
             // 
+            this.button18.Enabled = false;
             this.button18.Location = new System.Drawing.Point(302, 8);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(123, 23);
@@ -434,6 +441,7 @@
             // 
             // button20
             // 
+            this.button20.Enabled = false;
             this.button20.Location = new System.Drawing.Point(170, 90);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(122, 23);
@@ -443,6 +451,7 @@
             // 
             // btnUpdateTypeList
             // 
+            this.btnUpdateTypeList.Enabled = false;
             this.btnUpdateTypeList.Location = new System.Drawing.Point(38, 90);
             this.btnUpdateTypeList.Name = "btnUpdateTypeList";
             this.btnUpdateTypeList.Size = new System.Drawing.Size(123, 23);
@@ -453,6 +462,7 @@
             // 
             // button16
             // 
+            this.button16.Enabled = false;
             this.button16.Location = new System.Drawing.Point(170, 61);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(122, 23);
@@ -462,6 +472,7 @@
             // 
             // btnUpdateRaceList
             // 
+            this.btnUpdateRaceList.Enabled = false;
             this.btnUpdateRaceList.Location = new System.Drawing.Point(38, 61);
             this.btnUpdateRaceList.Name = "btnUpdateRaceList";
             this.btnUpdateRaceList.Size = new System.Drawing.Size(123, 23);
@@ -472,6 +483,7 @@
             // 
             // button8
             // 
+            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(170, 8);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(123, 23);
@@ -481,6 +493,7 @@
             // 
             // button7
             // 
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(170, 34);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(123, 23);
@@ -490,6 +503,7 @@
             // 
             // btnUpdateWeaponList
             // 
+            this.btnUpdateWeaponList.Enabled = false;
             this.btnUpdateWeaponList.Location = new System.Drawing.Point(38, 34);
             this.btnUpdateWeaponList.Name = "btnUpdateWeaponList";
             this.btnUpdateWeaponList.Size = new System.Drawing.Size(123, 23);
@@ -500,6 +514,7 @@
             // 
             // btnUpdateAbilityList
             // 
+            this.btnUpdateAbilityList.Enabled = false;
             this.btnUpdateAbilityList.Location = new System.Drawing.Point(38, 8);
             this.btnUpdateAbilityList.Name = "btnUpdateAbilityList";
             this.btnUpdateAbilityList.Size = new System.Drawing.Size(123, 23);
@@ -511,7 +526,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnQuit);
-            this.panel2.Controls.Add(this.button11);
+            this.panel2.Controls.Add(this.btnFight);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 674);
             this.panel2.Name = "panel2";
@@ -528,14 +543,14 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // button11
+            // btnFight
             // 
-            this.button11.Location = new System.Drawing.Point(180, 34);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "Fight";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnFight.Location = new System.Drawing.Point(180, 34);
+            this.btnFight.Name = "btnFight";
+            this.btnFight.Size = new System.Drawing.Size(75, 23);
+            this.btnFight.TabIndex = 0;
+            this.btnFight.Text = "Fight";
+            this.btnFight.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -550,10 +565,10 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.button27);
-            this.groupBox15.Controls.Add(this.comboBox13);
-            this.groupBox15.Controls.Add(this.button22);
-            this.groupBox15.Controls.Add(this.button21);
+            this.groupBox15.Controls.Add(this.button1);
+            this.groupBox15.Controls.Add(this.cmbEntityAllies);
+            this.groupBox15.Controls.Add(this.btnDeleteAlly);
+            this.groupBox15.Controls.Add(this.btnAddAlly);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
@@ -562,46 +577,42 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Pre-Made Players";
             // 
-            // button27
+            // cmbEntityAllies
             // 
-            this.button27.Location = new System.Drawing.Point(329, 29);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(106, 23);
-            this.button27.TabIndex = 7;
-            this.button27.Text = "Generate Template";
-            this.button27.UseVisualStyleBackColor = true;
+            this.cmbEntityAllies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEntityAllies.FormattingEnabled = true;
+            this.cmbEntityAllies.Location = new System.Drawing.Point(33, 29);
+            this.cmbEntityAllies.Name = "cmbEntityAllies";
+            this.cmbEntityAllies.Size = new System.Drawing.Size(197, 21);
+            this.cmbEntityAllies.TabIndex = 4;
+            this.cmbEntityAllies.SelectedIndexChanged += new System.EventHandler(this.cmbEntityAllies_SelectedIndexChanged);
             // 
-            // comboBox13
+            // btnDeleteAlly
             // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(6, 29);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(197, 21);
-            this.comboBox13.TabIndex = 4;
+            this.btnDeleteAlly.Location = new System.Drawing.Point(237, 40);
+            this.btnDeleteAlly.Name = "btnDeleteAlly";
+            this.btnDeleteAlly.Size = new System.Drawing.Size(103, 23);
+            this.btnDeleteAlly.TabIndex = 6;
+            this.btnDeleteAlly.Text = "Delete Pre-Made";
+            this.btnDeleteAlly.UseVisualStyleBackColor = true;
+            this.btnDeleteAlly.Click += new System.EventHandler(this.btnDeleteAlly_Click);
             // 
-            // button22
+            // btnAddAlly
             // 
-            this.button22.Location = new System.Drawing.Point(210, 40);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(103, 23);
-            this.button22.TabIndex = 6;
-            this.button22.Text = "Delete Pre-Made";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(210, 13);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(103, 23);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Add To Party";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnAddAlly.Location = new System.Drawing.Point(237, 13);
+            this.btnAddAlly.Name = "btnAddAlly";
+            this.btnAddAlly.Size = new System.Drawing.Size(103, 23);
+            this.btnAddAlly.TabIndex = 5;
+            this.btnAddAlly.Text = "Add To Party";
+            this.btnAddAlly.UseVisualStyleBackColor = true;
+            this.btnAddAlly.Click += new System.EventHandler(this.btnAddAlly_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button14);
+            this.groupBox2.Controls.Add(this.btnSavePreMadeA);
+            this.groupBox2.Controls.Add(this.btnRemoveAlly);
             this.groupBox2.Controls.Add(this.groupBox7);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbPlayerParty);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Location = new System.Drawing.Point(0, 78);
             this.groupBox2.Name = "groupBox2";
@@ -610,27 +621,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player Party Characters";
             // 
-            // button14
+            // btnSavePreMadeA
             // 
-            this.button14.Location = new System.Drawing.Point(205, 18);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(119, 23);
-            this.button14.TabIndex = 10;
-            this.button14.Text = "Remove From Party";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnSavePreMadeA.Location = new System.Drawing.Point(330, 18);
+            this.btnSavePreMadeA.Name = "btnSavePreMadeA";
+            this.btnSavePreMadeA.Size = new System.Drawing.Size(106, 23);
+            this.btnSavePreMadeA.TabIndex = 11;
+            this.btnSavePreMadeA.Text = "Save to Pre-Made";
+            this.btnSavePreMadeA.UseVisualStyleBackColor = true;
+            this.btnSavePreMadeA.Click += new System.EventHandler(this.btnSavePreMadeA_Click);
+            // 
+            // btnRemoveAlly
+            // 
+            this.btnRemoveAlly.Location = new System.Drawing.Point(205, 18);
+            this.btnRemoveAlly.Name = "btnRemoveAlly";
+            this.btnRemoveAlly.Size = new System.Drawing.Size(119, 23);
+            this.btnRemoveAlly.TabIndex = 10;
+            this.btnRemoveAlly.Text = "Remove From Party";
+            this.btnRemoveAlly.UseVisualStyleBackColor = true;
+            this.btnRemoveAlly.Click += new System.EventHandler(this.btnRemoveAlly_Click);
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.groupBox13);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.comboBox3);
+            this.groupBox7.Controls.Add(this.txtAllyClass);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.groupBox5);
-            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.btnASaveChanges);
             this.groupBox7.Controls.Add(this.groupBox6);
             this.groupBox7.Controls.Add(this.label3);
-            this.groupBox7.Controls.Add(this.numericUpDown1);
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.nudAllyLevel);
+            this.groupBox7.Controls.Add(this.txtAllyName);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Location = new System.Drawing.Point(6, 47);
             this.groupBox7.Name = "groupBox7";
@@ -653,6 +675,7 @@
             // 
             this.checkedListBox4.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox4.Enabled = false;
             this.checkedListBox4.FormattingEnabled = true;
             this.checkedListBox4.Location = new System.Drawing.Point(7, 15);
             this.checkedListBox4.Name = "checkedListBox4";
@@ -673,19 +696,22 @@
             // 
             this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.Enabled = false;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(7, 15);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(128, 60);
             this.checkedListBox1.TabIndex = 0;
             // 
-            // comboBox3
+            // txtAllyClass
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(54, 44);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(114, 21);
-            this.comboBox3.TabIndex = 10;
+            this.txtAllyClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtAllyClass.Enabled = false;
+            this.txtAllyClass.FormattingEnabled = true;
+            this.txtAllyClass.Location = new System.Drawing.Point(54, 44);
+            this.txtAllyClass.Name = "txtAllyClass";
+            this.txtAllyClass.Size = new System.Drawing.Size(114, 21);
+            this.txtAllyClass.TabIndex = 10;
             // 
             // label6
             // 
@@ -707,6 +733,7 @@
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(6, 71);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(287, 81);
@@ -808,14 +835,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Constitution:";
             // 
-            // button1
+            // btnASaveChanges
             // 
-            this.button1.Location = new System.Drawing.Point(179, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnASaveChanges.Location = new System.Drawing.Point(179, 261);
+            this.btnASaveChanges.Name = "btnASaveChanges";
+            this.btnASaveChanges.Size = new System.Drawing.Size(114, 23);
+            this.btnASaveChanges.TabIndex = 6;
+            this.btnASaveChanges.Text = "Save Changes";
+            this.btnASaveChanges.UseVisualStyleBackColor = true;
+            this.btnASaveChanges.Click += new System.EventHandler(this.btnASaveChanges_Click);
             // 
             // groupBox6
             // 
@@ -823,6 +851,7 @@
             this.groupBox6.Controls.Add(this.comboBox7);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Enabled = false;
             this.groupBox6.Location = new System.Drawing.Point(6, 158);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(287, 87);
@@ -873,29 +902,31 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Level:";
             // 
-            // numericUpDown1
+            // nudAllyLevel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(218, 30);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nudAllyLevel.Location = new System.Drawing.Point(218, 30);
+            this.nudAllyLevel.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 20);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudAllyLevel.Name = "nudAllyLevel";
+            this.nudAllyLevel.Size = new System.Drawing.Size(75, 20);
+            this.nudAllyLevel.TabIndex = 5;
+            this.nudAllyLevel.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudAllyLevel.ValueChanged += new System.EventHandler(this.nudAllyLevel_ValueChanged);
             // 
-            // textBox1
+            // txtAllyName
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtAllyName.Location = new System.Drawing.Point(54, 18);
+            this.txtAllyName.Name = "txtAllyName";
+            this.txtAllyName.Size = new System.Drawing.Size(114, 20);
+            this.txtAllyName.TabIndex = 3;
+            this.txtAllyName.TextChanged += new System.EventHandler(this.txtAllyName_TextChanged);
             // 
             // label1
             // 
@@ -906,13 +937,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Name:";
             // 
-            // comboBox1
+            // cmbPlayerParty
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(36, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbPlayerParty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPlayerParty.FormattingEnabled = true;
+            this.cmbPlayerParty.Location = new System.Drawing.Point(36, 19);
+            this.cmbPlayerParty.Name = "cmbPlayerParty";
+            this.cmbPlayerParty.Size = new System.Drawing.Size(165, 21);
+            this.cmbPlayerParty.TabIndex = 0;
+            this.cmbPlayerParty.SelectedIndexChanged += new System.EventHandler(this.cmbPlayerParty_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -927,10 +960,13 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button28);
-            this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Controls.Add(this.rTemplates);
+            this.groupBox3.Controls.Add(this.rBosses);
+            this.groupBox3.Controls.Add(this.btnGenerateTemplateFoe);
+            this.groupBox3.Controls.Add(this.cmbEntityFoes);
+            this.groupBox3.Controls.Add(this.btnDeleteFoe);
+            this.groupBox3.Controls.Add(this.btnAddFoe);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
@@ -939,46 +975,75 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pre-Made Foes";
             // 
-            // button28
+            // rTemplates
             // 
-            this.button28.Location = new System.Drawing.Point(339, 27);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(106, 23);
-            this.button28.TabIndex = 8;
-            this.button28.Text = "Generate Template";
-            this.button28.UseVisualStyleBackColor = true;
+            this.rTemplates.AutoSize = true;
+            this.rTemplates.Location = new System.Drawing.Point(96, 43);
+            this.rTemplates.Name = "rTemplates";
+            this.rTemplates.Size = new System.Drawing.Size(74, 17);
+            this.rTemplates.TabIndex = 10;
+            this.rTemplates.Text = "Templates";
+            this.rTemplates.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // rBosses
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(5, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(197, 21);
-            this.comboBox2.TabIndex = 4;
+            this.rBosses.AutoSize = true;
+            this.rBosses.Checked = true;
+            this.rBosses.Location = new System.Drawing.Point(22, 43);
+            this.rBosses.Name = "rBosses";
+            this.rBosses.Size = new System.Drawing.Size(59, 17);
+            this.rBosses.TabIndex = 9;
+            this.rBosses.TabStop = true;
+            this.rBosses.Text = "Bosses";
+            this.rBosses.UseVisualStyleBackColor = true;
+            this.rBosses.CheckedChanged += new System.EventHandler(this.rBosses_CheckedChanged);
             // 
-            // button2
+            // btnGenerateTemplateFoe
             // 
-            this.button2.Location = new System.Drawing.Point(208, 40);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Delete Pre-Made";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGenerateTemplateFoe.Enabled = false;
+            this.btnGenerateTemplateFoe.Location = new System.Drawing.Point(314, 13);
+            this.btnGenerateTemplateFoe.Name = "btnGenerateTemplateFoe";
+            this.btnGenerateTemplateFoe.Size = new System.Drawing.Size(106, 23);
+            this.btnGenerateTemplateFoe.TabIndex = 8;
+            this.btnGenerateTemplateFoe.Text = "Generate Template";
+            this.btnGenerateTemplateFoe.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // cmbEntityFoes
             // 
-            this.button15.Location = new System.Drawing.Point(208, 13);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(103, 23);
-            this.button15.TabIndex = 5;
-            this.button15.Text = "Add To Party";
-            this.button15.UseVisualStyleBackColor = true;
+            this.cmbEntityFoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEntityFoes.FormattingEnabled = true;
+            this.cmbEntityFoes.Location = new System.Drawing.Point(5, 15);
+            this.cmbEntityFoes.Name = "cmbEntityFoes";
+            this.cmbEntityFoes.Size = new System.Drawing.Size(197, 21);
+            this.cmbEntityFoes.TabIndex = 4;
+            this.cmbEntityFoes.SelectedIndexChanged += new System.EventHandler(this.cmbEntityFoes_SelectedIndexChanged);
+            // 
+            // btnDeleteFoe
+            // 
+            this.btnDeleteFoe.Enabled = false;
+            this.btnDeleteFoe.Location = new System.Drawing.Point(208, 40);
+            this.btnDeleteFoe.Name = "btnDeleteFoe";
+            this.btnDeleteFoe.Size = new System.Drawing.Size(103, 23);
+            this.btnDeleteFoe.TabIndex = 6;
+            this.btnDeleteFoe.Text = "Delete Pre-Made";
+            this.btnDeleteFoe.UseVisualStyleBackColor = true;
+            // 
+            // btnAddFoe
+            // 
+            this.btnAddFoe.Enabled = false;
+            this.btnAddFoe.Location = new System.Drawing.Point(208, 13);
+            this.btnAddFoe.Name = "btnAddFoe";
+            this.btnAddFoe.Size = new System.Drawing.Size(103, 23);
+            this.btnAddFoe.TabIndex = 5;
+            this.btnAddFoe.Text = "Add To Party";
+            this.btnAddFoe.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button25);
-            this.groupBox9.Controls.Add(this.groupBox10);
-            this.groupBox9.Controls.Add(this.comboBox14);
+            this.groupBox9.Controls.Add(this.btnSavePreMadeF);
+            this.groupBox9.Controls.Add(this.btnRemoveFoe);
+            this.groupBox9.Controls.Add(this.btnPCommit);
+            this.groupBox9.Controls.Add(this.cmbFoeParty);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(0, 78);
             this.groupBox9.Name = "groupBox9";
@@ -987,34 +1052,43 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Foe Party Characters";
             // 
-            // button25
+            // btnSavePreMadeF
             // 
-            this.button25.Location = new System.Drawing.Point(205, 21);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(119, 23);
-            this.button25.TabIndex = 10;
-            this.button25.Text = "Remove From Party";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btnSavePreMadeF.Location = new System.Drawing.Point(330, 21);
+            this.btnSavePreMadeF.Name = "btnSavePreMadeF";
+            this.btnSavePreMadeF.Size = new System.Drawing.Size(110, 23);
+            this.btnSavePreMadeF.TabIndex = 11;
+            this.btnSavePreMadeF.Text = "Save to Pre-Made";
+            this.btnSavePreMadeF.UseVisualStyleBackColor = true;
             // 
-            // groupBox10
+            // btnRemoveFoe
             // 
-            this.groupBox10.Controls.Add(this.groupBox11);
-            this.groupBox10.Controls.Add(this.groupBox12);
-            this.groupBox10.Controls.Add(this.comboBox4);
-            this.groupBox10.Controls.Add(this.label7);
-            this.groupBox10.Controls.Add(this.groupBox14);
-            this.groupBox10.Controls.Add(this.button26);
-            this.groupBox10.Controls.Add(this.groupBox16);
-            this.groupBox10.Controls.Add(this.label23);
-            this.groupBox10.Controls.Add(this.numericUpDown10);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Controls.Add(this.label24);
-            this.groupBox10.Location = new System.Drawing.Point(6, 47);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(448, 290);
-            this.groupBox10.TabIndex = 9;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Foe Info";
+            this.btnRemoveFoe.Location = new System.Drawing.Point(205, 21);
+            this.btnRemoveFoe.Name = "btnRemoveFoe";
+            this.btnRemoveFoe.Size = new System.Drawing.Size(119, 23);
+            this.btnRemoveFoe.TabIndex = 10;
+            this.btnRemoveFoe.Text = "Remove From Party";
+            this.btnRemoveFoe.UseVisualStyleBackColor = true;
+            // 
+            // btnPCommit
+            // 
+            this.btnPCommit.Controls.Add(this.groupBox11);
+            this.btnPCommit.Controls.Add(this.groupBox12);
+            this.btnPCommit.Controls.Add(this.txtFoeRace);
+            this.btnPCommit.Controls.Add(this.label7);
+            this.btnPCommit.Controls.Add(this.groupBox14);
+            this.btnPCommit.Controls.Add(this.btnFSaveChanges);
+            this.btnPCommit.Controls.Add(this.groupBox16);
+            this.btnPCommit.Controls.Add(this.label23);
+            this.btnPCommit.Controls.Add(this.nudFoeLevel);
+            this.btnPCommit.Controls.Add(this.txtFoeName);
+            this.btnPCommit.Controls.Add(this.label24);
+            this.btnPCommit.Location = new System.Drawing.Point(6, 47);
+            this.btnPCommit.Name = "btnPCommit";
+            this.btnPCommit.Size = new System.Drawing.Size(448, 290);
+            this.btnPCommit.TabIndex = 9;
+            this.btnPCommit.TabStop = false;
+            this.btnPCommit.Text = "Foe Info";
             // 
             // groupBox11
             // 
@@ -1030,6 +1104,7 @@
             // 
             this.checkedListBox2.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox2.Enabled = false;
             this.checkedListBox2.FormattingEnabled = true;
             this.checkedListBox2.Location = new System.Drawing.Point(7, 15);
             this.checkedListBox2.Name = "checkedListBox2";
@@ -1050,19 +1125,22 @@
             // 
             this.checkedListBox3.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox3.Enabled = false;
             this.checkedListBox3.FormattingEnabled = true;
             this.checkedListBox3.Location = new System.Drawing.Point(7, 15);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(128, 60);
             this.checkedListBox3.TabIndex = 0;
             // 
-            // comboBox4
+            // txtFoeRace
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(54, 44);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(114, 21);
-            this.comboBox4.TabIndex = 10;
+            this.txtFoeRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtFoeRace.Enabled = false;
+            this.txtFoeRace.FormattingEnabled = true;
+            this.txtFoeRace.Location = new System.Drawing.Point(54, 44);
+            this.txtFoeRace.Name = "txtFoeRace";
+            this.txtFoeRace.Size = new System.Drawing.Size(114, 21);
+            this.txtFoeRace.TabIndex = 10;
             // 
             // label7
             // 
@@ -1084,6 +1162,7 @@
             this.groupBox14.Controls.Add(this.label9);
             this.groupBox14.Controls.Add(this.label10);
             this.groupBox14.Controls.Add(this.label11);
+            this.groupBox14.Enabled = false;
             this.groupBox14.Location = new System.Drawing.Point(6, 71);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(287, 81);
@@ -1185,14 +1264,14 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Constitution:";
             // 
-            // button26
+            // btnFSaveChanges
             // 
-            this.button26.Location = new System.Drawing.Point(179, 261);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 6;
-            this.button26.Text = "Save";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btnFSaveChanges.Location = new System.Drawing.Point(179, 261);
+            this.btnFSaveChanges.Name = "btnFSaveChanges";
+            this.btnFSaveChanges.Size = new System.Drawing.Size(106, 23);
+            this.btnFSaveChanges.TabIndex = 6;
+            this.btnFSaveChanges.Text = "Save Changes";
+            this.btnFSaveChanges.UseVisualStyleBackColor = true;
             // 
             // groupBox16
             // 
@@ -1208,6 +1287,7 @@
             // 
             this.checkedListBox5.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox5.Enabled = false;
             this.checkedListBox5.FormattingEnabled = true;
             this.checkedListBox5.Location = new System.Drawing.Point(10, 17);
             this.checkedListBox5.Name = "checkedListBox5";
@@ -1223,29 +1303,29 @@
             this.label23.TabIndex = 4;
             this.label23.Text = "Level:";
             // 
-            // numericUpDown10
+            // nudFoeLevel
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(218, 30);
-            this.numericUpDown10.Minimum = new decimal(new int[] {
+            this.nudFoeLevel.Location = new System.Drawing.Point(218, 30);
+            this.nudFoeLevel.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(75, 20);
-            this.numericUpDown10.TabIndex = 5;
-            this.numericUpDown10.Value = new decimal(new int[] {
+            this.nudFoeLevel.Name = "nudFoeLevel";
+            this.nudFoeLevel.Size = new System.Drawing.Size(75, 20);
+            this.nudFoeLevel.TabIndex = 5;
+            this.nudFoeLevel.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // textBox2
+            // txtFoeName
             // 
-            this.textBox2.Location = new System.Drawing.Point(54, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtFoeName.Location = new System.Drawing.Point(54, 18);
+            this.txtFoeName.Name = "txtFoeName";
+            this.txtFoeName.Size = new System.Drawing.Size(114, 20);
+            this.txtFoeName.TabIndex = 3;
             // 
             // label24
             // 
@@ -1256,13 +1336,14 @@
             this.label24.TabIndex = 2;
             this.label24.Text = "Name:";
             // 
-            // comboBox14
+            // cmbFoeParty
             // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(36, 23);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(165, 21);
-            this.comboBox14.TabIndex = 0;
+            this.cmbFoeParty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFoeParty.FormattingEnabled = true;
+            this.cmbFoeParty.Location = new System.Drawing.Point(36, 23);
+            this.cmbFoeParty.Name = "cmbFoeParty";
+            this.cmbFoeParty.Size = new System.Drawing.Size(165, 21);
+            this.cmbFoeParty.TabIndex = 0;
             // 
             // grpFoeInventory
             // 
@@ -1286,6 +1367,7 @@
             this.grpFoeInventory.Controls.Add(this.button10);
             this.grpFoeInventory.Controls.Add(this.lstFoeInventory);
             this.grpFoeInventory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpFoeInventory.Enabled = false;
             this.grpFoeInventory.Location = new System.Drawing.Point(489, 439);
             this.grpFoeInventory.Name = "grpFoeInventory";
             this.grpFoeInventory.Size = new System.Drawing.Size(460, 229);
@@ -1464,6 +1546,26 @@
             this.lstFoeInventory.Size = new System.Drawing.Size(429, 82);
             this.lstFoeInventory.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(346, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Commit Changes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(314, 40);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Commit Changes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // BattleSetupV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1494,12 +1596,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAllyLevel)).EndInit();
             this.panel4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.btnPCommit.ResumeLayout(false);
+            this.btnPCommit.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
@@ -1509,7 +1612,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
             this.groupBox16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).EndInit();
             this.grpFoeInventory.ResumeLayout(false);
             this.grpFoeInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
@@ -1525,18 +1628,18 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox txtAllyClass;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnASaveChanges;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown nudAllyLevel;
+        private System.Windows.Forms.TextBox txtAllyName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPlayerParty;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1562,29 +1665,29 @@
         private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnFight;
         private System.Windows.Forms.Button btnUpdateRaceList;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button btnUpdateTypeList;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnRemoveAlly;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.Button btnDeleteAlly;
+        private System.Windows.Forms.Button btnAddAlly;
+        private System.Windows.Forms.ComboBox cmbEntityAllies;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ComboBox cmbEntityFoes;
+        private System.Windows.Forms.Button btnDeleteFoe;
+        private System.Windows.Forms.Button btnAddFoe;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button btnRemoveFoe;
+        private System.Windows.Forms.GroupBox btnPCommit;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox txtFoeRace;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
@@ -1595,17 +1698,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnFSaveChanges;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown nudFoeLevel;
+        private System.Windows.Forms.TextBox txtFoeName;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.ComboBox cmbFoeParty;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.CheckedListBox checkedListBox5;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button btnGenerateTemplateFoe;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -1640,5 +1742,11 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Button btnSavePreMadeA;
+        private System.Windows.Forms.Button btnSavePreMadeF;
+        private System.Windows.Forms.RadioButton rTemplates;
+        private System.Windows.Forms.RadioButton rBosses;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

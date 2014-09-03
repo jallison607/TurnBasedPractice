@@ -8,7 +8,7 @@ namespace TurnBasedPractice.GameClasses
 {
     class Game
     {
-        public readonly int gameID;
-        public Party PlayerParty;
+        //public readonly int gameID;
+        //public Party PlayerParty;
     }
 }

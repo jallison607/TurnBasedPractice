@@ -5,14 +5,14 @@ using System.Text;
 
 namespace TurnBasedPractice.NewGameClasses
 {
-    class Effect
+    public class Effect
     {
-        private int id;
+        /*private int id;
         private string name;
         private int elementalType;
         private int effectType;
         private int effectAmount;
         private int effectDuration;
-
+        */
     }
 }

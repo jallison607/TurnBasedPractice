@@ -10,10 +10,12 @@ namespace TurnBasedPractice.EntityClasses
     {
         private List<Entity> _charactersInParty = new List<Entity>();
         private List<Entity> _activeParty = new List<Entity>();
+        private int maxActive;
         private Dictionary<Item, int> inventory = new Dictionary<Item, int>();
 
-        public Party(List<Entity> tmpPartyChars, int maxActive)
+        public Party(List<Entity> tmpPartyChars, int tmpMaxActive)
         {
+            maxActive = tmpMaxActive;
             this._charactersInParty = tmpPartyChars;
             int i = 0;
             while (i < maxActive && i < this._charactersInParty.Count)
@@ -110,7 +112,65 @@ namespace TurnBasedPractice.EntityClasses
             return this.inventory;
         }
 
-        
+        public void addEntity(Entity newEnt)
+        {
+            _charactersInParty.Add(newEnt);
+            if (_activeParty.Count < maxActive)
+            {
+                _activeParty.Add(newEnt);
+            }
+        }
+
+        public void removeEntity(Entity oldEnt)
+        {
+            bool inActiveParty = false;
+            foreach (Entity tmpEnt in _activeParty)
+            {
+                if (tmpEnt.id == oldEnt.id)
+                {
+                    inActiveParty = true;
+                }
+            }
+            _charactersInParty.Remove(oldEnt);
+
+            if (inActiveParty)
+            {
+                _activeParty.Remove(oldEnt);
+            }
+
+        }
+
+        public void updateEntity(Entity tmpUpdatedEnt)
+        {
+            int index = -1;
+            foreach (Entity tmpEnt in _charactersInParty)
+            {
+                if (tmpUpdatedEnt.id == tmpEnt.id)
+                {
+                    index = _charactersInParty.IndexOf(tmpEnt);
+                }
+            }
+            if (index > -1)
+            {
+                _charactersInParty[index] = tmpUpdatedEnt;
+                index = -1;
+            }
+
+            foreach (Entity tmpEnt in _activeParty)
+            {
+                if (tmpUpdatedEnt.id == tmpEnt.id)
+                {
+                    index = _charactersInParty.IndexOf(tmpEnt);
+                }
+            }
+
+            if (index > -1)
+            {
+                _activeParty[index] = tmpUpdatedEnt;
+            }
+
+
+        }
 
     }
 }

@@ -15,6 +15,8 @@ namespace TurnBasedPractice.EntityClasses
 
         //Logs and things
         private string _EPath = "data\\e.jsa";
+        private string _PEPath = "data\\pe.jsa";
+        private string _BEPath = "data\\be.jsa";
         private string _ELog = "data\\e.log";
         private string _ETPath = "data\\et.jsa";
         private string _ETLog = "data\\et.log";
@@ -26,6 +28,17 @@ namespace TurnBasedPractice.EntityClasses
         private EncrypterDecrypter _EntityEncrypter;
         private BasicLogger bLogger;
 
+
+        /// <summary>
+        /// Creates the wrapper for the specified type. Current valid types are:
+        /// 
+        /// "Entity"
+        /// "Player Entity"
+        /// "Boss Entity"
+        /// "Entity Template"
+        /// 
+        /// </summary>
+        /// <param name="tmpType"></param>
         public EntityWrapper(string tmpType)
         {
             this._EntityEncrypter = new EncrypterDecrypter();
@@ -53,9 +66,55 @@ namespace TurnBasedPractice.EntityClasses
                     }
                 }
             }
+            else if (tmpType == "Player Entity")
+            {
+                this.bLogger = new BasicLogger(this._ELog);
+                this._ActivePath = this._PEPath;
+                string encryptedEntities = this._EntityEncrypter.decryptFile(this._PEPath);
+                if (encryptedEntities.Length > 0)
+                {
+                    int TotalEntries = ParseItems.parseIntFrom(encryptedEntities, 4);
+                    encryptedEntities = encryptedEntities.Substring(4);
+                    int i = 0;
+                    while (i < TotalEntries)
+                    {
+                        int lengthOfEntity = ParseItems.parseIntFrom(encryptedEntities, 3);
+                        encryptedEntities = encryptedEntities.Substring(3);
+                        this.bLogger.Log("Attempting to decrypt: " + encryptedEntities.Substring(0, lengthOfEntity), debug);
+                        Entity newEntity = new Entity(encryptedEntities.Substring(0, lengthOfEntity));
+                        encryptedEntities = encryptedEntities.Substring(lengthOfEntity);
+                        this._listOfEntities.Add(newEntity);
+                        this._usedIDs.Add(newEntity.id);
+                        i++;
+                    }
+                }
+            }
+            else if (tmpType == "Boss Entity")
+            {
+                this.bLogger = new BasicLogger(this._ELog);
+                this._ActivePath = this._BEPath;
+                string encryptedEntities = this._EntityEncrypter.decryptFile(this._BEPath);
+                if (encryptedEntities.Length > 0)
+                {
+                    int TotalEntries = ParseItems.parseIntFrom(encryptedEntities, 4);
+                    encryptedEntities = encryptedEntities.Substring(4);
+                    int i = 0;
+                    while (i < TotalEntries)
+                    {
+                        int lengthOfEntity = ParseItems.parseIntFrom(encryptedEntities, 3);
+                        encryptedEntities = encryptedEntities.Substring(3);
+                        this.bLogger.Log("Attempting to decrypt: " + encryptedEntities.Substring(0, lengthOfEntity), debug);
+                        Entity newEntity = new Entity(encryptedEntities.Substring(0, lengthOfEntity));
+                        encryptedEntities = encryptedEntities.Substring(lengthOfEntity);
+                        this._listOfEntities.Add(newEntity);
+                        this._usedIDs.Add(newEntity.id);
+                        i++;
+                    }
+                }
+            }
             else if (tmpType == "Entity Template")
             {
-                
+
                 this.bLogger = new BasicLogger(this._ETLog);
                 this._ActivePath = this._ETPath;
                 string encryptedEntities = this._EntityEncrypter.decryptFile(this._ETPath);
@@ -76,7 +135,7 @@ namespace TurnBasedPractice.EntityClasses
                         i++;
                     }
                 }
-                
+
             }
             else
             {
@@ -110,6 +169,8 @@ namespace TurnBasedPractice.EntityClasses
         {
             bool added = false;
 
+
+            //Loops through all pre-exsisting Entities and adds if a matchis found
             for (int i = 0; i < this._listOfEntities.Count; i++)
             {
                 if (this._listOfEntities[i].id == tmpNewEntity.id)
@@ -119,12 +180,18 @@ namespace TurnBasedPractice.EntityClasses
                 }
             }
 
+
+            //If no match is found then add new entry
             if (!added)
             {
                 this._listOfEntities.Add(tmpNewEntity);
-                this._usedIDs.Add(tmpNewEntity.id);
+                if (!this._usedIDs.Contains(tmpNewEntity.id))
+                {
+                    this._usedIDs.Add(tmpNewEntity.id);
+                }
                 added = true;
             }
+            
 
             return added;
         }
@@ -160,7 +227,10 @@ namespace TurnBasedPractice.EntityClasses
             return null;
         }
 
-
+        /// <summary>
+        /// This will return the next available ID and place a lock on the id returned(not to be returned again)
+        /// </summary>
+        /// <returns></returns>
         public int getNextID()
         {
 
@@ -175,6 +245,10 @@ namespace TurnBasedPractice.EntityClasses
                 }
             }
 
+            if (found)
+            {
+                this._usedIDs.Add(i);
+            }
             return i;
 
         }

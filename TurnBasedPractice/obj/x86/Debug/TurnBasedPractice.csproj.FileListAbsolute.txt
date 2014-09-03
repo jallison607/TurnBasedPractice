@@ -32,6 +32,9 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetup.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest2.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetupV2.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateAbilityWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.BattleSetupV2.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateAbilityWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateRaceWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateWeaponsWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.EffectsBox.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\NameGenerator.dll

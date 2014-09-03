@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using TurnBasedPractice.Windows;
 using TurnBasedPractice.EntityClasses;
 using TurnBasedPractice.ItemClasses;
+using TurnBasedPractice.NewWindows;
 
 namespace TurnBasedPractice
 {

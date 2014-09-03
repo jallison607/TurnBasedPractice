@@ -155,6 +155,11 @@ namespace TurnBasedPractice.EntityClasses
             this.InstanceID = tmpIID;
         }
 
+        public void setLevel(int tmpLevel)
+        {
+            this.level = tmpLevel;
+        }
+
         //#####Combat Methods
         public int dodge()
         {

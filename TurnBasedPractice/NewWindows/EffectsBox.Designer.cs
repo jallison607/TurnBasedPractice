@@ -67,7 +67,6 @@
             this.mainBox.TabIndex = 3;
             this.mainBox.TabStop = false;
             this.mainBox.Text = "Ability Info";
-            this.mainBox.Enter += new System.EventHandler(this.mainBox_Enter);
             // 
             // btnExit
             // 
