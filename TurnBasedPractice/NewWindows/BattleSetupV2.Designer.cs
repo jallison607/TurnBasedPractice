@@ -64,6 +64,7 @@
             this.btnFight = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.btnPCommit = new System.Windows.Forms.Button();
             this.cmbEntityAllies = new System.Windows.Forms.ComboBox();
             this.btnDeleteAlly = new System.Windows.Forms.Button();
             this.btnAddAlly = new System.Windows.Forms.Button();
@@ -88,8 +89,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnASaveChanges = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cmbPArmor = new System.Windows.Forms.ComboBox();
+            this.cmbPWeapon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,6 +100,7 @@
             this.cmbPlayerParty = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnFCommit = new System.Windows.Forms.Button();
             this.rTemplates = new System.Windows.Forms.RadioButton();
             this.rBosses = new System.Windows.Forms.RadioButton();
             this.btnGenerateTemplateFoe = new System.Windows.Forms.Button();
@@ -108,12 +110,12 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnSavePreMadeF = new System.Windows.Forms.Button();
             this.btnRemoveFoe = new System.Windows.Forms.Button();
-            this.btnPCommit = new System.Windows.Forms.GroupBox();
+            this.FoeInfo = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.txtFoeRace = new System.Windows.Forms.ComboBox();
+            this.cmbFoeRace = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -151,9 +153,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.lstFoeInventory = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lstFInventory = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
@@ -175,7 +175,7 @@
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.btnPCommit.SuspendLayout();
+            this.FoeInfo.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -565,7 +565,7 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.button1);
+            this.groupBox15.Controls.Add(this.btnPCommit);
             this.groupBox15.Controls.Add(this.cmbEntityAllies);
             this.groupBox15.Controls.Add(this.btnDeleteAlly);
             this.groupBox15.Controls.Add(this.btnAddAlly);
@@ -576,6 +576,16 @@
             this.groupBox15.TabIndex = 7;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Pre-Made Players";
+            // 
+            // btnPCommit
+            // 
+            this.btnPCommit.Location = new System.Drawing.Point(346, 27);
+            this.btnPCommit.Name = "btnPCommit";
+            this.btnPCommit.Size = new System.Drawing.Size(98, 23);
+            this.btnPCommit.TabIndex = 7;
+            this.btnPCommit.Text = "Commit Changes";
+            this.btnPCommit.UseVisualStyleBackColor = true;
+            this.btnPCommit.Click += new System.EventHandler(this.btnPCommit_Click);
             // 
             // cmbEntityAllies
             // 
@@ -744,9 +754,19 @@
             // numericUpDown6
             // 
             this.numericUpDown6.Location = new System.Drawing.Point(201, 44);
+            this.numericUpDown6.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(56, 20);
             this.numericUpDown6.TabIndex = 7;
+            this.numericUpDown6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown5
             // 
@@ -847,11 +867,10 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox8);
-            this.groupBox6.Controls.Add(this.comboBox7);
+            this.groupBox6.Controls.Add(this.cmbPArmor);
+            this.groupBox6.Controls.Add(this.cmbPWeapon);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Enabled = false;
             this.groupBox6.Location = new System.Drawing.Point(6, 158);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(287, 87);
@@ -859,21 +878,25 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Equipment";
             // 
-            // comboBox8
+            // cmbPArmor
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(74, 55);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(199, 21);
-            this.comboBox8.TabIndex = 3;
+            this.cmbPArmor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPArmor.Enabled = false;
+            this.cmbPArmor.FormattingEnabled = true;
+            this.cmbPArmor.Location = new System.Drawing.Point(74, 55);
+            this.cmbPArmor.Name = "cmbPArmor";
+            this.cmbPArmor.Size = new System.Drawing.Size(199, 21);
+            this.cmbPArmor.TabIndex = 3;
             // 
-            // comboBox7
+            // cmbPWeapon
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(74, 23);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(199, 21);
-            this.comboBox7.TabIndex = 2;
+            this.cmbPWeapon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPWeapon.FormattingEnabled = true;
+            this.cmbPWeapon.Location = new System.Drawing.Point(74, 23);
+            this.cmbPWeapon.Name = "cmbPWeapon";
+            this.cmbPWeapon.Size = new System.Drawing.Size(199, 21);
+            this.cmbPWeapon.TabIndex = 2;
+            this.cmbPWeapon.SelectedIndexChanged += new System.EventHandler(this.cmbPWeapon_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -960,7 +983,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btnFCommit);
             this.groupBox3.Controls.Add(this.rTemplates);
             this.groupBox3.Controls.Add(this.rBosses);
             this.groupBox3.Controls.Add(this.btnGenerateTemplateFoe);
@@ -974,6 +997,16 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pre-Made Foes";
+            // 
+            // btnFCommit
+            // 
+            this.btnFCommit.Location = new System.Drawing.Point(314, 40);
+            this.btnFCommit.Name = "btnFCommit";
+            this.btnFCommit.Size = new System.Drawing.Size(106, 23);
+            this.btnFCommit.TabIndex = 11;
+            this.btnFCommit.Text = "Commit Changes";
+            this.btnFCommit.UseVisualStyleBackColor = true;
+            this.btnFCommit.Click += new System.EventHandler(this.btnFCommit_Click);
             // 
             // rTemplates
             // 
@@ -1027,6 +1060,7 @@
             this.btnDeleteFoe.TabIndex = 6;
             this.btnDeleteFoe.Text = "Delete Pre-Made";
             this.btnDeleteFoe.UseVisualStyleBackColor = true;
+            this.btnDeleteFoe.Click += new System.EventHandler(this.btnDeleteFoe_Click);
             // 
             // btnAddFoe
             // 
@@ -1042,7 +1076,7 @@
             // 
             this.groupBox9.Controls.Add(this.btnSavePreMadeF);
             this.groupBox9.Controls.Add(this.btnRemoveFoe);
-            this.groupBox9.Controls.Add(this.btnPCommit);
+            this.groupBox9.Controls.Add(this.FoeInfo);
             this.groupBox9.Controls.Add(this.cmbFoeParty);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(0, 78);
@@ -1070,25 +1104,25 @@
             this.btnRemoveFoe.Text = "Remove From Party";
             this.btnRemoveFoe.UseVisualStyleBackColor = true;
             // 
-            // btnPCommit
+            // FoeInfo
             // 
-            this.btnPCommit.Controls.Add(this.groupBox11);
-            this.btnPCommit.Controls.Add(this.groupBox12);
-            this.btnPCommit.Controls.Add(this.txtFoeRace);
-            this.btnPCommit.Controls.Add(this.label7);
-            this.btnPCommit.Controls.Add(this.groupBox14);
-            this.btnPCommit.Controls.Add(this.btnFSaveChanges);
-            this.btnPCommit.Controls.Add(this.groupBox16);
-            this.btnPCommit.Controls.Add(this.label23);
-            this.btnPCommit.Controls.Add(this.nudFoeLevel);
-            this.btnPCommit.Controls.Add(this.txtFoeName);
-            this.btnPCommit.Controls.Add(this.label24);
-            this.btnPCommit.Location = new System.Drawing.Point(6, 47);
-            this.btnPCommit.Name = "btnPCommit";
-            this.btnPCommit.Size = new System.Drawing.Size(448, 290);
-            this.btnPCommit.TabIndex = 9;
-            this.btnPCommit.TabStop = false;
-            this.btnPCommit.Text = "Foe Info";
+            this.FoeInfo.Controls.Add(this.groupBox11);
+            this.FoeInfo.Controls.Add(this.groupBox12);
+            this.FoeInfo.Controls.Add(this.cmbFoeRace);
+            this.FoeInfo.Controls.Add(this.label7);
+            this.FoeInfo.Controls.Add(this.groupBox14);
+            this.FoeInfo.Controls.Add(this.btnFSaveChanges);
+            this.FoeInfo.Controls.Add(this.groupBox16);
+            this.FoeInfo.Controls.Add(this.label23);
+            this.FoeInfo.Controls.Add(this.nudFoeLevel);
+            this.FoeInfo.Controls.Add(this.txtFoeName);
+            this.FoeInfo.Controls.Add(this.label24);
+            this.FoeInfo.Location = new System.Drawing.Point(6, 47);
+            this.FoeInfo.Name = "FoeInfo";
+            this.FoeInfo.Size = new System.Drawing.Size(448, 290);
+            this.FoeInfo.TabIndex = 9;
+            this.FoeInfo.TabStop = false;
+            this.FoeInfo.Text = "Foe Info";
             // 
             // groupBox11
             // 
@@ -1132,15 +1166,15 @@
             this.checkedListBox3.Size = new System.Drawing.Size(128, 60);
             this.checkedListBox3.TabIndex = 0;
             // 
-            // txtFoeRace
+            // cmbFoeRace
             // 
-            this.txtFoeRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtFoeRace.Enabled = false;
-            this.txtFoeRace.FormattingEnabled = true;
-            this.txtFoeRace.Location = new System.Drawing.Point(54, 44);
-            this.txtFoeRace.Name = "txtFoeRace";
-            this.txtFoeRace.Size = new System.Drawing.Size(114, 21);
-            this.txtFoeRace.TabIndex = 10;
+            this.cmbFoeRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFoeRace.Enabled = false;
+            this.cmbFoeRace.FormattingEnabled = true;
+            this.cmbFoeRace.Location = new System.Drawing.Point(54, 44);
+            this.cmbFoeRace.Name = "cmbFoeRace";
+            this.cmbFoeRace.Size = new System.Drawing.Size(114, 21);
+            this.cmbFoeRace.TabIndex = 10;
             // 
             // label7
             // 
@@ -1173,9 +1207,19 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(201, 44);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(56, 20);
             this.numericUpDown2.TabIndex = 7;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown7
             // 
@@ -1365,7 +1409,7 @@
             this.grpFoeInventory.Controls.Add(this.label28);
             this.grpFoeInventory.Controls.Add(this.button9);
             this.grpFoeInventory.Controls.Add(this.button10);
-            this.grpFoeInventory.Controls.Add(this.lstFoeInventory);
+            this.grpFoeInventory.Controls.Add(this.lstFInventory);
             this.grpFoeInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpFoeInventory.Enabled = false;
             this.grpFoeInventory.Location = new System.Drawing.Point(489, 439);
@@ -1537,34 +1581,14 @@
             this.button10.Text = "Add";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // lstFoeInventory
+            // lstFInventory
             // 
-            this.lstFoeInventory.FormattingEnabled = true;
-            this.lstFoeInventory.Location = new System.Drawing.Point(12, 20);
-            this.lstFoeInventory.MultiColumn = true;
-            this.lstFoeInventory.Name = "lstFoeInventory";
-            this.lstFoeInventory.Size = new System.Drawing.Size(429, 82);
-            this.lstFoeInventory.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(346, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Commit Changes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(314, 40);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Commit Changes";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lstFInventory.FormattingEnabled = true;
+            this.lstFInventory.Location = new System.Drawing.Point(12, 20);
+            this.lstFInventory.MultiColumn = true;
+            this.lstFInventory.Name = "lstFInventory";
+            this.lstFInventory.Size = new System.Drawing.Size(429, 82);
+            this.lstFInventory.TabIndex = 0;
             // 
             // BattleSetupV2
             // 
@@ -1601,8 +1625,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.btnPCommit.ResumeLayout(false);
-            this.btnPCommit.PerformLayout();
+            this.FoeInfo.ResumeLayout(false);
+            this.FoeInfo.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
@@ -1683,11 +1707,11 @@
         private System.Windows.Forms.Button btnAddFoe;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnRemoveFoe;
-        private System.Windows.Forms.GroupBox btnPCommit;
+        private System.Windows.Forms.GroupBox FoeInfo;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.ComboBox txtFoeRace;
+        private System.Windows.Forms.ComboBox cmbFoeRace;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
@@ -1735,18 +1759,18 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ListBox lstFoeInventory;
+        private System.Windows.Forms.ListBox lstFInventory;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cmbPArmor;
+        private System.Windows.Forms.ComboBox cmbPWeapon;
         private System.Windows.Forms.Button btnSavePreMadeA;
         private System.Windows.Forms.Button btnSavePreMadeF;
         private System.Windows.Forms.RadioButton rTemplates;
         private System.Windows.Forms.RadioButton rBosses;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPCommit;
+        private System.Windows.Forms.Button btnFCommit;
     }
 }
