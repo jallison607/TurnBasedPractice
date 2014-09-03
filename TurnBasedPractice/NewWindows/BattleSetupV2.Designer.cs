@@ -102,7 +102,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnFCommit = new System.Windows.Forms.Button();
             this.rTemplates = new System.Windows.Forms.RadioButton();
-            this.rBosses = new System.Windows.Forms.RadioButton();
+            this.rGenerated = new System.Windows.Forms.RadioButton();
             this.btnGenerateTemplateFoe = new System.Windows.Forms.Button();
             this.cmbEntityFoes = new System.Windows.Forms.ComboBox();
             this.btnDeleteFoe = new System.Windows.Forms.Button();
@@ -985,7 +985,7 @@
             // 
             this.groupBox3.Controls.Add(this.btnFCommit);
             this.groupBox3.Controls.Add(this.rTemplates);
-            this.groupBox3.Controls.Add(this.rBosses);
+            this.groupBox3.Controls.Add(this.rGenerated);
             this.groupBox3.Controls.Add(this.btnGenerateTemplateFoe);
             this.groupBox3.Controls.Add(this.cmbEntityFoes);
             this.groupBox3.Controls.Add(this.btnDeleteFoe);
@@ -1011,25 +1011,25 @@
             // rTemplates
             // 
             this.rTemplates.AutoSize = true;
-            this.rTemplates.Location = new System.Drawing.Point(96, 43);
+            this.rTemplates.Location = new System.Drawing.Point(103, 43);
             this.rTemplates.Name = "rTemplates";
             this.rTemplates.Size = new System.Drawing.Size(74, 17);
             this.rTemplates.TabIndex = 10;
             this.rTemplates.Text = "Templates";
             this.rTemplates.UseVisualStyleBackColor = true;
             // 
-            // rBosses
+            // rGenerated
             // 
-            this.rBosses.AutoSize = true;
-            this.rBosses.Checked = true;
-            this.rBosses.Location = new System.Drawing.Point(22, 43);
-            this.rBosses.Name = "rBosses";
-            this.rBosses.Size = new System.Drawing.Size(59, 17);
-            this.rBosses.TabIndex = 9;
-            this.rBosses.TabStop = true;
-            this.rBosses.Text = "Bosses";
-            this.rBosses.UseVisualStyleBackColor = true;
-            this.rBosses.CheckedChanged += new System.EventHandler(this.rBosses_CheckedChanged);
+            this.rGenerated.AutoSize = true;
+            this.rGenerated.Checked = true;
+            this.rGenerated.Location = new System.Drawing.Point(22, 43);
+            this.rGenerated.Name = "rGenerated";
+            this.rGenerated.Size = new System.Drawing.Size(75, 17);
+            this.rGenerated.TabIndex = 9;
+            this.rGenerated.TabStop = true;
+            this.rGenerated.Text = "Generated";
+            this.rGenerated.UseVisualStyleBackColor = true;
+            this.rGenerated.CheckedChanged += new System.EventHandler(this.rBosses_CheckedChanged);
             // 
             // btnGenerateTemplateFoe
             // 
@@ -1064,13 +1064,13 @@
             // 
             // btnAddFoe
             // 
-            this.btnAddFoe.Enabled = false;
             this.btnAddFoe.Location = new System.Drawing.Point(208, 13);
             this.btnAddFoe.Name = "btnAddFoe";
             this.btnAddFoe.Size = new System.Drawing.Size(103, 23);
             this.btnAddFoe.TabIndex = 5;
             this.btnAddFoe.Text = "Add To Party";
             this.btnAddFoe.UseVisualStyleBackColor = true;
+            this.btnAddFoe.Click += new System.EventHandler(this.btnAddFoe_Click);
             // 
             // groupBox9
             // 
@@ -1094,6 +1094,7 @@
             this.btnSavePreMadeF.TabIndex = 11;
             this.btnSavePreMadeF.Text = "Save to Pre-Made";
             this.btnSavePreMadeF.UseVisualStyleBackColor = true;
+            this.btnSavePreMadeF.Click += new System.EventHandler(this.btnSavePreMadeF_Click);
             // 
             // btnRemoveFoe
             // 
@@ -1103,6 +1104,7 @@
             this.btnRemoveFoe.TabIndex = 10;
             this.btnRemoveFoe.Text = "Remove From Party";
             this.btnRemoveFoe.UseVisualStyleBackColor = true;
+            this.btnRemoveFoe.Click += new System.EventHandler(this.btnRemoveFoe_Click);
             // 
             // FoeInfo
             // 
@@ -1316,6 +1318,7 @@
             this.btnFSaveChanges.TabIndex = 6;
             this.btnFSaveChanges.Text = "Save Changes";
             this.btnFSaveChanges.UseVisualStyleBackColor = true;
+            this.btnFSaveChanges.Click += new System.EventHandler(this.btnFSaveChanges_Click);
             // 
             // groupBox16
             // 
@@ -1363,6 +1366,7 @@
             0,
             0,
             0});
+            this.nudFoeLevel.ValueChanged += new System.EventHandler(this.nudFoeLevel_ValueChanged);
             // 
             // txtFoeName
             // 
@@ -1370,6 +1374,7 @@
             this.txtFoeName.Name = "txtFoeName";
             this.txtFoeName.Size = new System.Drawing.Size(114, 20);
             this.txtFoeName.TabIndex = 3;
+            this.txtFoeName.TextChanged += new System.EventHandler(this.txtFoeName_TextChanged);
             // 
             // label24
             // 
@@ -1769,7 +1774,7 @@
         private System.Windows.Forms.Button btnSavePreMadeA;
         private System.Windows.Forms.Button btnSavePreMadeF;
         private System.Windows.Forms.RadioButton rTemplates;
-        private System.Windows.Forms.RadioButton rBosses;
+        private System.Windows.Forms.RadioButton rGenerated;
         private System.Windows.Forms.Button btnPCommit;
         private System.Windows.Forms.Button btnFCommit;
     }

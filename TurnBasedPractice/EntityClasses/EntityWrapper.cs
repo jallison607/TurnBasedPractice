@@ -16,7 +16,7 @@ namespace TurnBasedPractice.EntityClasses
         //Logs and things
         private string _EPath = "data\\e.jsa";
         private string _PEPath = "data\\pe.jsa";
-        private string _BEPath = "data\\be.jsa";
+        private string _GEPath = "data\\ge.jsa";
         private string _ELog = "data\\e.log";
         private string _ETPath = "data\\et.jsa";
         private string _ETLog = "data\\et.log";
@@ -34,7 +34,7 @@ namespace TurnBasedPractice.EntityClasses
         /// 
         /// "Entity"
         /// "Player Entity"
-        /// "Boss Entity"
+        /// "Generated Entity"
         /// "Entity Template"
         /// 
         /// </summary>
@@ -89,11 +89,11 @@ namespace TurnBasedPractice.EntityClasses
                     }
                 }
             }
-            else if (tmpType == "Boss Entity")
+            else if (tmpType == "Generated Entity")
             {
                 this.bLogger = new BasicLogger(this._ELog);
-                this._ActivePath = this._BEPath;
-                string encryptedEntities = this._EntityEncrypter.decryptFile(this._BEPath);
+                this._ActivePath = this._GEPath;
+                string encryptedEntities = this._EntityEncrypter.decryptFile(this._GEPath);
                 if (encryptedEntities.Length > 0)
                 {
                     int TotalEntries = ParseItems.parseIntFrom(encryptedEntities, 4);
