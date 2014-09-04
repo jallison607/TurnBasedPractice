@@ -10,10 +10,12 @@ namespace TurnBasedPractice.EntityClasses
     {
         public int id;
         public string name;
-        public int constitution;
-        public int dexterity;
-        public int strength;
-        public int magi;
+        //Every level gets 2 points to distribute among the following stats - Tentative maximum of 99
+        public int constitution; //Used to derive HP | MaxHP = 5*Constitution
+        public int magi; //Used to derive mana | MaxMana = 5*Magi
+        public int dexterity; //Used to derive speed | Speed Bonus = (dexterity/2)Rounded
+        public int strength; //Used to derive damage | Damage Bonus = (Strength/2)Rounded
+        
 
         public EntityAbstract(string EString)
         {

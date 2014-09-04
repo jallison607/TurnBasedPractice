@@ -17,7 +17,7 @@ namespace TurnBasedPractice.NewWindows
     {
         private EntityWrapper playerWrapper;
         private EntityWrapper generatedFoeWrapper;
-        private EntityWrapper templateWrapper;
+        private EntityTemplateWrapper templateWrapper;
         private Party pParty = new Party(new List<Entity>(), 3);
         private Entity selectedPartyMember;
         private Entity selectedFoePartyMember;
@@ -30,15 +30,17 @@ namespace TurnBasedPractice.NewWindows
         private ItemWrapper wepWrapper;
         private Entity newEntity;
         private Random r = new Random();
+        private bool loadingFoe = false;
+        private bool loadingAlly = false;
 
         public BattleSetupV2()
         {
             InitializeComponent();
-            playerWrapper = new EntityWrapper("Player Entity");
-            generatedFoeWrapper = new EntityWrapper("Generated Entity");
-            templateWrapper = new EntityWrapper("Entity Template");
             wepWrapper = new ItemWrapper("Weapon");
-            
+            updateLocalWeaponList();
+            playerWrapper = new EntityWrapper("Player Entity", WepList);
+            generatedFoeWrapper = new EntityWrapper("Generated Entity", WepList);
+            templateWrapper = new EntityTemplateWrapper("Entity Template");
             updateLocalLists();
             
             
@@ -105,7 +107,6 @@ namespace TurnBasedPractice.NewWindows
             if (cmbEntityAllies.SelectedIndex == -1)
             {
                 btnDeleteAlly.Enabled = false;
-                btnGenerateTemplateFoe.Enabled = false;
                 txtAllyName.Text = "";
             }
             else
@@ -116,63 +117,47 @@ namespace TurnBasedPractice.NewWindows
             if (cmbEntityFoes.SelectedIndex == -1)
             {
                 btnDeleteFoe.Enabled = false;
-                btnGenerateTemplateFoe.Enabled = false;
                 txtFoeName.Text = "";
             }
             else
             {
                 btnDeleteFoe.Enabled = true;
-                if (rGenerated.Checked)
-                {
-                    btnGenerateTemplateFoe.Enabled = true;
-                }
-                else
-                {
-                    btnGenerateTemplateFoe.Enabled = false;
-                }
             }
 
             if (cmbPlayerParty.SelectedIndex >= 0)
             {
                 selectedPartyMember = (Entity)pParty.getEntities()[cmbPlayerParty.SelectedIndex].Clone();
                 updateSelectedPlayerInfo();
-                btnRemoveAlly.Enabled = true;
-                btnSavePreMadeA.Enabled = true;
-                cmbPWeapon.Enabled = true;
-                btnASaveChanges.Enabled = true;
-                txtAllyName.Enabled = true;
-                nudAllyLevel.Enabled = true;
+                grpCharInfo.Enabled = true;
             }
             else
             {
+                txtAllyName.Text = "";
                 cmbPlayerParty.SelectedText = "";
-                btnRemoveAlly.Enabled = false;
-                btnSavePreMadeA.Enabled = false;
-                cmbPWeapon.Enabled = false;
-                btnASaveChanges.Enabled = false;
-                txtAllyName.Enabled = false;
-                nudAllyLevel.Enabled = false;
+                nudpCon.Value = 1;
+                nudpDex.Value = 1;
+                nudpMag.Value = 1;
+                nudpStr.Value = 1;
+                grpCharInfo.Enabled = false;
             }
 
             if (cmbFoeParty.SelectedIndex >= 0)
             {
                 selectedFoePartyMember = (Entity)fParty.getEntities()[cmbFoeParty.SelectedIndex].Clone();
+                updateSelectedFoeInfo();
                 txtFoeName.Text = selectedFoePartyMember.name;
                 nudFoeLevel.Value = selectedFoePartyMember.getLevel();
-                btnRemoveFoe.Enabled = true;
-                btnSavePreMadeF.Enabled = true;
-                btnFSaveChanges.Enabled = true;
-                txtFoeName.Enabled = true;
-                nudFoeLevel.Enabled = true;
+                grpFoeInfo.Enabled = true;
             }
             else
             {
+                txtFoeName.Text = "";
                 cmbFoeParty.SelectedText = "";
-                btnRemoveFoe.Enabled = false;
-                btnSavePreMadeF.Enabled = false;
-                btnFSaveChanges.Enabled = false;
-                txtFoeName.Enabled = false;
-                nudFoeLevel.Enabled = false;
+                nudfCon.Value = 1;
+                nudfDex.Value = 1;
+                nudfMag.Value = 1;
+                nudfStr.Value = 1;
+                grpFoeInfo.Enabled = false;
             }
 
             if (cmbPlayerParty.Items.Count > 0)
@@ -207,6 +192,7 @@ namespace TurnBasedPractice.NewWindows
 
         private void updateSelectedPlayerInfo()
         {
+            loadingAlly = true;
             txtAllyName.Text = selectedPartyMember.name;
             nudAllyLevel.Value = selectedPartyMember.getLevel();
             int wepIndex = -1;
@@ -231,14 +217,34 @@ namespace TurnBasedPractice.NewWindows
 
             cmbPWeapon.SelectedIndex = wepIndex;
 
+            nudpCon.Value = selectedPartyMember.constitution;
+            nudpMag.Value = selectedPartyMember.magi;
+            nudpDex.Value = selectedPartyMember.dexterity;
+            nudpStr.Value = selectedPartyMember.strength;
+            loadingAlly = false;
+        }
+
+        private void updateSelectedFoeInfo()
+        {
+            loadingFoe = true;
+            txtFoeName.Text = selectedFoePartyMember.name;
+            nudFoeLevel.Value = selectedFoePartyMember.getLevel();
+            nudfCon.Value = selectedFoePartyMember.constitution;
+            nudfMag.Value = selectedFoePartyMember.magi;
+            nudfDex.Value = selectedFoePartyMember.dexterity;
+            nudfStr.Value = selectedFoePartyMember.strength;
+            loadingFoe = false;
         }
 
         private void removePreMadePlayer()
         {
-            playerWrapper.removeEntity(pEntList[cmbEntityAllies.SelectedIndex - 1]);
-            updateLocalLists();
-            loadEntities();
-            updateControlsData();
+            if (cmbEntityAllies.SelectedIndex > 0)
+            {
+                playerWrapper.removeEntity(pEntList[cmbEntityAllies.SelectedIndex - 1]);
+                updateLocalLists();
+                loadEntities();
+                updateControlsData();
+            }
         }
 
         private void removePreMadeFoe()
@@ -296,7 +302,6 @@ namespace TurnBasedPractice.NewWindows
             pEntList.Clear();
             gEntList.Clear();
             tEntList.Clear();
-            WepList.Clear();
 
             foreach (EntityAbstract tmpEnt in playerWrapper.getEntities())
             {
@@ -306,29 +311,33 @@ namespace TurnBasedPractice.NewWindows
             {
                 gEntList.Add((Entity)tmpEnt);
             }
-            foreach (EntityAbstract tmpEnt in templateWrapper.getEntities())
+            foreach (EntityTemplate tmpEnt in templateWrapper.getEntities())
             {
-                tEntList.Add((EntityTemplate)tmpEnt);
+                tEntList.Add(tmpEnt);
             }
 
+            updateLocalWeaponList();
+
+            int[] tmpStats = new int[5]{1,1,1,1,1};
+
+            newEntity = new Entity(0, "", tmpStats ,WepList[0]);
+        }
+
+        private void updateLocalWeaponList()
+        {
+            WepList.Clear();
             foreach (Item tmpWep in wepWrapper.getItems())
             {
                 WepList.Add((Weapon)tmpWep);
             }
-
-            newEntity = new Entity(playerWrapper.getNextID(), "", 1, WepList[0]);
         }
 
-        //Events
+        //########Events
+        //Open New Windows
         private void btnUpdateAbilityList_Click(object sender, EventArgs e)
         {
             new UpdateAbilityWindow().Show();
 
-        }
-
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnUpdateWeaponList_Click(object sender, EventArgs e)
@@ -346,6 +355,26 @@ namespace TurnBasedPractice.NewWindows
 
         }
 
+        //Exit
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Foe Only Events
+        private void rBosses_CheckedChanged(object sender, EventArgs e)
+        {
+            loadEntities();
+            updateControlsData();
+        }
+
+        //Ally Only Events
+        private void cmbPWeapon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedPartyMember.equipWeapon(WepList[cmbPWeapon.SelectedIndex]);
+        }
+
+        //Similar events on either side
         private void btnAddAlly_Click(object sender, EventArgs e)
         {
             if (cmbEntityAllies.SelectedIndex > 0)
@@ -364,103 +393,6 @@ namespace TurnBasedPractice.NewWindows
             updateControlsData();
         }
 
-        private void btnRemoveAlly_Click(object sender, EventArgs e)
-        {
-            if (cmbPlayerParty.SelectedIndex >= 0)
-            {
-                pParty.removeEntity(pParty.getEntities()[cmbPlayerParty.SelectedIndex]);
-                cmbPlayerParty.Items.RemoveAt(cmbPlayerParty.SelectedIndex);
-            }
-
-            loadEntities();
-            updateControlsData();
-        }
-
-        private void rBosses_CheckedChanged(object sender, EventArgs e)
-        {
-            loadEntities();
-            updateControlsData();
-        }
-
-        private void cmbEntityFoes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updateControlsData();
-        }
-
-        private void cmbEntityAllies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updateControlsData();
-        }
-
-        private void btnDeleteAlly_Click(object sender, EventArgs e)
-        {
-            removePreMadePlayer();
-        }
-
-        private void btnSavePreMadeA_Click(object sender, EventArgs e)
-        {
-            addToPreMadePlayer();
-        }
-
-        private void cmbPlayerParty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbPlayerParty.SelectedIndex >= 0)
-            {
-                selectedPartyMember = (Entity) pParty.getEntities()[cmbPlayerParty.SelectedIndex].Clone();
-                updateSelectedPlayerInfo();
-            }
-        }
-
-        private void txtAllyName_TextChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.name = txtAllyName.Text;
-        }
-
-        private void nudAllyLevel_ValueChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.setLevel((int)nudAllyLevel.Value);
-        }
-
-        private void btnASaveChanges_Click(object sender, EventArgs e)
-        {
-            if (cmbPlayerParty.SelectedIndex >= 0)
-            {
-                pParty.updateEntity(selectedPartyMember);
-                loadEntities();
-                updateControlsData();
-            }
-        }
-
-        private void btnPCommit_Click(object sender, EventArgs e)
-        {
-            playerWrapper.saveEntities();
-        }
-
-        private void cmbPWeapon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.equipWeapon(WepList[cmbPWeapon.SelectedIndex]);
-        }
-
-        private void btnDeleteFoe_Click(object sender, EventArgs e)
-        {
-            if (cmbEntityFoes.SelectedIndex > 0)
-            {
-                removePreMadeFoe();
-            }
-        }
-
-        private void btnFCommit_Click(object sender, EventArgs e)
-        {
-            if (rGenerated.Checked)
-            {
-                generatedFoeWrapper.saveEntities();
-            }
-            else
-            {
-                templateWrapper.saveEntities();
-            }
-        }
-
         private void btnAddFoe_Click(object sender, EventArgs e)
         {
             if (cmbEntityFoes.SelectedIndex > 0)
@@ -471,7 +403,7 @@ namespace TurnBasedPractice.NewWindows
                 }
                 else
                 {
-                    fParty.addEntity(new Entity(tEntList[cmbEntityFoes.SelectedIndex - 1], tEntList[cmbEntityFoes.SelectedIndex - 1].getMinLevel()));
+                    fParty.addEntity(tEntList[cmbEntityFoes.SelectedIndex - 1].generateAnEntity(generatedFoeWrapper.getNextID(),nameRandomizer.randomFirstName()[0], WepList));
                 }
             }
             else
@@ -486,6 +418,38 @@ namespace TurnBasedPractice.NewWindows
             updateControlsData();
         }
 
+        private void btnRemoveAlly_Click(object sender, EventArgs e)
+        {
+            if (cmbPlayerParty.SelectedIndex >= 0)
+            {
+                pParty.removeEntity(pParty.getEntities()[cmbPlayerParty.SelectedIndex]);
+            }
+
+            loadEntities();
+            updateControlsData();
+        }
+
+        private void btnRemoveFoe_Click(object sender, EventArgs e)
+        {
+            if (cmbFoeParty.SelectedIndex >= 0)
+            {
+                fParty.removeEntity(fParty.getEntities()[cmbFoeParty.SelectedIndex]);
+            }
+
+            loadEntities();
+            updateControlsData();
+        }
+
+        private void btnASaveChanges_Click(object sender, EventArgs e)
+        {
+            if (cmbPlayerParty.SelectedIndex >= 0)
+            {
+                pParty.updateEntity(selectedPartyMember);
+                loadEntities();
+                updateControlsData();
+            }
+        }
+
         private void btnFSaveChanges_Click(object sender, EventArgs e)
         {
             if (cmbFoeParty.SelectedIndex >= 0)
@@ -496,9 +460,70 @@ namespace TurnBasedPractice.NewWindows
             }
         }
 
+        private void cmbEntityFoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbEntityAllies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDeleteAlly_Click(object sender, EventArgs e)
+        {
+            removePreMadePlayer();
+        }
+
+        private void btnDeleteFoe_Click(object sender, EventArgs e)
+        {
+            if (cmbEntityFoes.SelectedIndex > 0)
+            {
+                removePreMadeFoe();
+            }
+        }
+
+        private void btnSavePreMadeA_Click(object sender, EventArgs e)
+        {
+            addToPreMadePlayer();
+        }
+
+        private void btnSavePreMadeF_Click(object sender, EventArgs e)
+        {
+            addToPreMadeFoe();
+        }
+
+        private void cmbPlayerParty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbPlayerParty.SelectedIndex >= 0)
+            {
+                selectedPartyMember = (Entity) pParty.getEntities()[cmbPlayerParty.SelectedIndex].Clone();
+                updateSelectedPlayerInfo();
+            }
+        }
+
+        private void cmbFoeParty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFoeParty.SelectedIndex >= 0)
+            {
+                selectedFoePartyMember = (Entity)fParty.getEntities()[cmbFoeParty.SelectedIndex].Clone();
+                updateSelectedFoeInfo();
+            }
+        }
+
+        private void txtAllyName_TextChanged(object sender, EventArgs e)
+        {
+            selectedPartyMember.name = txtAllyName.Text;
+        }
+
         private void txtFoeName_TextChanged(object sender, EventArgs e)
         {
             selectedFoePartyMember.name = txtFoeName.Text;
+        }
+
+        private void nudAllyLevel_ValueChanged(object sender, EventArgs e)
+        {
+            selectedPartyMember.setLevel((int)nudAllyLevel.Value);
         }
 
         private void nudFoeLevel_ValueChanged(object sender, EventArgs e)
@@ -506,21 +531,45 @@ namespace TurnBasedPractice.NewWindows
             selectedFoePartyMember.setLevel((int)nudFoeLevel.Value);
         }
 
-        private void btnRemoveFoe_Click(object sender, EventArgs e)
+        private void btnPCommit_Click(object sender, EventArgs e)
         {
-            if (cmbFoeParty.SelectedIndex >= 0)
-            {
-                fParty.removeEntity(fParty.getEntities()[cmbFoeParty.SelectedIndex]);
-                cmbFoeParty.Items.RemoveAt(cmbFoeParty.SelectedIndex);
-            }
-
-            loadEntities();
-            updateControlsData();
+            playerWrapper.saveEntities();
         }
 
-        private void btnSavePreMadeF_Click(object sender, EventArgs e)
+        private void btnFCommit_Click(object sender, EventArgs e)
         {
-            addToPreMadeFoe();
+            if (rGenerated.Checked)
+            {
+                generatedFoeWrapper.saveEntities();
+            }
+            else
+            {
+                templateWrapper.saveEntities();
+            }
+        }
+
+        private void nudpStat_ValueChanged(object sender, EventArgs e)
+        {
+            //If you dont "lock" it like this you wind up with race conditions due to the updating player info flagging this event (Which is technicially another thread)
+            if (!loadingAlly)
+            {
+                selectedPartyMember.constitution = (int)nudpCon.Value;
+                selectedPartyMember.magi = (int)nudpMag.Value;
+                selectedPartyMember.dexterity = (int)nudpDex.Value;
+                selectedPartyMember.strength = (int)nudpStr.Value;
+            }
+        }
+
+        private void nudfStat_ValueChanged(object sender, EventArgs e)
+        {
+            //If you dont "lock" it like this you wind up with race conditions due to the updating foe info flagging this event (Which is technicially another thread)
+            if (!loadingFoe)
+            {
+                selectedFoePartyMember.constitution = (int)nudfCon.Value;
+                selectedFoePartyMember.magi = (int)nudfMag.Value;
+                selectedFoePartyMember.dexterity = (int)nudfDex.Value;
+                selectedFoePartyMember.strength = (int)nudfStr.Value;
+            }
         }
 
     }

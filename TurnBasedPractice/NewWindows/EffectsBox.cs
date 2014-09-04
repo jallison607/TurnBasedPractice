@@ -12,26 +12,14 @@ namespace TurnBasedPractice.NewWindows
 {
     public partial class EffectsBox : UserControl
     {
-        public override string Text
-        {
-            get
-            {
-                return mainBox.Text;
-            }
-            set
-            {
-                mainBox.Text = value;
-            }
-        }
 
         public EffectsBox()
         {
             InitializeComponent();
         }
 
-        public void updateData(int tmpID, string tmpName, List<Effect> tmpInUse, List<Effect> tmpAvailable)
+        public void updateData(int tmpID, List<Effect> tmpInUse, List<Effect> tmpAvailable)
         {
-            this.txtName.Text = tmpName;
             updateInUse(tmpInUse);
             updateAllAvailable(tmpAvailable);
         }
@@ -44,6 +32,11 @@ namespace TurnBasedPractice.NewWindows
         private void updateAllAvailable(List<Effect> tmpAList)
         {
 
+        }
+
+        private void btnEditEffects_Click(object sender, EventArgs e)
+        {
+            new UpdateEffectList().Show();
         }
 
 

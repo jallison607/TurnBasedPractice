@@ -22,8 +22,8 @@ namespace TurnBasedPractice.Windows
         public NewEntityTemplate()
         {
             InitializeComponent();
-            this._entityWrapper = new EntityWrapper("Entity Template");
             this._weaponWrapper = new ItemWrapper("Weapon");
+            this._entityWrapper = new EntityWrapper("Entity Template");
         }
 
 

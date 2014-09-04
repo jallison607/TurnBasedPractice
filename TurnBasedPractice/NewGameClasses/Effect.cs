@@ -7,12 +7,16 @@ namespace TurnBasedPractice.NewGameClasses
 {
     public class Effect
     {
-        /*private int id;
+        /*
+        private int id;
         private string name;
         private int elementalType;
         private int effectType;
+        private int effectedStat;
         private int effectAmount;
         private int effectDuration;
-        */
+         * */
+        //private specialEffect specEffect
+
     }
 }

@@ -7,7 +7,6 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\Tes
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.MainMenu.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Properties.Resources.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewItem.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\GenerateResource.read.1.tlog
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\GenerateResource.write.1.tlog
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.exe
@@ -26,11 +25,7 @@ C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBa
 C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewItem.resources
 C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.csproj.GenerateResource.Cache
 C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewEntity.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.NewEntityTemplate.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetup.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest2.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.BattleSetupV2.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateAbilityWindow.resources
@@ -38,3 +33,4 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateWeaponsWindow.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.EffectsBox.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\NameGenerator.dll
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateEffectList.resources

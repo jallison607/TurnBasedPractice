@@ -53,6 +53,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.btnUpdateTypeList = new System.Windows.Forms.Button();
+            this.btnUpdateTemplateList = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.btnUpdateRaceList = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -71,7 +72,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSavePreMadeA = new System.Windows.Forms.Button();
             this.btnRemoveAlly = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.grpCharInfo = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -79,10 +80,10 @@
             this.txtAllyClass = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.nudpMag = new System.Windows.Forms.NumericUpDown();
+            this.nudpStr = new System.Windows.Forms.NumericUpDown();
+            this.nudpDex = new System.Windows.Forms.NumericUpDown();
+            this.nudpCon = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -103,14 +104,13 @@
             this.btnFCommit = new System.Windows.Forms.Button();
             this.rTemplates = new System.Windows.Forms.RadioButton();
             this.rGenerated = new System.Windows.Forms.RadioButton();
-            this.btnGenerateTemplateFoe = new System.Windows.Forms.Button();
             this.cmbEntityFoes = new System.Windows.Forms.ComboBox();
             this.btnDeleteFoe = new System.Windows.Forms.Button();
             this.btnAddFoe = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnSavePreMadeF = new System.Windows.Forms.Button();
             this.btnRemoveFoe = new System.Windows.Forms.Button();
-            this.FoeInfo = new System.Windows.Forms.GroupBox();
+            this.grpFoeInfo = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -118,10 +118,10 @@
             this.cmbFoeRace = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.nudfMag = new System.Windows.Forms.NumericUpDown();
+            this.nudfStr = new System.Windows.Forms.NumericUpDown();
+            this.nudfDex = new System.Windows.Forms.NumericUpDown();
+            this.nudfCon = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -162,27 +162,27 @@
             this.panel3.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.grpCharInfo.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpMag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpStr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpCon)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAllyLevel)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.FoeInfo.SuspendLayout();
+            this.grpFoeInfo.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfMag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfStr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfCon)).BeginInit();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).BeginInit();
             this.grpFoeInventory.SuspendLayout();
@@ -417,6 +417,7 @@
             this.panel1.Controls.Add(this.button18);
             this.panel1.Controls.Add(this.button20);
             this.panel1.Controls.Add(this.btnUpdateTypeList);
+            this.panel1.Controls.Add(this.btnUpdateTemplateList);
             this.panel1.Controls.Add(this.button16);
             this.panel1.Controls.Add(this.btnUpdateRaceList);
             this.panel1.Controls.Add(this.button8);
@@ -459,6 +460,16 @@
             this.btnUpdateTypeList.Text = "Update Type List";
             this.btnUpdateTypeList.UseVisualStyleBackColor = true;
             this.btnUpdateTypeList.Click += new System.EventHandler(this.btnUpdateTypeList_Click);
+            // 
+            // btnUpdateTemplateList
+            // 
+            this.btnUpdateTemplateList.Enabled = false;
+            this.btnUpdateTemplateList.Location = new System.Drawing.Point(302, 34);
+            this.btnUpdateTemplateList.Name = "btnUpdateTemplateList";
+            this.btnUpdateTemplateList.Size = new System.Drawing.Size(123, 23);
+            this.btnUpdateTemplateList.TabIndex = 8;
+            this.btnUpdateTemplateList.Text = "Update Template List";
+            this.btnUpdateTemplateList.UseVisualStyleBackColor = true;
             // 
             // button16
             // 
@@ -514,7 +525,6 @@
             // 
             // btnUpdateAbilityList
             // 
-            this.btnUpdateAbilityList.Enabled = false;
             this.btnUpdateAbilityList.Location = new System.Drawing.Point(38, 8);
             this.btnUpdateAbilityList.Name = "btnUpdateAbilityList";
             this.btnUpdateAbilityList.Size = new System.Drawing.Size(123, 23);
@@ -621,7 +631,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnSavePreMadeA);
             this.groupBox2.Controls.Add(this.btnRemoveAlly);
-            this.groupBox2.Controls.Add(this.groupBox7);
+            this.groupBox2.Controls.Add(this.grpCharInfo);
             this.groupBox2.Controls.Add(this.cmbPlayerParty);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Location = new System.Drawing.Point(0, 78);
@@ -651,25 +661,25 @@
             this.btnRemoveAlly.UseVisualStyleBackColor = true;
             this.btnRemoveAlly.Click += new System.EventHandler(this.btnRemoveAlly_Click);
             // 
-            // groupBox7
+            // grpCharInfo
             // 
-            this.groupBox7.Controls.Add(this.groupBox13);
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.txtAllyClass);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.groupBox5);
-            this.groupBox7.Controls.Add(this.btnASaveChanges);
-            this.groupBox7.Controls.Add(this.groupBox6);
-            this.groupBox7.Controls.Add(this.label3);
-            this.groupBox7.Controls.Add(this.nudAllyLevel);
-            this.groupBox7.Controls.Add(this.txtAllyName);
-            this.groupBox7.Controls.Add(this.label1);
-            this.groupBox7.Location = new System.Drawing.Point(6, 47);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(448, 290);
-            this.groupBox7.TabIndex = 9;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Character Info";
+            this.grpCharInfo.Controls.Add(this.groupBox13);
+            this.grpCharInfo.Controls.Add(this.groupBox8);
+            this.grpCharInfo.Controls.Add(this.txtAllyClass);
+            this.grpCharInfo.Controls.Add(this.label6);
+            this.grpCharInfo.Controls.Add(this.groupBox5);
+            this.grpCharInfo.Controls.Add(this.btnASaveChanges);
+            this.grpCharInfo.Controls.Add(this.groupBox6);
+            this.grpCharInfo.Controls.Add(this.label3);
+            this.grpCharInfo.Controls.Add(this.nudAllyLevel);
+            this.grpCharInfo.Controls.Add(this.txtAllyName);
+            this.grpCharInfo.Controls.Add(this.label1);
+            this.grpCharInfo.Location = new System.Drawing.Point(6, 47);
+            this.grpCharInfo.Name = "grpCharInfo";
+            this.grpCharInfo.Size = new System.Drawing.Size(448, 290);
+            this.grpCharInfo.TabIndex = 9;
+            this.grpCharInfo.TabStop = false;
+            this.grpCharInfo.Text = "Character Info";
             // 
             // groupBox13
             // 
@@ -735,15 +745,14 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox5.Controls.Add(this.numericUpDown6);
-            this.groupBox5.Controls.Add(this.numericUpDown5);
-            this.groupBox5.Controls.Add(this.numericUpDown4);
-            this.groupBox5.Controls.Add(this.numericUpDown3);
+            this.groupBox5.Controls.Add(this.nudpMag);
+            this.groupBox5.Controls.Add(this.nudpStr);
+            this.groupBox5.Controls.Add(this.nudpDex);
+            this.groupBox5.Controls.Add(this.nudpCon);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(6, 71);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(287, 81);
@@ -751,73 +760,77 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Stats";
             // 
-            // numericUpDown6
+            // nudpMag
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(201, 44);
-            this.numericUpDown6.Minimum = new decimal(new int[] {
+            this.nudpMag.Location = new System.Drawing.Point(201, 44);
+            this.nudpMag.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown6.TabIndex = 7;
-            this.numericUpDown6.Value = new decimal(new int[] {
+            this.nudpMag.Name = "nudpMag";
+            this.nudpMag.Size = new System.Drawing.Size(56, 20);
+            this.nudpMag.TabIndex = 7;
+            this.nudpMag.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudpMag.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
-            // numericUpDown5
+            // nudpStr
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(201, 17);
-            this.numericUpDown5.Minimum = new decimal(new int[] {
+            this.nudpStr.Location = new System.Drawing.Point(201, 17);
+            this.nudpStr.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown5.TabIndex = 6;
-            this.numericUpDown5.Value = new decimal(new int[] {
+            this.nudpStr.Name = "nudpStr";
+            this.nudpStr.Size = new System.Drawing.Size(56, 20);
+            this.nudpStr.TabIndex = 6;
+            this.nudpStr.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudpStr.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
-            // numericUpDown4
+            // nudpDex
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(82, 43);
-            this.numericUpDown4.Minimum = new decimal(new int[] {
+            this.nudpDex.Location = new System.Drawing.Point(82, 43);
+            this.nudpDex.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown4.TabIndex = 5;
-            this.numericUpDown4.Value = new decimal(new int[] {
+            this.nudpDex.Name = "nudpDex";
+            this.nudpDex.Size = new System.Drawing.Size(56, 20);
+            this.nudpDex.TabIndex = 5;
+            this.nudpDex.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudpDex.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
-            // numericUpDown3
+            // nudpCon
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(82, 20);
-            this.numericUpDown3.Minimum = new decimal(new int[] {
+            this.nudpCon.Location = new System.Drawing.Point(82, 20);
+            this.nudpCon.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown3.TabIndex = 4;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.nudpCon.Name = "nudpCon";
+            this.nudpCon.Size = new System.Drawing.Size(56, 20);
+            this.nudpCon.TabIndex = 4;
+            this.nudpCon.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudpCon.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
             // label14
             // 
@@ -986,7 +999,6 @@
             this.groupBox3.Controls.Add(this.btnFCommit);
             this.groupBox3.Controls.Add(this.rTemplates);
             this.groupBox3.Controls.Add(this.rGenerated);
-            this.groupBox3.Controls.Add(this.btnGenerateTemplateFoe);
             this.groupBox3.Controls.Add(this.cmbEntityFoes);
             this.groupBox3.Controls.Add(this.btnDeleteFoe);
             this.groupBox3.Controls.Add(this.btnAddFoe);
@@ -1031,16 +1043,6 @@
             this.rGenerated.UseVisualStyleBackColor = true;
             this.rGenerated.CheckedChanged += new System.EventHandler(this.rBosses_CheckedChanged);
             // 
-            // btnGenerateTemplateFoe
-            // 
-            this.btnGenerateTemplateFoe.Enabled = false;
-            this.btnGenerateTemplateFoe.Location = new System.Drawing.Point(314, 13);
-            this.btnGenerateTemplateFoe.Name = "btnGenerateTemplateFoe";
-            this.btnGenerateTemplateFoe.Size = new System.Drawing.Size(106, 23);
-            this.btnGenerateTemplateFoe.TabIndex = 8;
-            this.btnGenerateTemplateFoe.Text = "Generate Template";
-            this.btnGenerateTemplateFoe.UseVisualStyleBackColor = true;
-            // 
             // cmbEntityFoes
             // 
             this.cmbEntityFoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1076,7 +1078,7 @@
             // 
             this.groupBox9.Controls.Add(this.btnSavePreMadeF);
             this.groupBox9.Controls.Add(this.btnRemoveFoe);
-            this.groupBox9.Controls.Add(this.FoeInfo);
+            this.groupBox9.Controls.Add(this.grpFoeInfo);
             this.groupBox9.Controls.Add(this.cmbFoeParty);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(0, 78);
@@ -1106,25 +1108,25 @@
             this.btnRemoveFoe.UseVisualStyleBackColor = true;
             this.btnRemoveFoe.Click += new System.EventHandler(this.btnRemoveFoe_Click);
             // 
-            // FoeInfo
+            // grpFoeInfo
             // 
-            this.FoeInfo.Controls.Add(this.groupBox11);
-            this.FoeInfo.Controls.Add(this.groupBox12);
-            this.FoeInfo.Controls.Add(this.cmbFoeRace);
-            this.FoeInfo.Controls.Add(this.label7);
-            this.FoeInfo.Controls.Add(this.groupBox14);
-            this.FoeInfo.Controls.Add(this.btnFSaveChanges);
-            this.FoeInfo.Controls.Add(this.groupBox16);
-            this.FoeInfo.Controls.Add(this.label23);
-            this.FoeInfo.Controls.Add(this.nudFoeLevel);
-            this.FoeInfo.Controls.Add(this.txtFoeName);
-            this.FoeInfo.Controls.Add(this.label24);
-            this.FoeInfo.Location = new System.Drawing.Point(6, 47);
-            this.FoeInfo.Name = "FoeInfo";
-            this.FoeInfo.Size = new System.Drawing.Size(448, 290);
-            this.FoeInfo.TabIndex = 9;
-            this.FoeInfo.TabStop = false;
-            this.FoeInfo.Text = "Foe Info";
+            this.grpFoeInfo.Controls.Add(this.groupBox11);
+            this.grpFoeInfo.Controls.Add(this.groupBox12);
+            this.grpFoeInfo.Controls.Add(this.cmbFoeRace);
+            this.grpFoeInfo.Controls.Add(this.label7);
+            this.grpFoeInfo.Controls.Add(this.groupBox14);
+            this.grpFoeInfo.Controls.Add(this.btnFSaveChanges);
+            this.grpFoeInfo.Controls.Add(this.groupBox16);
+            this.grpFoeInfo.Controls.Add(this.label23);
+            this.grpFoeInfo.Controls.Add(this.nudFoeLevel);
+            this.grpFoeInfo.Controls.Add(this.txtFoeName);
+            this.grpFoeInfo.Controls.Add(this.label24);
+            this.grpFoeInfo.Location = new System.Drawing.Point(6, 47);
+            this.grpFoeInfo.Name = "grpFoeInfo";
+            this.grpFoeInfo.Size = new System.Drawing.Size(448, 290);
+            this.grpFoeInfo.TabIndex = 9;
+            this.grpFoeInfo.TabStop = false;
+            this.grpFoeInfo.Text = "Foe Info";
             // 
             // groupBox11
             // 
@@ -1190,15 +1192,14 @@
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox14.Controls.Add(this.numericUpDown2);
-            this.groupBox14.Controls.Add(this.numericUpDown7);
-            this.groupBox14.Controls.Add(this.numericUpDown8);
-            this.groupBox14.Controls.Add(this.numericUpDown9);
+            this.groupBox14.Controls.Add(this.nudfMag);
+            this.groupBox14.Controls.Add(this.nudfStr);
+            this.groupBox14.Controls.Add(this.nudfDex);
+            this.groupBox14.Controls.Add(this.nudfCon);
             this.groupBox14.Controls.Add(this.label8);
             this.groupBox14.Controls.Add(this.label9);
             this.groupBox14.Controls.Add(this.label10);
             this.groupBox14.Controls.Add(this.label11);
-            this.groupBox14.Enabled = false;
             this.groupBox14.Location = new System.Drawing.Point(6, 71);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(287, 81);
@@ -1206,73 +1207,77 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Stats";
             // 
-            // numericUpDown2
+            // nudfMag
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(201, 44);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.nudfMag.Location = new System.Drawing.Point(201, 44);
+            this.nudfMag.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown2.TabIndex = 7;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.nudfMag.Name = "nudfMag";
+            this.nudfMag.Size = new System.Drawing.Size(56, 20);
+            this.nudfMag.TabIndex = 7;
+            this.nudfMag.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudfMag.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
-            // numericUpDown7
+            // nudfStr
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(201, 17);
-            this.numericUpDown7.Minimum = new decimal(new int[] {
+            this.nudfStr.Location = new System.Drawing.Point(201, 17);
+            this.nudfStr.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown7.TabIndex = 6;
-            this.numericUpDown7.Value = new decimal(new int[] {
+            this.nudfStr.Name = "nudfStr";
+            this.nudfStr.Size = new System.Drawing.Size(56, 20);
+            this.nudfStr.TabIndex = 6;
+            this.nudfStr.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudfStr.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
-            // numericUpDown8
+            // nudfDex
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(82, 43);
-            this.numericUpDown8.Minimum = new decimal(new int[] {
+            this.nudfDex.Location = new System.Drawing.Point(82, 43);
+            this.nudfDex.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown8.TabIndex = 5;
-            this.numericUpDown8.Value = new decimal(new int[] {
+            this.nudfDex.Name = "nudfDex";
+            this.nudfDex.Size = new System.Drawing.Size(56, 20);
+            this.nudfDex.TabIndex = 5;
+            this.nudfDex.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudfDex.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
-            // numericUpDown9
+            // nudfCon
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(82, 20);
-            this.numericUpDown9.Minimum = new decimal(new int[] {
+            this.nudfCon.Location = new System.Drawing.Point(82, 20);
+            this.nudfCon.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown9.TabIndex = 4;
-            this.numericUpDown9.Value = new decimal(new int[] {
+            this.nudfCon.Name = "nudfCon";
+            this.nudfCon.Size = new System.Drawing.Size(56, 20);
+            this.nudfCon.TabIndex = 4;
+            this.nudfCon.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudfCon.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
             // label8
             // 
@@ -1393,6 +1398,7 @@
             this.cmbFoeParty.Name = "cmbFoeParty";
             this.cmbFoeParty.Size = new System.Drawing.Size(165, 21);
             this.cmbFoeParty.TabIndex = 0;
+            this.cmbFoeParty.SelectedIndexChanged += new System.EventHandler(this.cmbFoeParty_SelectedIndexChanged);
             // 
             // grpFoeInventory
             // 
@@ -1613,16 +1619,16 @@
             this.panel3.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.grpCharInfo.ResumeLayout(false);
+            this.grpCharInfo.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpMag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpStr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudpCon)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAllyLevel)).EndInit();
@@ -1630,16 +1636,16 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.FoeInfo.ResumeLayout(false);
-            this.FoeInfo.PerformLayout();
+            this.grpFoeInfo.ResumeLayout(false);
+            this.grpFoeInfo.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfMag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfStr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudfCon)).EndInit();
             this.groupBox16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).EndInit();
             this.grpFoeInventory.ResumeLayout(false);
@@ -1654,7 +1660,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox grpCharInfo;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox txtAllyClass;
@@ -1673,10 +1679,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nudpMag;
+        private System.Windows.Forms.NumericUpDown nudpStr;
+        private System.Windows.Forms.NumericUpDown nudpDex;
+        private System.Windows.Forms.NumericUpDown nudpCon;
         private System.Windows.Forms.NumericUpDown numericUpDown11;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox3;
@@ -1712,17 +1718,17 @@
         private System.Windows.Forms.Button btnAddFoe;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnRemoveFoe;
-        private System.Windows.Forms.GroupBox FoeInfo;
+        private System.Windows.Forms.GroupBox grpFoeInfo;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.ComboBox cmbFoeRace;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.NumericUpDown nudfMag;
+        private System.Windows.Forms.NumericUpDown nudfStr;
+        private System.Windows.Forms.NumericUpDown nudfDex;
+        private System.Windows.Forms.NumericUpDown nudfCon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -1736,7 +1742,7 @@
         private System.Windows.Forms.ComboBox cmbFoeParty;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.CheckedListBox checkedListBox5;
-        private System.Windows.Forms.Button btnGenerateTemplateFoe;
+        private System.Windows.Forms.Button btnUpdateTemplateList;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;

@@ -23,22 +23,22 @@ namespace TurnBasedPractice
 
         private void btnNewItem_Click(object sender, EventArgs e)
         {
-            new NewItem().Show();
+            //new NewItem().Show();
         }
 
         private void btnNewEntity_Click(object sender, EventArgs e)
         {
-            new NewEntity().Show();
+            //new NewEntity().Show();
         }
 
         private void btnTemplate_Click(object sender, EventArgs e)
         {
-            new NewEntityTemplate().Show();
+            //new NewEntityTemplate().Show();
         }
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            List<Entity> tmpList = new List<Entity>();   
+           /* List<Entity> tmpList = new List<Entity>();   
             Weapon tmpWeapon = new Weapon(0,"unarmed",0,5,0);
             tmpList.Add(new Entity(0,"Joe",1,tmpWeapon));
             tmpList.Add(new Entity(1,"Joe 2",1,tmpWeapon));
@@ -63,11 +63,12 @@ namespace TurnBasedPractice
             }
 
             MessageBox.Show(tmpList[0].name + " has " + tmpList[0].currentHP() + " out of " + tmpList[0].getMaxHP());
+            * */
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
         {
-            new BattleSetup().Show();
+            //new BattleSetup().Show();
         }
 
         private void btnSetup_Click(object sender, EventArgs e)
