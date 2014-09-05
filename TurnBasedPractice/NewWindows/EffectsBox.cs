@@ -6,37 +6,41 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TurnBasedPractice.NewGameClasses;
+using TurnBasedPractice.GameClasses;
 
-namespace TurnBasedPractice.NewWindows
+namespace TurnBasedPractice.Windows
 {
     public partial class EffectsBox : UserControl
     {
-
+        public EffectWrapper _effectWrapper = new EffectWrapper(0);
         public EffectsBox()
         {
             InitializeComponent();
         }
 
-        public void updateData(int tmpID, List<Effect> tmpInUse, List<Effect> tmpAvailable)
+        public void updateData()
         {
-            updateInUse(tmpInUse);
-            updateAllAvailable(tmpAvailable);
+            updateInUse();
+            updateAllAvailable();
         }
 
-        private void updateInUse(List<Effect> tmpEList)
+        private void updateInUse()
         {
 
         }
 
-        private void updateAllAvailable(List<Effect> tmpAList)
+        private void updateAllAvailable()
         {
-
+            cmbEffects.Items.Clear();
+            foreach(Effect tmpEffect in this._effectWrapper.getEffectsList()){
+                cmbEffects.Items.Add(tmpEffect.name);
+            }
         }
 
         private void btnEditEffects_Click(object sender, EventArgs e)
         {
-            new UpdateEffectList().Show();
+            new UpdateEffectList(_effectWrapper).ShowDialog();
+            updateData();
         }
 
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TurnBasedPractice.NewWindows
+namespace TurnBasedPractice.Windows
 {
     public partial class UpdateWeaponsWindow : Form
     {

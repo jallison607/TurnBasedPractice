@@ -24,8 +24,9 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Relea
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleTest2.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.WeaponSearch.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Release\NameGenerator.dll
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.NewWindows.BattleSetupV2.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.NewWindows.UpdateAbilityWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.NewWindows.UpdateRaceWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.NewWindows.UpdateWeaponsWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.NewWindows.EffectsBox.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateEffectList.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.BattleSetupV2.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateAbilityWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateRaceWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.EffectsBox.resources

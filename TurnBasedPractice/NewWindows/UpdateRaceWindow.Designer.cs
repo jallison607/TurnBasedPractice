@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.NewWindows
+﻿namespace TurnBasedPractice.Windows
 {
     partial class UpdateRaceWindow
     {

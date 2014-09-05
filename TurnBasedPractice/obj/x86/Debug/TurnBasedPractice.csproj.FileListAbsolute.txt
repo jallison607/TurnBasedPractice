@@ -3,7 +3,6 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\Tur
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.exe
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TurnBasedPractice.pdb
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\GameTools.dll
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\TestLib.pdb
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.MainMenu.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Properties.Resources.resources
@@ -27,10 +26,10 @@ C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBa
 C:\Users\Josh\Documents\Visual Studio 2010\Projects\TurnBasedPractice818a\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.WeaponSearch.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleTest2.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.BattleSetupV2.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateAbilityWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateRaceWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateWeaponsWindow.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.EffectsBox.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\bin\Debug\NameGenerator.dll
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.NewWindows.UpdateEffectList.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateAbilityWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.EffectsBox.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateEffectList.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetupV2.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateRaceWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources

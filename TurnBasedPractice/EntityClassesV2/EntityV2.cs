@@ -30,10 +30,7 @@ namespace TurnBasedPractice.EntityClasses
         {
             EString = EString.Substring(29 + this.name.Length);
 
-            int weaponLength = ParseItems.parseIntFrom(EString, 3);
-            EString = EString.Substring(3);
-
-            int WepID = ParseItems.parseIntFrom(EString, 3);
+            int WepID = ParseItems.parseIntFrom(EString, 4);
 
             foreach (Weapon tmpWep in currentWeapons)
             {

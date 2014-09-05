@@ -6,14 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TurnBasedPractice.GameClasses;
 
-namespace TurnBasedPractice.NewWindows
+namespace TurnBasedPractice.Windows
 {
     public partial class UpdateAbilityWindow : Form
     {
-        public UpdateAbilityWindow()
+        //private AbilityWrapper
+        public UpdateAbilityWindow(EffectWrapper tmpEffectWrapper)
         {
             InitializeComponent();
+            this.effectsBox1._effectWrapper = tmpEffectWrapper;
+            this.effectsBox1.updateData();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

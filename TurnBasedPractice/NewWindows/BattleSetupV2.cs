@@ -11,13 +11,14 @@ using TurnBasedPractice.EntityClasses;
 using TurnBasedPractice.ItemClasses;
 using NameMaker;
 
-namespace TurnBasedPractice.NewWindows
+namespace TurnBasedPractice.Windows
 {
     public partial class BattleSetupV2 : Form
     {
         private EntityWrapper playerWrapper;
         private EntityWrapper generatedFoeWrapper;
         private EntityTemplateWrapper templateWrapper;
+        private EffectWrapper effectWrapper = new EffectWrapper();
         private Party pParty = new Party(new List<Entity>(), 3);
         private Entity selectedPartyMember;
         private Entity selectedFoePartyMember;
@@ -37,6 +38,8 @@ namespace TurnBasedPractice.NewWindows
         {
             InitializeComponent();
             wepWrapper = new ItemWrapper("Weapon");
+            Weapon tmpWep = new Weapon(0, "Unarmed", 0, 0, 0);
+            wepWrapper.AddItem(tmpWep);
             updateLocalWeaponList();
             playerWrapper = new EntityWrapper("Player Entity", WepList);
             generatedFoeWrapper = new EntityWrapper("Generated Entity", WepList);
@@ -336,7 +339,7 @@ namespace TurnBasedPractice.NewWindows
         //Open New Windows
         private void btnUpdateAbilityList_Click(object sender, EventArgs e)
         {
-            new UpdateAbilityWindow().Show();
+            new UpdateAbilityWindow(effectWrapper).Show();
 
         }
 
@@ -369,10 +372,6 @@ namespace TurnBasedPractice.NewWindows
         }
 
         //Ally Only Events
-        private void cmbPWeapon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.equipWeapon(WepList[cmbPWeapon.SelectedIndex]);
-        }
 
         //Similar events on either side
         private void btnAddAlly_Click(object sender, EventArgs e)
@@ -444,6 +443,13 @@ namespace TurnBasedPractice.NewWindows
         {
             if (cmbPlayerParty.SelectedIndex >= 0)
             {
+                selectedPartyMember.name = txtAllyName.Text;
+                selectedPartyMember.setLevel((int)nudAllyLevel.Value);
+                selectedPartyMember.constitution = (int)nudpCon.Value;
+                selectedPartyMember.magi = (int)nudpMag.Value;
+                selectedPartyMember.dexterity = (int)nudpDex.Value;
+                selectedPartyMember.strength = (int)nudpStr.Value;
+                selectedPartyMember.equipWeapon(WepList[cmbPWeapon.SelectedIndex]);
                 pParty.updateEntity(selectedPartyMember);
                 loadEntities();
                 updateControlsData();
@@ -454,20 +460,19 @@ namespace TurnBasedPractice.NewWindows
         {
             if (cmbFoeParty.SelectedIndex >= 0)
             {
+                selectedFoePartyMember.name = txtFoeName.Text;
+                selectedFoePartyMember.setLevel((int)nudFoeLevel.Value);
+                if (!loadingFoe)
+                {
+                    selectedFoePartyMember.constitution = (int)nudfCon.Value;
+                    selectedFoePartyMember.magi = (int)nudfMag.Value;
+                    selectedFoePartyMember.dexterity = (int)nudfDex.Value;
+                    selectedFoePartyMember.strength = (int)nudfStr.Value;
+                }
                 fParty.updateEntity(selectedFoePartyMember);
                 loadEntities();
                 updateControlsData();
             }
-        }
-
-        private void cmbEntityFoes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void cmbEntityAllies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnDeleteAlly_Click(object sender, EventArgs e)
@@ -511,26 +516,6 @@ namespace TurnBasedPractice.NewWindows
             }
         }
 
-        private void txtAllyName_TextChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.name = txtAllyName.Text;
-        }
-
-        private void txtFoeName_TextChanged(object sender, EventArgs e)
-        {
-            selectedFoePartyMember.name = txtFoeName.Text;
-        }
-
-        private void nudAllyLevel_ValueChanged(object sender, EventArgs e)
-        {
-            selectedPartyMember.setLevel((int)nudAllyLevel.Value);
-        }
-
-        private void nudFoeLevel_ValueChanged(object sender, EventArgs e)
-        {
-            selectedFoePartyMember.setLevel((int)nudFoeLevel.Value);
-        }
-
         private void btnPCommit_Click(object sender, EventArgs e)
         {
             playerWrapper.saveEntities();
@@ -547,30 +532,5 @@ namespace TurnBasedPractice.NewWindows
                 templateWrapper.saveEntities();
             }
         }
-
-        private void nudpStat_ValueChanged(object sender, EventArgs e)
-        {
-            //If you dont "lock" it like this you wind up with race conditions due to the updating player info flagging this event (Which is technicially another thread)
-            if (!loadingAlly)
-            {
-                selectedPartyMember.constitution = (int)nudpCon.Value;
-                selectedPartyMember.magi = (int)nudpMag.Value;
-                selectedPartyMember.dexterity = (int)nudpDex.Value;
-                selectedPartyMember.strength = (int)nudpStr.Value;
-            }
-        }
-
-        private void nudfStat_ValueChanged(object sender, EventArgs e)
-        {
-            //If you dont "lock" it like this you wind up with race conditions due to the updating foe info flagging this event (Which is technicially another thread)
-            if (!loadingFoe)
-            {
-                selectedFoePartyMember.constitution = (int)nudfCon.Value;
-                selectedFoePartyMember.magi = (int)nudfMag.Value;
-                selectedFoePartyMember.dexterity = (int)nudfDex.Value;
-                selectedFoePartyMember.strength = (int)nudfStr.Value;
-            }
-        }
-
     }
 }

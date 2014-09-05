@@ -53,9 +53,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TestLib">
-      <HintPath>..\..\TestLib\TestLib\bin\Release\TestLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityClassesV2\EntityTemplateWrapperV2.cs" />
@@ -79,6 +76,7 @@
     <Compile Include="GameClasses\BattleV2.cs" />
     <Compile Include="GameClasses\Game.cs" />
     <Compile Include="NewGameClasses\Effect.cs" />
+    <Compile Include="NewGameClasses\EffectWrapper.cs" />
     <Compile Include="NewWindows\UpdateEffectList.cs">
       <SubType>Form</SubType>
     </Compile>

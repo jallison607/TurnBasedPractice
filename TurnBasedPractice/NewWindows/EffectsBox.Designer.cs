@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.NewWindows
+﻿namespace TurnBasedPractice.Windows
 {
     partial class EffectsBox
     {
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.subBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.cmbEffects = new System.Windows.Forms.ComboBox();
-            this.lstEffects = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.txtElement = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.txtStatChanged = new System.Windows.Forms.TextBox();
-            this.txtEffectAmount = new System.Windows.Forms.TextBox();
-            this.btnEditEffects = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSpecialEffectName = new System.Windows.Forms.TextBox();
-            this.txtEffectDuration = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtEffectDuration = new System.Windows.Forms.TextBox();
+            this.txtSpecialEffectName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnEditEffects = new System.Windows.Forms.Button();
+            this.txtEffectAmount = new System.Windows.Forms.TextBox();
+            this.txtStatChanged = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.txtElement = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lstEffects = new System.Windows.Forms.ListBox();
+            this.cmbEffects = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.subBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,116 +77,39 @@
             this.subBox.TabStop = false;
             this.subBox.Text = "Effects";
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Element:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 207);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Duration:";
             // 
-            // label4
+            // txtEffectDuration
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Name:";
+            this.txtEffectDuration.Location = new System.Drawing.Point(70, 204);
+            this.txtEffectDuration.Name = "txtEffectDuration";
+            this.txtEffectDuration.ReadOnly = true;
+            this.txtEffectDuration.Size = new System.Drawing.Size(100, 20);
+            this.txtEffectDuration.TabIndex = 23;
             // 
-            // label2
+            // txtSpecialEffectName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "By";
+            this.txtSpecialEffectName.Location = new System.Drawing.Point(224, 204);
+            this.txtSpecialEffectName.Name = "txtSpecialEffectName";
+            this.txtSpecialEffectName.ReadOnly = true;
+            this.txtSpecialEffectName.Size = new System.Drawing.Size(100, 20);
+            this.txtSpecialEffectName.TabIndex = 22;
             // 
-            // txtName
+            // label6
             // 
-            this.txtName.Location = new System.Drawing.Point(54, 144);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(106, 20);
-            this.txtName.TabIndex = 12;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(257, 49);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(62, 23);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // cmbEffects
-            // 
-            this.cmbEffects.FormattingEnabled = true;
-            this.cmbEffects.Location = new System.Drawing.Point(54, 108);
-            this.cmbEffects.Name = "cmbEffects";
-            this.cmbEffects.Size = new System.Drawing.Size(121, 21);
-            this.cmbEffects.TabIndex = 14;
-            // 
-            // lstEffects
-            // 
-            this.lstEffects.BackColor = System.Drawing.SystemColors.Control;
-            this.lstEffects.FormattingEnabled = true;
-            this.lstEffects.Location = new System.Drawing.Point(7, 20);
-            this.lstEffects.Name = "lstEffects";
-            this.lstEffects.Size = new System.Drawing.Size(244, 69);
-            this.lstEffects.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Effect:";
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(256, 20);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(63, 23);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // txtElement
-            // 
-            this.txtElement.Location = new System.Drawing.Point(226, 141);
-            this.txtElement.Name = "txtElement";
-            this.txtElement.ReadOnly = true;
-            this.txtElement.Size = new System.Drawing.Size(100, 20);
-            this.txtElement.TabIndex = 16;
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(12, 174);
-            this.txtType.Name = "txtType";
-            this.txtType.ReadOnly = true;
-            this.txtType.Size = new System.Drawing.Size(100, 20);
-            this.txtType.TabIndex = 17;
-            // 
-            // txtStatChanged
-            // 
-            this.txtStatChanged.Location = new System.Drawing.Point(119, 174);
-            this.txtStatChanged.Name = "txtStatChanged";
-            this.txtStatChanged.ReadOnly = true;
-            this.txtStatChanged.Size = new System.Drawing.Size(100, 20);
-            this.txtStatChanged.TabIndex = 18;
-            // 
-            // txtEffectAmount
-            // 
-            this.txtEffectAmount.Location = new System.Drawing.Point(251, 173);
-            this.txtEffectAmount.Name = "txtEffectAmount";
-            this.txtEffectAmount.ReadOnly = true;
-            this.txtEffectAmount.Size = new System.Drawing.Size(68, 20);
-            this.txtEffectAmount.TabIndex = 19;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(173, 207);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Special:";
             // 
             // btnEditEffects
             // 
@@ -198,39 +121,117 @@
             this.btnEditEffects.UseVisualStyleBackColor = true;
             this.btnEditEffects.Click += new System.EventHandler(this.btnEditEffects_Click);
             // 
-            // label6
+            // txtEffectAmount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(173, 207);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Special:";
+            this.txtEffectAmount.Location = new System.Drawing.Point(251, 173);
+            this.txtEffectAmount.Name = "txtEffectAmount";
+            this.txtEffectAmount.ReadOnly = true;
+            this.txtEffectAmount.Size = new System.Drawing.Size(68, 20);
+            this.txtEffectAmount.TabIndex = 19;
             // 
-            // txtSpecialEffectName
+            // txtStatChanged
             // 
-            this.txtSpecialEffectName.Location = new System.Drawing.Point(224, 204);
-            this.txtSpecialEffectName.Name = "txtSpecialEffectName";
-            this.txtSpecialEffectName.ReadOnly = true;
-            this.txtSpecialEffectName.Size = new System.Drawing.Size(100, 20);
-            this.txtSpecialEffectName.TabIndex = 22;
+            this.txtStatChanged.Location = new System.Drawing.Point(119, 174);
+            this.txtStatChanged.Name = "txtStatChanged";
+            this.txtStatChanged.ReadOnly = true;
+            this.txtStatChanged.Size = new System.Drawing.Size(100, 20);
+            this.txtStatChanged.TabIndex = 18;
             // 
-            // txtEffectDuration
+            // txtType
             // 
-            this.txtEffectDuration.Location = new System.Drawing.Point(70, 204);
-            this.txtEffectDuration.Name = "txtEffectDuration";
-            this.txtEffectDuration.ReadOnly = true;
-            this.txtEffectDuration.Size = new System.Drawing.Size(100, 20);
-            this.txtEffectDuration.TabIndex = 23;
+            this.txtType.Location = new System.Drawing.Point(12, 174);
+            this.txtType.Name = "txtType";
+            this.txtType.ReadOnly = true;
+            this.txtType.Size = new System.Drawing.Size(100, 20);
+            this.txtType.TabIndex = 17;
             // 
-            // label8
+            // txtElement
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 207);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Duration:";
+            this.txtElement.Location = new System.Drawing.Point(226, 141);
+            this.txtElement.Name = "txtElement";
+            this.txtElement.ReadOnly = true;
+            this.txtElement.Size = new System.Drawing.Size(100, 20);
+            this.txtElement.TabIndex = 16;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(256, 20);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(63, 23);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Effect:";
+            // 
+            // lstEffects
+            // 
+            this.lstEffects.BackColor = System.Drawing.SystemColors.Control;
+            this.lstEffects.FormattingEnabled = true;
+            this.lstEffects.Location = new System.Drawing.Point(7, 20);
+            this.lstEffects.Name = "lstEffects";
+            this.lstEffects.Size = new System.Drawing.Size(244, 69);
+            this.lstEffects.TabIndex = 0;
+            // 
+            // cmbEffects
+            // 
+            this.cmbEffects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEffects.FormattingEnabled = true;
+            this.cmbEffects.Location = new System.Drawing.Point(54, 108);
+            this.cmbEffects.Name = "cmbEffects";
+            this.cmbEffects.Size = new System.Drawing.Size(121, 21);
+            this.cmbEffects.TabIndex = 14;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(257, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(62, 23);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(54, 144);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(106, 20);
+            this.txtName.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(225, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "By";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(175, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Element:";
             // 
             // EffectsBox
             // 

@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.NewWindows
+﻿namespace TurnBasedPractice.Windows
 {
     partial class UpdateAbilityWindow
     {
@@ -28,40 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbCurrent = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.effectsBox1 = new TurnBasedPractice.Windows.EffectsBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.effectsBox1 = new TurnBasedPractice.NewWindows.EffectsBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbCurrent
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbCurrent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCurrent.FormattingEnabled = true;
+            this.cmbCurrent.Location = new System.Drawing.Point(12, 11);
+            this.cmbCurrent.Name = "cmbCurrent";
+            this.cmbCurrent.Size = new System.Drawing.Size(262, 21);
+            this.cmbCurrent.TabIndex = 0;
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(280, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(280, 11);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.effectsBox1);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
@@ -69,6 +70,13 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ability Info";
+            // 
+            // effectsBox1
+            // 
+            this.effectsBox1.Location = new System.Drawing.Point(16, 51);
+            this.effectsBox1.Name = "effectsBox1";
+            this.effectsBox1.Size = new System.Drawing.Size(374, 243);
+            this.effectsBox1.TabIndex = 5;
             // 
             // btnExit
             // 
@@ -80,21 +88,21 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button5
+            // btnSave
             // 
-            this.button5.Location = new System.Drawing.Point(106, 300);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Save";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(106, 300);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtName.Location = new System.Drawing.Point(52, 20);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(154, 20);
+            this.txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -105,21 +113,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
-            // effectsBox1
-            // 
-            this.effectsBox1.Location = new System.Drawing.Point(15, 54);
-            this.effectsBox1.Name = "effectsBox1";
-            this.effectsBox1.Size = new System.Drawing.Size(374, 243);
-            this.effectsBox1.TabIndex = 5;
-            // 
             // UpdateAbilityWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 399);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.cmbCurrent);
             this.Name = "UpdateAbilityWindow";
             this.Text = "Modify Ability List";
             this.groupBox1.ResumeLayout(false);
@@ -130,12 +131,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbCurrent;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
         private EffectsBox effectsBox1;
     }

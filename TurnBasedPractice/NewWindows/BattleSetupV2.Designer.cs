@@ -1,4 +1,4 @@
-﻿namespace TurnBasedPractice.NewWindows
+﻿namespace TurnBasedPractice.Windows
 {
     partial class BattleSetupV2
     {
@@ -605,7 +605,6 @@
             this.cmbEntityAllies.Name = "cmbEntityAllies";
             this.cmbEntityAllies.Size = new System.Drawing.Size(197, 21);
             this.cmbEntityAllies.TabIndex = 4;
-            this.cmbEntityAllies.SelectedIndexChanged += new System.EventHandler(this.cmbEntityAllies_SelectedIndexChanged);
             // 
             // btnDeleteAlly
             // 
@@ -776,7 +775,6 @@
             0,
             0,
             0});
-            this.nudpMag.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
             // nudpStr
             // 
@@ -794,7 +792,6 @@
             0,
             0,
             0});
-            this.nudpStr.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
             // nudpDex
             // 
@@ -812,7 +809,6 @@
             0,
             0,
             0});
-            this.nudpDex.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
             // nudpCon
             // 
@@ -830,7 +826,6 @@
             0,
             0,
             0});
-            this.nudpCon.ValueChanged += new System.EventHandler(this.nudpStat_ValueChanged);
             // 
             // label14
             // 
@@ -909,7 +904,6 @@
             this.cmbPWeapon.Name = "cmbPWeapon";
             this.cmbPWeapon.Size = new System.Drawing.Size(199, 21);
             this.cmbPWeapon.TabIndex = 2;
-            this.cmbPWeapon.SelectedIndexChanged += new System.EventHandler(this.cmbPWeapon_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -954,7 +948,6 @@
             0,
             0,
             0});
-            this.nudAllyLevel.ValueChanged += new System.EventHandler(this.nudAllyLevel_ValueChanged);
             // 
             // txtAllyName
             // 
@@ -962,7 +955,6 @@
             this.txtAllyName.Name = "txtAllyName";
             this.txtAllyName.Size = new System.Drawing.Size(114, 20);
             this.txtAllyName.TabIndex = 3;
-            this.txtAllyName.TextChanged += new System.EventHandler(this.txtAllyName_TextChanged);
             // 
             // label1
             // 
@@ -1051,7 +1043,6 @@
             this.cmbEntityFoes.Name = "cmbEntityFoes";
             this.cmbEntityFoes.Size = new System.Drawing.Size(197, 21);
             this.cmbEntityFoes.TabIndex = 4;
-            this.cmbEntityFoes.SelectedIndexChanged += new System.EventHandler(this.cmbEntityFoes_SelectedIndexChanged);
             // 
             // btnDeleteFoe
             // 
@@ -1223,7 +1214,6 @@
             0,
             0,
             0});
-            this.nudfMag.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
             // nudfStr
             // 
@@ -1241,7 +1231,6 @@
             0,
             0,
             0});
-            this.nudfStr.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
             // nudfDex
             // 
@@ -1259,7 +1248,6 @@
             0,
             0,
             0});
-            this.nudfDex.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
             // nudfCon
             // 
@@ -1277,7 +1265,6 @@
             0,
             0,
             0});
-            this.nudfCon.ValueChanged += new System.EventHandler(this.nudfStat_ValueChanged);
             // 
             // label8
             // 
@@ -1371,7 +1358,6 @@
             0,
             0,
             0});
-            this.nudFoeLevel.ValueChanged += new System.EventHandler(this.nudFoeLevel_ValueChanged);
             // 
             // txtFoeName
             // 
@@ -1379,7 +1365,6 @@
             this.txtFoeName.Name = "txtFoeName";
             this.txtFoeName.Size = new System.Drawing.Size(114, 20);
             this.txtFoeName.TabIndex = 3;
-            this.txtFoeName.TextChanged += new System.EventHandler(this.txtFoeName_TextChanged);
             // 
             // label24
             // 
