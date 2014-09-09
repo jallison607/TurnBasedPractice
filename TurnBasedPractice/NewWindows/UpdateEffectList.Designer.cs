@@ -48,10 +48,10 @@
             this.pSpecial = new System.Windows.Forms.Panel();
             this.pStandard = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnCommit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudEffect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
@@ -118,7 +118,8 @@
             "Earth",
             "Poison",
             "Holy",
-            "Time"});
+            "Time",
+            "Ice"});
             this.cmbElement.Location = new System.Drawing.Point(213, 8);
             this.cmbElement.Name = "cmbElement";
             this.cmbElement.Size = new System.Drawing.Size(96, 21);
@@ -287,6 +288,24 @@
             this.panel2.Size = new System.Drawing.Size(315, 59);
             this.panel2.TabIndex = 17;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(284, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Ex: An effect of 4 with duration of 4 will apply 1 each round";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(282, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Duration indicates over how long the effect takes to apply.";
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(39, 247);
@@ -306,24 +325,6 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 8);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(282, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Duration indicates over how long the effect takes to apply.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(284, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Ex: An effect of 4 with duration of 4 will apply 1 each round";
             // 
             // btnCommit
             // 

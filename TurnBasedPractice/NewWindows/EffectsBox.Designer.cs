@@ -161,6 +161,7 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label5
             // 
@@ -188,6 +189,7 @@
             this.cmbEffects.Name = "cmbEffects";
             this.cmbEffects.Size = new System.Drawing.Size(121, 21);
             this.cmbEffects.TabIndex = 14;
+            this.cmbEffects.SelectedIndexChanged += new System.EventHandler(this.cmbEffects_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -197,6 +199,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtName
             // 

@@ -112,5 +112,90 @@ namespace TurnBasedPractice.GameClasses
 
             return tmpNew;
         }
+
+        public string getElementName()
+        {
+            string result = string.Empty;
+            switch (this.elementalType)
+            {
+                case 0:
+                    result = "Normal";
+                    break;
+                case 1:
+                    result = "Fire";
+                    break;
+                case 2:
+                    result = "Water";
+                    break;
+                case 3:
+                    result = "Air";
+                    break;
+                case 4:
+                    result = "Earth";
+                    break;
+                case 5:
+                    result = "Posion";
+                    break;
+                case 6:
+                    result = "Holy";
+                    break;
+                case 7:
+                    result = "Time";
+                    break;
+                case 8:
+                    result = "Ice";
+                    break;
+            }
+            return result;
+        }
+
+        public string getEffectType()
+        {
+            string result = string.Empty;
+            switch (this.effectType)
+            {
+                case 0:
+                    result = "Decrease";
+                    break;
+                case 1:
+                    result = "Increase";
+                    break;
+                case 2:
+                    result = "Change status";
+                    break;
+            }
+            return result;
+        }
+
+        public string getEffectedStatName()
+        {
+            /* Stats
+         * 0: Hit Points
+         * 1: Magi Points
+         * 2: Strength
+         * 3: Dexterity
+         * 4: Speed
+         */
+            string result = string.Empty;
+            switch (this.effectedStat)
+            {
+                case 0:
+                    result = "Hit Points";
+                    break;
+                case 1:
+                    result = "Magi Points";
+                    break;
+                case 2:
+                    result = "Strength";
+                    break;
+                case 3:
+                    result = "Dexterity";
+                    break;
+                case 4:
+                    result = "Speed";
+                    break;
+            }
+            return result;
+        }
     }
 }

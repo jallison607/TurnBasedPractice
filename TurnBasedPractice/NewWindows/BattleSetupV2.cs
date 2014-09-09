@@ -19,6 +19,7 @@ namespace TurnBasedPractice.Windows
         private EntityWrapper generatedFoeWrapper;
         private EntityTemplateWrapper templateWrapper;
         private EffectWrapper effectWrapper = new EffectWrapper();
+        private AbilityWrapper abilityWrapper = new AbilityWrapper();
         private Party pParty = new Party(new List<Entity>(), 3);
         private Entity selectedPartyMember;
         private Entity selectedFoePartyMember;
@@ -339,8 +340,7 @@ namespace TurnBasedPractice.Windows
         //Open New Windows
         private void btnUpdateAbilityList_Click(object sender, EventArgs e)
         {
-            new UpdateAbilityWindow(effectWrapper).Show();
-
+            new UpdateAbilityWindow(abilityWrapper, effectWrapper).Show();
         }
 
         private void btnUpdateWeaponList_Click(object sender, EventArgs e)

@@ -31,6 +31,7 @@
             this.cmbCurrent = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCommit = new System.Windows.Forms.Button();
             this.effectsBox1 = new TurnBasedPractice.Windows.EffectsBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.cmbCurrent.Name = "cmbCurrent";
             this.cmbCurrent.Size = new System.Drawing.Size(262, 21);
             this.cmbCurrent.TabIndex = 0;
+            this.cmbCurrent.SelectedIndexChanged += new System.EventHandler(this.cmbCurrent_SelectedIndexChanged);
             // 
             // btnDelete
             // 
@@ -59,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCommit);
             this.groupBox1.Controls.Add(this.effectsBox1);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -71,6 +74,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ability Info";
             // 
+            // btnCommit
+            // 
+            this.btnCommit.Location = new System.Drawing.Point(167, 300);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(75, 23);
+            this.btnCommit.TabIndex = 6;
+            this.btnCommit.Text = "Commit";
+            this.btnCommit.UseVisualStyleBackColor = true;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
+            // 
             // effectsBox1
             // 
             this.effectsBox1.Location = new System.Drawing.Point(16, 51);
@@ -80,7 +93,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(213, 300);
+            this.btnExit.Location = new System.Drawing.Point(250, 300);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 4;
@@ -90,12 +103,13 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(106, 300);
+            this.btnSave.Location = new System.Drawing.Point(82, 300);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtName
             // 
@@ -139,5 +153,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
         private EffectsBox effectsBox1;
+        private System.Windows.Forms.Button btnCommit;
     }
 }

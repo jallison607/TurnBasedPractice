@@ -70,7 +70,7 @@ namespace TurnBasedPractice.Windows
         {
             if (!changesSaved)
             {
-                DialogResult ds = MessageBox.Show("Save Changes?", "Save", MessageBoxButtons.YesNoCancel);
+                DialogResult ds = MessageBox.Show("Commit Changes?", "Save", MessageBoxButtons.YesNoCancel);
 
                 if (ds == DialogResult.Yes)
                 {
