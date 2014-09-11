@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace TurnBasedPractice.Windows
 {
-    public partial class UpdateWeaponsWindow : Form
+    public partial class cAvailableInShops : Form
     {
-        public UpdateWeaponsWindow()
+        public cAvailableInShops()
         {
             InitializeComponent();
         }

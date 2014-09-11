@@ -75,10 +75,12 @@
     <Compile Include="GameClasses\Battle.cs" />
     <Compile Include="GameClasses\BattleV2.cs" />
     <Compile Include="GameClasses\Game.cs" />
+    <Compile Include="GameClasses\PlayerClass.cs" />
     <Compile Include="NewGameClasses\Ability.cs" />
-    <Compile Include="NewGameClasses\AbilityWrapper.cs" />
+    <Compile Include="NewGameClasses\DAbilityWrapper.cs" />
+    <Compile Include="NewGameClasses\DEffectWrapper.cs" />
     <Compile Include="NewGameClasses\Effect.cs" />
-    <Compile Include="NewGameClasses\EffectWrapper.cs" />
+    <Compile Include="NewGameClasses\Spell.cs" />
     <Compile Include="NewGameClasses\WrapperAbstract.cs" />
     <Compile Include="NewWindows\UpdateEffectList.cs">
       <SubType>Form</SubType>

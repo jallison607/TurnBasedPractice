@@ -9,29 +9,25 @@ namespace TurnBasedPractice.ItemClasses
 {
     public abstract class Item
     {
-        public readonly int itemID;
-        public readonly string itemName;
-        public readonly int value;
+        public int itemID;
+        public string itemName;
+        public int value;
+        private bool canBuy;
 
-        public Item(int tmpID, string tmpName, int tmpValue){
+        public Item(int tmpID, string tmpName, int tmpValue, bool tmpCanBuy){
             this.itemID = tmpID;
             this.itemName = tmpName;
             this.value = tmpValue;
-
+            this.canBuy = tmpCanBuy;
         }
 
         public Item(string EString)
         {
-            this.itemID = ParseItems.parseIntFrom(EString, 4);
-            EString = EString.Substring(4);
-            int nameLength = ParseItems.parseIntFrom(EString, 2);
-            EString = EString.Substring(2);
-            this.itemName = ParseItems.parseStringFrom(EString, nameLength);
-            EString = EString.Substring(nameLength);
-            this.value = ParseItems.parseIntFrom(EString, 4);
+            throw new NotImplementedException();
         }
 
         public abstract string ToEString();
+        public abstract Item Clone(int tmpID);
 
     }
 }

@@ -21,6 +21,7 @@ namespace TurnBasedPractice.GameClasses
          * 5: Poison
          * 6: Holy
          * 7: Time
+         * 8: Ice
          */
         public int elementalType;
 

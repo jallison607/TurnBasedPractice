@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TurnBasedPractice.ItemClasses;
+using TurnBasedPractice.GameClasses;
 using GameTools.Basic;
 using System.Threading;
 
@@ -13,6 +14,8 @@ namespace TurnBasedPractice.EntityClasses
         private int InstanceID = 0;
         public int attackTry;
         private Weapon equipedWeapon;
+        private PlayerClass activeClass;
+        private Dictionary<PlayerClass, int> playerClassesAndLevels = new Dictionary<PlayerClass, int>();
 
         //Constructors
         public Entity(int tmpID, string tmpName, int[] tmpStats, Weapon tmpWeapon)
@@ -20,9 +23,6 @@ namespace TurnBasedPractice.EntityClasses
         {
             
             this.equipedWeapon = tmpWeapon;
-
-            //Again why is this sleeping?
-            Thread.Sleep(1);
             
         }
 
@@ -39,9 +39,6 @@ namespace TurnBasedPractice.EntityClasses
                     this.equipedWeapon = tmpWep;
                 }
             }
-            
-            
-            Thread.Sleep(1);
             
         }
 
@@ -94,19 +91,28 @@ namespace TurnBasedPractice.EntityClasses
         public int basicAttackHit()
         {
             
-            int tmpAttackTry = TurnBasedPractice.RandomInt.r.Next(0, 100);
-            tmpAttackTry += this.equipedWeapon.AttackRollBonus + this.strength;
-            return tmpAttackTry;
+            //int tmpAttackTry = TurnBasedPractice.RandomInt.r.Next(0, 100);
+            //tmpAttackTry += this.equipedWeapon.AttackRollBonus + this.strength;
+            //return tmpAttackTry;
+            throw new NotImplementedException();
         }
 
         public int basicAttackDamage()
         {
-            return this.equipedWeapon.damage;
+            //return this.equipedWeapon.damage;
+            throw new NotImplementedException();
         }
 
-        public void unequipWeapon()
+        /// <summary>
+        /// Unequips and returns the previously equiped weapon
+        /// "Equips" unarmed weapon with ID of -001
+        /// </summary>
+        /// <returns></returns>
+        public Weapon unequipWeapon()
         {
-            this.equipedWeapon = new Weapon(-001, "Unarmed", 0, 1, 20);
+            Weapon tmpOld = this.equipedWeapon;
+            this.equipedWeapon = new Weapon(-001, "Unarmed", 0, 1, 20,false,new List<int>(), new List<int>());
+            return tmpOld;
         }
 
         public void equipWeapon(Weapon tmpNewWep)
@@ -117,6 +123,25 @@ namespace TurnBasedPractice.EntityClasses
         public Weapon getEquipedWeapon()
         {
             return this.equipedWeapon;
+        }
+
+        public PlayerClass getActiveClass()
+        {
+            return this.activeClass;
+        }
+
+        public void setActiveClass(PlayerClass tmpClass)
+        {
+            this.activeClass = tmpClass;
+        }
+
+        /// <summary>
+        /// Returns a dictionary of all classes this Entity has and what level
+        /// </summary>
+        /// <returns>playerClassesAndLevels</returns>
+        public Dictionary<PlayerClass, int> getClasses()
+        {
+            return this.playerClassesAndLevels;
         }
 
         public override EntityAbstract Clone()

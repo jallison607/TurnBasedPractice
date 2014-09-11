@@ -3,51 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameTools.Basic;
+using TurnBasedPractice.GameClasses;
 
 namespace TurnBasedPractice.ItemClasses
 {
     public class Weapon : Item
     {
-        public readonly int damage;
-        public readonly int AttackRollBonus;
+        private int power;
+        private int accuracy;
+        private List<int> classesCanUse = new List<int>();
+        private List<int> magicalEffects = new List<int>();
 
-        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpDamage, int tmpAttackRollBonus)
-            : base(tmpID, tmpName, tmpValue)
+        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, int tmpAccuracy, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
+            : base(tmpID, tmpName, tmpValue, tmpCanBuy)
         {
-            this.damage = tmpDamage;
-            this.AttackRollBonus = tmpAttackRollBonus;
+            this.power = tmpPower;
+            this.accuracy = tmpAccuracy;
+            this.magicalEffects = tmpMagicalEffects;
+            this.classesCanUse = tmpClassesCanUse;
         }
 
-        public Weapon(string EString)
-            : base(EString)
-        {
-            string remaining = EString.Substring(10 + this.itemName.Length);
-            this.damage = ParseItems.parseIntFrom(remaining, 4);
-            remaining = remaining.Substring(4);
-            this.AttackRollBonus = ParseItems.parseIntFrom(remaining, 4);
-            remaining = remaining.Substring(4);
-        }
-        
         /*
          * Return string to be encrypted in this format 
          * 
-         * length + ID + NameLength + Name + Value + Damage + AttackRollBonus
+         * length + ID + NameLength + Name + canBuy + Value + Power + accuracy
          * 
-         * xxx + xxxx + xx + xn + xxxx + xxxx + xxxx
+         * xxx + xxxx + xx + xn + x + xxxx + 
          * 
          */
         override public string ToEString()
         {
-            string toBeEncrypted = String.Empty;
-            toBeEncrypted += ParseItems.convertToLength(this.itemID, 4);
-            toBeEncrypted += ParseItems.convertToLength(this.itemName.Length, 2);
-            toBeEncrypted += this.itemName;
-            toBeEncrypted += ParseItems.convertToLength(this.value, 4);
-            toBeEncrypted += ParseItems.convertToLength(this.damage, 4);
-            toBeEncrypted += ParseItems.convertToLength(this.AttackRollBonus, 4);
+            throw new NotImplementedException();
+        }
 
-            toBeEncrypted = ParseItems.convertToLength(toBeEncrypted.Length, 3) + toBeEncrypted;
-            return toBeEncrypted;
+        public int getPower()
+        {
+            return this.power;
+        }
+
+        public int getAccuracy()
+        {
+            return this.accuracy;
+        }
+
+        public List<int> getMagicalEffects()
+        {
+            return this.magicalEffects;
+        }
+
+        public override Item Clone(int tmpID)
+        {
+            throw new NotImplementedException();
         }
 
     }

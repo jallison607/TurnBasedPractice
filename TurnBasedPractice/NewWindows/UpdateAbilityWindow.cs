@@ -102,5 +102,17 @@ namespace TurnBasedPractice.Windows
             changesSaved = true;
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (cmbCurrent.SelectedIndex > 0)
+            {
+                Ability tmpToRemove = _abilityWrapper.getAbilityList()[cmbCurrent.SelectedIndex - 1];
+                _abilityWrapper.removeAbility(tmpToRemove);
+                loadPreExsistingAbilities();
+                cmbCurrent.SelectedIndex = 0;
+                changesSaved = false;
+            }
+        }
+
     }
 }

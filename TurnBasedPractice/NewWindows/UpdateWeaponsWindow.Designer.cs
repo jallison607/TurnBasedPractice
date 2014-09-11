@@ -1,6 +1,6 @@
 ﻿namespace TurnBasedPractice.Windows
 {
-    partial class UpdateWeaponsWindow
+    partial class cAvailableInShops
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,11 @@
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clbCanUseClasses = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnCommit = new System.Windows.Forms.Button();
+            this.effectsBox1 = new TurnBasedPractice.Windows.EffectsBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -40,15 +44,10 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.effectsBox1 = new TurnBasedPractice.Windows.EffectsBox();
-            this.btnCommit = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.clbCanUseClasses.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -74,22 +73,58 @@
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // clbCanUseClasses
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.btnCommit);
-            this.groupBox1.Controls.Add(this.effectsBox1);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 51);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(388, 473);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Weapon Info";
+            this.clbCanUseClasses.Controls.Add(this.checkBox1);
+            this.clbCanUseClasses.Controls.Add(this.button3);
+            this.clbCanUseClasses.Controls.Add(this.btnCommit);
+            this.clbCanUseClasses.Controls.Add(this.effectsBox1);
+            this.clbCanUseClasses.Controls.Add(this.button5);
+            this.clbCanUseClasses.Controls.Add(this.groupBox3);
+            this.clbCanUseClasses.Controls.Add(this.groupBox2);
+            this.clbCanUseClasses.Controls.Add(this.textBox1);
+            this.clbCanUseClasses.Controls.Add(this.label1);
+            this.clbCanUseClasses.Location = new System.Drawing.Point(13, 51);
+            this.clbCanUseClasses.Name = "clbCanUseClasses";
+            this.clbCanUseClasses.Size = new System.Drawing.Size(388, 473);
+            this.clbCanUseClasses.TabIndex = 2;
+            this.clbCanUseClasses.TabStop = false;
+            this.clbCanUseClasses.Text = "Weapon Info";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(242, 22);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(113, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Available in Shops";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(237, 418);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnCommit
+            // 
+            this.btnCommit.Location = new System.Drawing.Point(156, 418);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(75, 23);
+            this.btnCommit.TabIndex = 8;
+            this.btnCommit.Text = "Commit";
+            this.btnCommit.UseVisualStyleBackColor = true;
+            // 
+            // effectsBox1
+            // 
+            this.effectsBox1.Location = new System.Drawing.Point(10, 153);
+            this.effectsBox1.Name = "effectsBox1";
+            this.effectsBox1.Size = new System.Drawing.Size(374, 243);
+            this.effectsBox1.TabIndex = 7;
             // 
             // button5
             // 
@@ -108,7 +143,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.numericUpDown1);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(98, 46);
+            this.groupBox3.Location = new System.Drawing.Point(242, 46);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(129, 100);
             this.groupBox3.TabIndex = 4;
@@ -189,54 +224,29 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Range:";
+            this.label2.Text = "Value:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.checkedListBox1);
             this.groupBox2.Location = new System.Drawing.Point(10, 46);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(82, 100);
+            this.groupBox2.Size = new System.Drawing.Size(221, 100);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wielding";
+            this.groupBox2.Text = "Classes";
             // 
-            // radioButton3
+            // checkedListBox1
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 68);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(54, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Magic";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(54, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Melee";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 45);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Ranged";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.checkedListBox1.Enabled = false;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(6, 16);
+            this.checkedListBox1.MultiColumn = true;
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(209, 79);
+            this.checkedListBox1.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -254,50 +264,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
-            // effectsBox1
-            // 
-            this.effectsBox1.Location = new System.Drawing.Point(10, 153);
-            this.effectsBox1.Name = "effectsBox1";
-            this.effectsBox1.Size = new System.Drawing.Size(374, 243);
-            this.effectsBox1.TabIndex = 7;
-            // 
-            // btnCommit
-            // 
-            this.btnCommit.Location = new System.Drawing.Point(156, 418);
-            this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(75, 23);
-            this.btnCommit.TabIndex = 8;
-            this.btnCommit.Text = "Commit";
-            this.btnCommit.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(237, 418);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // UpdateWeaponsWindow
+            // cAvailableInShops
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 536);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.clbCanUseClasses);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "UpdateWeaponsWindow";
+            this.Name = "cAvailableInShops";
             this.Text = "Modify Weapon List";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.clbCanUseClasses.ResumeLayout(false);
+            this.clbCanUseClasses.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,13 +290,10 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox clbCanUseClasses;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
@@ -324,5 +305,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnCommit;
         private EffectsBox effectsBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

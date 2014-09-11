@@ -10,8 +10,8 @@ namespace TurnBasedPractice.ItemClasses
     {
         private readonly int potency; 
 
-        public Potion(int tmpID, string tmpName, int tmpValue, int tmpPotency)
-            : base(tmpID, tmpName, tmpValue)
+        public Potion(int tmpID, string tmpName, int tmpValue, int tmpPotency, bool tmpCanBuy)
+            : base(tmpID, tmpName, tmpValue, tmpCanBuy)
         {
             this.potency = tmpPotency;
         }
@@ -19,9 +19,7 @@ namespace TurnBasedPractice.ItemClasses
         public Potion(string EString)
             : base(EString)
         {
-            string remaining = EString.Substring(10 + this.itemName.Length);
-            this.potency = ParseItems.parseIntFrom(remaining, 4);
-            
+            throw new NotImplementedException();
         }
 
         /*
@@ -34,15 +32,7 @@ namespace TurnBasedPractice.ItemClasses
          */
         override public string ToEString()
         {
-            string toBeEncrypted = String.Empty;
-            toBeEncrypted += ParseItems.convertToLength(this.itemID, 4);
-            toBeEncrypted += ParseItems.convertToLength(this.itemName.Length, 2);
-            toBeEncrypted += this.itemName;
-            toBeEncrypted += ParseItems.convertToLength(this.value, 4);
-            toBeEncrypted += ParseItems.convertToLength(this.potency, 4);
-
-            toBeEncrypted = ParseItems.convertToLength(toBeEncrypted.Length, 3) + toBeEncrypted;
-            return toBeEncrypted;
+            throw new NotImplementedException();
         }
 
         public int getPotency()

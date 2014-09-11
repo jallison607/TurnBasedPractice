@@ -75,7 +75,7 @@
             this.subBox.Size = new System.Drawing.Size(360, 232);
             this.subBox.TabIndex = 2;
             this.subBox.TabStop = false;
-            this.subBox.Text = "Effects";
+            this.subBox.Text = "Magic Effects";
             // 
             // label8
             // 

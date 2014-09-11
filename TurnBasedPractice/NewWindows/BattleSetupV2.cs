@@ -39,7 +39,7 @@ namespace TurnBasedPractice.Windows
         {
             InitializeComponent();
             wepWrapper = new ItemWrapper("Weapon");
-            Weapon tmpWep = new Weapon(0, "Unarmed", 0, 0, 0);
+            Weapon tmpWep = new Weapon(0, "Unarmed", 0, 0, 0, true, new List<int>(), new List<int>());
             wepWrapper.AddItem(tmpWep);
             updateLocalWeaponList();
             playerWrapper = new EntityWrapper("Player Entity", WepList);
@@ -345,7 +345,7 @@ namespace TurnBasedPractice.Windows
 
         private void btnUpdateWeaponList_Click(object sender, EventArgs e)
         {
-            new UpdateWeaponsWindow().Show();
+            new cAvailableInShops().Show();
         }
 
         private void btnUpdateRaceList_Click(object sender, EventArgs e)
