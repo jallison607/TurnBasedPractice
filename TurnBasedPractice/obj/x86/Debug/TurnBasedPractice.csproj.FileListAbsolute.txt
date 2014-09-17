@@ -32,4 +32,5 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateEffectList.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.BattleSetupV2.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateRaceWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateMagicWindow.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Debug\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources

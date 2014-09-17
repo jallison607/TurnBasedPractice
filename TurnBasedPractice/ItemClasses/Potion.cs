@@ -35,6 +35,11 @@ namespace TurnBasedPractice.ItemClasses
             throw new NotImplementedException();
         }
 
+        public override Item Clone(int tmpID)
+        {
+            throw new NotImplementedException();
+        }
+
         public int getPotency()
         {
             return potency;

@@ -12,17 +12,17 @@ namespace TurnBasedPractice.Windows
 {
     public partial class UpdateEffectList : Form
     {
-        private EffectWrapper _effectWrapper = new EffectWrapper(0);
+        private EffectWrapper _effectWrapper = new EffectWrapper();
         private Effect newEffect = new Effect(-1, "New Effect", 0, 0, 0, 1, 1);
         private Effect selectedEffect = new Effect(-1,"New Effect", 0,0,0,1,1);
         private bool changesSaved = true;
 
-        public UpdateEffectList(EffectWrapper tmpWrapper)
+        public UpdateEffectList()
         {
-            this._effectWrapper = tmpWrapper;
             InitializeComponent();
             loadPreExsistingEffects();
             cmbCurrent.SelectedIndex = 0;
+            configureGui();
         }
 
         //Functional Methods
@@ -47,6 +47,17 @@ namespace TurnBasedPractice.Windows
             this.nudDuration.Value = selectedEffect.effectDuration;
         }
 
+        private void configureGui()
+        {
+            if (changesSaved)
+            {
+                btnCommit.Enabled = false;
+            }
+            else
+            {
+                btnCommit.Enabled = true;
+            }
+        }
         //Events
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,7 +85,7 @@ namespace TurnBasedPractice.Windows
 
                 if (ds == DialogResult.Yes)
                 {
-                    _effectWrapper.save();
+                    _effectWrapper.saveCacheChanges();
                     this.Close();
                 }
                 else if (ds == DialogResult.No)
@@ -105,6 +116,7 @@ namespace TurnBasedPractice.Windows
                 loadPreExsistingEffects();
                 cmbCurrent.SelectedIndex = 0;
                 changesSaved = false;
+                configureGui();
             }
         }
 
@@ -126,6 +138,7 @@ namespace TurnBasedPractice.Windows
             loadPreExsistingEffects();
             cmbCurrent.SelectedIndex = 0;
             changesSaved = false;
+            configureGui();
         }
 
         private void cmbCurrent_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,8 +158,9 @@ namespace TurnBasedPractice.Windows
         private void btnCommit_Click(object sender, EventArgs e)
         {
 
-            _effectWrapper.save();
+            _effectWrapper.saveCacheChanges();
             changesSaved = true;
+            configureGui();
         }
 
 

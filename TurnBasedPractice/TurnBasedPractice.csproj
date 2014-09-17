@@ -81,12 +81,19 @@
     <Compile Include="NewGameClasses\DEffectWrapper.cs" />
     <Compile Include="NewGameClasses\Effect.cs" />
     <Compile Include="NewGameClasses\Spell.cs" />
+    <Compile Include="NewGameClasses\SpellWrapper.cs" />
     <Compile Include="NewGameClasses\WrapperAbstract.cs" />
     <Compile Include="NewWindows\UpdateEffectList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewWindows\UpdateEffectList.Designer.cs">
       <DependentUpon>UpdateEffectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWindows\UpdateSpellWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWindows\UpdateSpellWindow.Designer.cs">
+      <DependentUpon>UpdateSpellWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="RandomInt.cs" />
     <Compile Include="GuiClasses\ControlWithID.cs">
@@ -152,6 +159,9 @@
     <EmbeddedResource Include="NewWindows\UpdateEffectList.resx">
       <DependentUpon>UpdateEffectList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\UpdateSpellWindow.resx">
+      <DependentUpon>UpdateSpellWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -185,6 +195,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Spell.datasource" />
+    <None Include="Properties\DataSources\TurnBasedPractice.ItemClasses.Item.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

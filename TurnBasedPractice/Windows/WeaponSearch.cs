@@ -26,7 +26,7 @@ namespace TurnBasedPractice.Windows
         {
             foreach (Weapon tmpWeaponEntry in _listOfWeapons)
             {
-                Weapon tmpWeapon = (Weapon)tmpWeaponEntry;
+                /* Weapon tmpWeapon = (Weapon)tmpWeaponEntry;
                 int tmpKey = 0;
                 int tmpID = tmpWeapon.itemID;
                 string tmpName = tmpWeapon.itemName;
@@ -34,6 +34,7 @@ namespace TurnBasedPractice.Windows
                 string tmpDamage = tmpWeapon.damage.ToString();
                 string tmpAttackRollBonus = tmpWeapon.AttackRollBonus.ToString();
                 this.dgvWeapons.Rows.Insert(tmpKey, tmpID, tmpName, Value, tmpDamage, tmpAttackRollBonus);
+             * */
             }
 
             this.dgvWeapons.ClearSelection();
@@ -52,7 +53,7 @@ namespace TurnBasedPractice.Windows
                 int tmpID = Int32.Parse(this.dgvWeapons.SelectedRows[0].Cells[0].Value.ToString());
                 foreach (Weapon tmpWep in this._listOfWeapons)
                 {
-                    if (tmpWep.itemID == tmpID)
+                    if (tmpWep.ItemID == tmpID)
                     {
                         this.selectedWep = tmpWep;
                         this.DialogResult = DialogResult.OK;

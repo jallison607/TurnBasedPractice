@@ -308,17 +308,17 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(39, 247);
+            this.btnSave.Location = new System.Drawing.Point(27, 247);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(87, 23);
             this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Save In Cahce";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(203, 247);
+            this.btnExit.Location = new System.Drawing.Point(220, 247);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 19;
@@ -330,9 +330,9 @@
             // 
             this.btnCommit.Location = new System.Drawing.Point(122, 247);
             this.btnCommit.Name = "btnCommit";
-            this.btnCommit.Size = new System.Drawing.Size(75, 23);
+            this.btnCommit.Size = new System.Drawing.Size(90, 23);
             this.btnCommit.TabIndex = 20;
-            this.btnCommit.Text = "Commit";
+            this.btnCommit.Text = "Commit Cache";
             this.btnCommit.UseVisualStyleBackColor = true;
             this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 

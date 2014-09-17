@@ -5,11 +5,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using GameTools.Basic;
-
+using TurnBasedPractice.GameClasses;
 
 namespace TurnBasedPractice.ItemClasses
 {
-    public class ItemWrapper
+    public class ItemWrapper : WrapperAbstract
     {
         //Debug variable
         private bool debug = false;
@@ -31,28 +31,52 @@ namespace TurnBasedPractice.ItemClasses
             type = tmpType;
             if (tmpType == "Weapon")
             {
-                OdbcCommand effectQuery = new OdbcCommand("select * from Weapon", dbConnection);
+                bLogger = new BasicLogger(_WLog);
+                OdbcCommand WeaponQuery = new OdbcCommand("select * from Weapon", dbConnection);
                 dbConnection.ConnectionString = connectionString;
                 dbConnection.Open();
-                OdbcDataReader reader = effectQuery.ExecuteReader();
+                OdbcDataReader reader = WeaponQuery.ExecuteReader();
                 while (reader.Read())
                 {
-                    int EffectID = (int)reader[0];
-                    string EffectName = reader[1].ToString();
-                    int ElementType = (int)reader[2];
-                    int EffectType = (int)reader[3];
-                    int EffectedStat = (int)reader[4];
-                    int EffectedAmount = (int)reader[5];
-                    int EffectedDuration = (int)reader[6];
-                    _listOfEffects.Add(new Effect(EffectID, EffectName, ElementType, EffectType, EffectedStat, EffectedAmount, EffectedDuration));
-                    _usedIDs.Add(EffectID);
+                    int WeaponID = (int)reader[0];
+                    string WeaponName = reader[1].ToString();
+                    string tmpCanBuy = reader[2].ToString();
+                    bool WeaponCanBuy;
+                    if (tmpCanBuy == "No")
+                    {
+                        WeaponCanBuy = false;
+                    }
+                    else
+                    {
+                        WeaponCanBuy = true;
+                    }
+
+                    int WeaponValue = (int)reader[3];
+                    int WeaponPower = (int)reader[4];
+                    List<int> WeaponEffects = new List<int>();
+                    List<int> WeaponClasses = new List<int>();
+                    bLogger.Log("Loading Item: " + WeaponID, debug);
+                    OdbcCommand WeaponEffectsQuery = new OdbcCommand("select EffectID from WeaponEffects where WeaponID = " + WeaponID, dbConnection);
+                    OdbcDataReader WeaponEffectReader = WeaponEffectsQuery.ExecuteReader();
+
+                    while (WeaponEffectReader.Read())
+                    {
+                        WeaponEffects.Add((int)WeaponEffectReader[0]);
+                    }
+
+                    OdbcCommand WeaponClassesQuery = new OdbcCommand("select ClassID from WeaponClasses where WeaponID = " + WeaponID, dbConnection);
+                    OdbcDataReader WeaponClassesReader = WeaponClassesQuery.ExecuteReader();
+
+
+                    _listOfItems.Add(new Weapon(WeaponID,WeaponName,WeaponValue,WeaponPower,WeaponCanBuy,WeaponEffects, WeaponClasses));
+                    _usedIDs.Add(WeaponID);
                 }
                 dbConnection.Close();
 
             }
             else if (tmpType == "Potion")
             {
-
+                bLogger = new BasicLogger(_PLog);
             }
             else
             {
@@ -64,16 +88,117 @@ namespace TurnBasedPractice.ItemClasses
 
         }
 
-        public void saveItems()
+        override public void reload()
         {
             if (type == "Weapon")
             {
+                OdbcCommand WeaponQuery = new OdbcCommand("select * from Weapon", dbConnection);
+                dbConnection.ConnectionString = connectionString;
+                dbConnection.Open();
+                OdbcDataReader reader = WeaponQuery.ExecuteReader();
+                while (reader.Read())
+                {
+                    int WeaponID = (int)reader[0];
+                    string WeaponName = reader[1].ToString();
+                    string tmpCanBuy = reader[2].ToString();
+                    bool WeaponCanBuy;
+                    if (tmpCanBuy == "No")
+                    {
+                        WeaponCanBuy = false;
+                    }
+                    else
+                    {
+                        WeaponCanBuy = true;
+                    }
+                    int WeaponValue = (int)reader[3];
+                    int WeaponPower = (int)reader[4];
+                    List<int> WeaponEffects = new List<int>();
+                    List<int> WeaponClasses = new List<int>();
+
+                    OdbcCommand WeaponEffectsQuery = new OdbcCommand("select EffectID from WeaponEffects where WeaponID = " + WeaponID, dbConnection);
+                    OdbcDataReader WeaponEffectReader = WeaponEffectsQuery.ExecuteReader();
+
+                    while (WeaponEffectReader.Read())
+                    {
+                        WeaponEffects.Add((int)WeaponEffectReader[0]);
+                    }
+
+                    OdbcCommand WeaponClassesQuery = new OdbcCommand("select ClassID from WeaponClasses where WeaponID = " + WeaponID, dbConnection);
+                    OdbcDataReader WeaponClassesReader = WeaponClassesQuery.ExecuteReader();
+
+
+                    _listOfItems.Add(new Weapon(WeaponID, WeaponName, WeaponValue, WeaponPower, WeaponCanBuy, WeaponEffects, WeaponClasses));
+                    _usedIDs.Add(WeaponID);
+                }
+                dbConnection.Close();
 
             }
             else if (type == "Potion")
             {
 
             }
+            else
+            {
+                this.bLogger = new BasicLogger(this._ActivePath);
+                bLogger.Log("ItemWrapper:ItemWrapper(Type): - Critical Error - Invalid ItemType");
+                MessageBox.Show("Critical Error, please see crit.err");
+                Environment.FailFast("Invalid Type");
+            }
+        }
+
+        override public void saveCacheChanges()
+        {
+            if (type == "Weapon")
+            {
+                dbConnection.ConnectionString = connectionString;
+                dbConnection.Open();
+                OdbcCommand WeaponClear = new OdbcCommand("delete from Weapon", dbConnection);
+                OdbcCommand WeaponEffectsClear = new OdbcCommand("delete from WeaponEffects", dbConnection);
+                WeaponClear.ExecuteNonQuery();
+                WeaponEffectsClear.ExecuteNonQuery();
+                foreach (Item tmpItem in _listOfItems)
+                {
+                    //public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, int tmpAccuracy, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
+                    Weapon tmpWeapon = (Weapon)tmpItem;
+                    OdbcCommand WeaponInsert = new OdbcCommand("insert into Weapon(WeaponID, WeaponName, CanBuy, WeaponValue, WeaponPower) VALUES (" + tmpWeapon.ItemID + ",'" + tmpWeapon.ItemName + "'," + tmpWeapon.canBuy + ","+ tmpWeapon.value + ","+ tmpWeapon.getPower() + ")", dbConnection);
+                    WeaponInsert.ExecuteNonQuery();
+                    foreach (int tmpID in tmpWeapon.getMagicalEffects())
+                    {
+                        OdbcCommand WeaponEffectAdd = new OdbcCommand("insert into WeaponEffects(WeaponID, EffectID) VALUES (" + tmpWeapon.ItemID + "," + tmpID + ")", dbConnection);
+                        WeaponEffectAdd.ExecuteNonQuery();
+                    }
+
+                    foreach (int tmpID in tmpWeapon.ValidClasses)
+                    {
+                        OdbcCommand WeaponEffectAdd = new OdbcCommand("insert into WeaponClasses(WeaponID, ClassID) VALUES (" + tmpWeapon.ItemID + "," + tmpID + ")", dbConnection);
+                        WeaponEffectAdd.ExecuteNonQuery();
+                    }
+                }
+                dbConnection.Close();
+            }
+            else if (type == "Potion")
+            {
+
+            }
+        }
+
+        public override int NextID()
+        {
+            int i = 0;
+            bool found = false;
+            while (!found)
+            {
+                if (_usedIDs.Contains(i))
+                {
+                    i++;
+                }
+                else
+                {
+                    found = true;
+                    _usedIDs.Add(i);
+                }
+            }
+            return i;
         }
 
         //###Modify & Get of Items
@@ -88,7 +213,7 @@ namespace TurnBasedPractice.ItemClasses
 
             for (int i = 0; i < this._listOfItems.Count; i++)
             {
-                if (this._listOfItems[i].itemID == tmpNewItem.itemID)
+                if (this._listOfItems[i].ItemID == tmpNewItem.ItemID)
                 {
                     this._listOfItems[i] = tmpNewItem;
                     added = true;
@@ -98,7 +223,7 @@ namespace TurnBasedPractice.ItemClasses
             if (!added)
             {
                 this._listOfItems.Add(tmpNewItem);
-                this._usedIDs.Add(tmpNewItem.itemID);
+                this._usedIDs.Add(tmpNewItem.ItemID);
                 added = true;
             }
 
@@ -111,9 +236,9 @@ namespace TurnBasedPractice.ItemClasses
 
             for (int i = 0; i < this._listOfItems.Count; i++)
             {
-                if (this._listOfItems[i].itemID == tmpRemoveItem.itemID)
+                if (this._listOfItems[i].ItemID == tmpRemoveItem.ItemID)
                 {
-                    this._usedIDs.Remove(tmpRemoveItem.itemID);
+                    this._usedIDs.Remove(tmpRemoveItem.ItemID);
                     this._listOfItems.RemoveAt(i);
                     removed = true;
                 }
@@ -127,7 +252,7 @@ namespace TurnBasedPractice.ItemClasses
             Item returnItem;
             foreach (Item tmpItem in this._listOfItems)
             {
-                if (tmpItem.itemID == tmpID)
+                if (tmpItem.ItemID == tmpID)
                 {
                     returnItem = tmpItem;
                     return returnItem;

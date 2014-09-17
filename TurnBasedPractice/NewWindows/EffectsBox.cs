@@ -89,7 +89,8 @@ namespace TurnBasedPractice.Windows
 
         private void btnEditEffects_Click(object sender, EventArgs e)
         {
-            new UpdateEffectList(_effectWrapper).ShowDialog();
+            new UpdateEffectList().ShowDialog();
+            _effectWrapper.reload();
             updateData();
             updateInUse();
             clearInfo();
@@ -103,11 +104,14 @@ namespace TurnBasedPractice.Windows
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!includedEffects.Contains(selectedEffect.id))
+            if (cmbEffects.SelectedIndex != -1)
             {
-                includedEffects.Add(selectedEffect.id);
+                if (!includedEffects.Contains(selectedEffect.id))
+                {
+                    includedEffects.Add(selectedEffect.id);
+                }
+                updateInUse();
             }
-            updateInUse();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

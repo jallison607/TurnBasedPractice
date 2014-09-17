@@ -12,19 +12,19 @@ namespace TurnBasedPractice.Windows
 {
     public partial class UpdateAbilityWindow : Form
     {
-        private AbilityWrapper _abilityWrapper = new AbilityWrapper(0);
+        private AbilityWrapper _abilityWrapper = new AbilityWrapper();
         private Ability newAbility = new Ability(-1, "New Ability", new List<int>());
         private Ability selectedAbility = new Ability(-1, "New Ability", new List<int>());
         private bool changesSaved = true;
 
-        public UpdateAbilityWindow(AbilityWrapper tmpAbilityWrapper, EffectWrapper tmpEffectWrapper)
+        public UpdateAbilityWindow()
         {
             InitializeComponent();
-            this._abilityWrapper = tmpAbilityWrapper;
-            this.effectsBox1._effectWrapper = tmpEffectWrapper;
-            this.effectsBox1.updateData();
+            effectsBox1._effectWrapper = new EffectWrapper();
+            effectsBox1.updateData();
             loadPreExsistingAbilities();
             cmbCurrent.SelectedIndex = 0;
+            configureGui();
         }
 
         private void loadPreExsistingAbilities()
@@ -44,6 +44,17 @@ namespace TurnBasedPractice.Windows
             effectsBox1.setList(selectedAbility.effects);
         }
 
+        private void configureGui()
+        {
+            if (changesSaved)
+            {
+                btnCommit.Enabled = false;
+            }
+            else
+            {
+                btnCommit.Enabled = true;
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -53,7 +64,7 @@ namespace TurnBasedPractice.Windows
 
                 if (ds == DialogResult.Yes)
                 {
-                    _abilityWrapper.save();
+                    _abilityWrapper.saveCacheChanges();
                     this.Close();
                 }
                 else if (ds == DialogResult.No)
@@ -90,16 +101,18 @@ namespace TurnBasedPractice.Windows
                 selectedAbility.id = _abilityWrapper.NextID();
             }
             selectedAbility.effects = effectsBox1.getList().ToList();
-            _abilityWrapper.addAbility(selectedAbility);
+            _abilityWrapper.addAbilityToTempCache(selectedAbility);
             loadPreExsistingAbilities();
             cmbCurrent.SelectedIndex = 0;
             changesSaved = false;
+            configureGui();
         }
 
         private void btnCommit_Click(object sender, EventArgs e)
         {
-            _abilityWrapper.save();
+            _abilityWrapper.saveCacheChanges();
             changesSaved = true;
+            configureGui();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -107,10 +120,11 @@ namespace TurnBasedPractice.Windows
             if (cmbCurrent.SelectedIndex > 0)
             {
                 Ability tmpToRemove = _abilityWrapper.getAbilityList()[cmbCurrent.SelectedIndex - 1];
-                _abilityWrapper.removeAbility(tmpToRemove);
+                _abilityWrapper.removeAbilityFromTempCache(tmpToRemove);
                 loadPreExsistingAbilities();
                 cmbCurrent.SelectedIndex = 0;
                 changesSaved = false;
+                configureGui();
             }
         }
 

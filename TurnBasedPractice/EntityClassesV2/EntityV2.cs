@@ -34,7 +34,7 @@ namespace TurnBasedPractice.EntityClasses
 
             foreach (Weapon tmpWep in currentWeapons)
             {
-                if (tmpWep.itemID == WepID)
+                if (tmpWep.ItemID == WepID)
                 {
                     this.equipedWeapon = tmpWep;
                 }
@@ -58,7 +58,7 @@ namespace TurnBasedPractice.EntityClasses
             string ToBeEncrypted = String.Empty;
 
             ToBeEncrypted += statsToEncrption();
-            ToBeEncrypted += ParseItems.convertToLength(this.equipedWeapon.itemID, 4);
+            ToBeEncrypted += ParseItems.convertToLength(this.equipedWeapon.ItemID, 4);
 
             ToBeEncrypted = ParseItems.convertToLength(ToBeEncrypted.Length, 3) + ToBeEncrypted;
 
@@ -111,7 +111,7 @@ namespace TurnBasedPractice.EntityClasses
         public Weapon unequipWeapon()
         {
             Weapon tmpOld = this.equipedWeapon;
-            this.equipedWeapon = new Weapon(-001, "Unarmed", 0, 1, 20,false,new List<int>(), new List<int>());
+            this.equipedWeapon = new Weapon(-001, "Unarmed", 0, 1, false,new List<int>(), new List<int>());
             return tmpOld;
         }
 

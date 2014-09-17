@@ -10,15 +10,17 @@ namespace TurnBasedPractice.ItemClasses
     public class Weapon : Item
     {
         private int power;
-        private int accuracy;
         private List<int> classesCanUse = new List<int>();
+        public List<int> ValidClasses
+        {
+            get { return classesCanUse; }
+        }
         private List<int> magicalEffects = new List<int>();
 
-        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, int tmpAccuracy, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
+        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
             : base(tmpID, tmpName, tmpValue, tmpCanBuy)
         {
             this.power = tmpPower;
-            this.accuracy = tmpAccuracy;
             this.magicalEffects = tmpMagicalEffects;
             this.classesCanUse = tmpClassesCanUse;
         }
@@ -41,11 +43,6 @@ namespace TurnBasedPractice.ItemClasses
             return this.power;
         }
 
-        public int getAccuracy()
-        {
-            return this.accuracy;
-        }
-
         public List<int> getMagicalEffects()
         {
             return this.magicalEffects;
@@ -53,7 +50,8 @@ namespace TurnBasedPractice.ItemClasses
 
         public override Item Clone(int tmpID)
         {
-            throw new NotImplementedException();
+            Weapon tmpNewWep = new Weapon(tmpID, ItemName, value, power, canBuy, magicalEffects, classesCanUse);
+            return tmpNewWep;
         }
 
     }

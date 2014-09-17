@@ -51,12 +51,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnUpdateEffectList = new System.Windows.Forms.Button();
             this.btnUpdateTypeList = new System.Windows.Forms.Button();
             this.btnUpdateTemplateList = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.btnUpdateRaceList = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnUpdateSpellList = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnUpdateWeaponList = new System.Windows.Forms.Button();
             this.btnUpdateAbilityList = new System.Windows.Forms.Button();
@@ -415,12 +415,12 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button20);
+            this.panel1.Controls.Add(this.btnUpdateEffectList);
             this.panel1.Controls.Add(this.btnUpdateTypeList);
             this.panel1.Controls.Add(this.btnUpdateTemplateList);
             this.panel1.Controls.Add(this.button16);
             this.panel1.Controls.Add(this.btnUpdateRaceList);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.btnUpdateSpellList);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.btnUpdateWeaponList);
             this.panel1.Controls.Add(this.btnUpdateAbilityList);
@@ -440,15 +440,15 @@
             this.button18.Text = "Update Item List";
             this.button18.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // btnUpdateEffectList
             // 
-            this.button20.Enabled = false;
-            this.button20.Location = new System.Drawing.Point(170, 90);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(122, 23);
-            this.button20.TabIndex = 7;
-            this.button20.Text = "Update Effect List";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnUpdateEffectList.Location = new System.Drawing.Point(170, 90);
+            this.btnUpdateEffectList.Name = "btnUpdateEffectList";
+            this.btnUpdateEffectList.Size = new System.Drawing.Size(122, 23);
+            this.btnUpdateEffectList.TabIndex = 7;
+            this.btnUpdateEffectList.Text = "Update Effect List";
+            this.btnUpdateEffectList.UseVisualStyleBackColor = true;
+            this.btnUpdateEffectList.Click += new System.EventHandler(this.btnUpdateEffectList_Click);
             // 
             // btnUpdateTypeList
             // 
@@ -492,15 +492,15 @@
             this.btnUpdateRaceList.UseVisualStyleBackColor = true;
             this.btnUpdateRaceList.Click += new System.EventHandler(this.btnUpdateRaceList_Click);
             // 
-            // button8
+            // btnUpdateSpellList
             // 
-            this.button8.Enabled = false;
-            this.button8.Location = new System.Drawing.Point(170, 8);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(123, 23);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Update Magic List";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnUpdateSpellList.Location = new System.Drawing.Point(170, 8);
+            this.btnUpdateSpellList.Name = "btnUpdateSpellList";
+            this.btnUpdateSpellList.Size = new System.Drawing.Size(123, 23);
+            this.btnUpdateSpellList.TabIndex = 3;
+            this.btnUpdateSpellList.Text = "Update Spell List";
+            this.btnUpdateSpellList.UseVisualStyleBackColor = true;
+            this.btnUpdateSpellList.Click += new System.EventHandler(this.btnUpdateSpellList_Click);
             // 
             // button7
             // 
@@ -514,7 +514,6 @@
             // 
             // btnUpdateWeaponList
             // 
-            this.btnUpdateWeaponList.Enabled = false;
             this.btnUpdateWeaponList.Location = new System.Drawing.Point(38, 34);
             this.btnUpdateWeaponList.Name = "btnUpdateWeaponList";
             this.btnUpdateWeaponList.Size = new System.Drawing.Size(123, 23);
@@ -1680,7 +1679,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnUpdateWeaponList;
         private System.Windows.Forms.Button btnUpdateAbilityList;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnUpdateSpellList;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.Panel panel2;
@@ -1689,7 +1688,7 @@
         private System.Windows.Forms.Button btnUpdateRaceList;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button btnUpdateTypeList;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnUpdateEffectList;
         private System.Windows.Forms.Button btnRemoveAlly;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnDeleteAlly;

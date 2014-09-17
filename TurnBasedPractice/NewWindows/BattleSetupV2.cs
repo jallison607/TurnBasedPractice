@@ -20,6 +20,8 @@ namespace TurnBasedPractice.Windows
         private EntityTemplateWrapper templateWrapper;
         private EffectWrapper effectWrapper = new EffectWrapper();
         private AbilityWrapper abilityWrapper = new AbilityWrapper();
+        private SpellWrapper spellWrapper = new SpellWrapper();
+        private ItemWrapper weaponWrapper = new ItemWrapper("Weapon");
         private Party pParty = new Party(new List<Entity>(), 3);
         private Entity selectedPartyMember;
         private Entity selectedFoePartyMember;
@@ -31,15 +33,16 @@ namespace TurnBasedPractice.Windows
         private NameRandomiser nameRandomizer = new NameRandomiser();
         private ItemWrapper wepWrapper;
         private Entity newEntity;
+        private Weapon unarmedWeapon = new Weapon(0, "Unarmed", 0, 0, true, new List<int>(), new List<int>());
         private Random r = new Random();
         private bool loadingFoe = false;
-        private bool loadingAlly = false;
+        //private bool loadingAlly = false;
 
         public BattleSetupV2()
         {
             InitializeComponent();
             wepWrapper = new ItemWrapper("Weapon");
-            Weapon tmpWep = new Weapon(0, "Unarmed", 0, 0, 0, true, new List<int>(), new List<int>());
+            Weapon tmpWep = unarmedWeapon;
             wepWrapper.AddItem(tmpWep);
             updateLocalWeaponList();
             playerWrapper = new EntityWrapper("Player Entity", WepList);
@@ -97,7 +100,7 @@ namespace TurnBasedPractice.Windows
             cmbPWeapon.Items.Clear();
             foreach (Weapon tmpWep in WepList)
             {
-                cmbPWeapon.Items.Add(tmpWep.itemName);
+                cmbPWeapon.Items.Add(tmpWep.ItemName);
             }
 
             
@@ -196,19 +199,19 @@ namespace TurnBasedPractice.Windows
 
         private void updateSelectedPlayerInfo()
         {
-            loadingAlly = true;
+            //loadingAlly = true;
             txtAllyName.Text = selectedPartyMember.name;
             nudAllyLevel.Value = selectedPartyMember.getLevel();
             int wepIndex = -1;
             int unarmedIndex = -1;
             foreach (Weapon tmpWep in WepList)
             {
-                if (tmpWep.itemID == selectedPartyMember.getEquipedWeapon().itemID)
+                if (tmpWep.ItemID == selectedPartyMember.getEquipedWeapon().ItemID)
                 {
                     wepIndex = WepList.IndexOf(tmpWep);
                 }
 
-                if (tmpWep.itemName == "Unarmed")
+                if (tmpWep.ItemName == "Unarmed")
                 {
                     unarmedIndex = WepList.IndexOf(tmpWep);
                 }
@@ -225,7 +228,7 @@ namespace TurnBasedPractice.Windows
             nudpMag.Value = selectedPartyMember.magi;
             nudpDex.Value = selectedPartyMember.dexterity;
             nudpStr.Value = selectedPartyMember.strength;
-            loadingAlly = false;
+            //loadingAlly = false;
         }
 
         private void updateSelectedFoeInfo()
@@ -340,17 +343,34 @@ namespace TurnBasedPractice.Windows
         //Open New Windows
         private void btnUpdateAbilityList_Click(object sender, EventArgs e)
         {
-            new UpdateAbilityWindow(abilityWrapper, effectWrapper).Show();
+            new UpdateAbilityWindow().ShowDialog();
+            effectWrapper.reload();
+            abilityWrapper.reload();
+        }
+
+        private void btnUpdateEffectList_Click(object sender, EventArgs e)
+        {
+            new UpdateEffectList().ShowDialog();
+            effectWrapper.reload();
         }
 
         private void btnUpdateWeaponList_Click(object sender, EventArgs e)
         {
-            new cAvailableInShops().Show();
+            new UpdateWeaponsWindow().ShowDialog();
+            weaponWrapper.reload();
+            
         }
 
         private void btnUpdateRaceList_Click(object sender, EventArgs e)
         {
             new UpdateRaceWindow().Show();
+        }
+        
+        private void btnUpdateSpellList_Click(object sender, EventArgs e)
+        {
+            new UpdateMagicWindow().Show();
+            effectWrapper.reload();
+            spellWrapper.reload();
         }
 
         private void btnUpdateTypeList_Click(object sender, EventArgs e)
@@ -532,5 +552,8 @@ namespace TurnBasedPractice.Windows
                 templateWrapper.saveEntities();
             }
         }
+
+
+
     }
 }

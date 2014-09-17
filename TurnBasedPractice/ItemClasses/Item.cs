@@ -9,14 +9,26 @@ namespace TurnBasedPractice.ItemClasses
 {
     public abstract class Item
     {
-        public int itemID;
-        public string itemName;
+        private int itemID;
+        public int ItemID
+        {
+            get { return itemID; }
+            set { itemID = value; }
+        }
+
+        private string itemName;
+        public string ItemName
+        {
+            get { return itemName; }
+            set { itemName = value; }
+        }
+        
         public int value;
-        private bool canBuy;
+        public bool canBuy;
 
         public Item(int tmpID, string tmpName, int tmpValue, bool tmpCanBuy){
-            this.itemID = tmpID;
-            this.itemName = tmpName;
+            this.ItemID = tmpID;
+            this.ItemName = tmpName;
             this.value = tmpValue;
             this.canBuy = tmpCanBuy;
         }

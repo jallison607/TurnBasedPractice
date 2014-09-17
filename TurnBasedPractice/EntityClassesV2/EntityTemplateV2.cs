@@ -185,10 +185,10 @@ namespace TurnBasedPractice.EntityClasses
 
             //Select a random weapon from weapons this template uses
             int selectedID = RandomInt.r.Next(0, weaponIDs.Count);
-            Weapon selectedWep = new Weapon(-001, "Unarmed", 0, 1, 20);
+            Weapon selectedWep = new Weapon(0, "Unarmed", 0, 0, true, new List<int>(), new List<int>());
             foreach(Weapon tmpWep in tmpWeapons)
             {
-                if(tmpWep.itemID == weaponIDs[selectedID]){
+                if(tmpWep.ItemID == weaponIDs[selectedID]){
                     selectedWep = tmpWep;
                 }
             }
