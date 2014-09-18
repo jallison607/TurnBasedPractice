@@ -54,7 +54,7 @@
             this.btnUpdateEffectList = new System.Windows.Forms.Button();
             this.btnUpdateTypeList = new System.Windows.Forms.Button();
             this.btnUpdateTemplateList = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.btnUpdateClassList = new System.Windows.Forms.Button();
             this.btnUpdateRaceList = new System.Windows.Forms.Button();
             this.btnUpdateSpellList = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -418,7 +418,7 @@
             this.panel1.Controls.Add(this.btnUpdateEffectList);
             this.panel1.Controls.Add(this.btnUpdateTypeList);
             this.panel1.Controls.Add(this.btnUpdateTemplateList);
-            this.panel1.Controls.Add(this.button16);
+            this.panel1.Controls.Add(this.btnUpdateClassList);
             this.panel1.Controls.Add(this.btnUpdateRaceList);
             this.panel1.Controls.Add(this.btnUpdateSpellList);
             this.panel1.Controls.Add(this.button7);
@@ -471,15 +471,15 @@
             this.btnUpdateTemplateList.Text = "Update Template List";
             this.btnUpdateTemplateList.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // btnUpdateClassList
             // 
-            this.button16.Enabled = false;
-            this.button16.Location = new System.Drawing.Point(170, 61);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(122, 23);
-            this.button16.TabIndex = 5;
-            this.button16.Text = "Update Class List";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnUpdateClassList.Location = new System.Drawing.Point(170, 61);
+            this.btnUpdateClassList.Name = "btnUpdateClassList";
+            this.btnUpdateClassList.Size = new System.Drawing.Size(122, 23);
+            this.btnUpdateClassList.TabIndex = 5;
+            this.btnUpdateClassList.Text = "Update Class List";
+            this.btnUpdateClassList.UseVisualStyleBackColor = true;
+            this.btnUpdateClassList.Click += new System.EventHandler(this.btnUpdateClassList_Click);
             // 
             // btnUpdateRaceList
             // 
@@ -1686,7 +1686,7 @@
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnFight;
         private System.Windows.Forms.Button btnUpdateRaceList;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnUpdateClassList;
         private System.Windows.Forms.Button btnUpdateTypeList;
         private System.Windows.Forms.Button btnUpdateEffectList;
         private System.Windows.Forms.Button btnRemoveAlly;

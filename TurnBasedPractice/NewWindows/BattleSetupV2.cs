@@ -22,6 +22,7 @@ namespace TurnBasedPractice.Windows
         private AbilityWrapper abilityWrapper = new AbilityWrapper();
         private SpellWrapper spellWrapper = new SpellWrapper();
         private ItemWrapper weaponWrapper = new ItemWrapper("Weapon");
+        private CharacterClassWrapper characterClassWrapper = new CharacterClassWrapper();
         private Party pParty = new Party(new List<Entity>(), 3);
         private Entity selectedPartyMember;
         private Entity selectedFoePartyMember;
@@ -378,6 +379,15 @@ namespace TurnBasedPractice.Windows
 
         }
 
+        private void btnUpdateClassList_Click(object sender, EventArgs e)
+        {
+            new UpdateCharacterClassWindow().ShowDialog();
+            characterClassWrapper.reload();
+            abilityWrapper.reload();
+            effectWrapper.reload();
+
+        }
+
         //Exit
         private void btnQuit_Click(object sender, EventArgs e)
         {
@@ -552,6 +562,8 @@ namespace TurnBasedPractice.Windows
                 templateWrapper.saveEntities();
             }
         }
+
+
 
 
 

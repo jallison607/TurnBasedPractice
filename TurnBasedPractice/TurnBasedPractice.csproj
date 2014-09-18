@@ -74,15 +74,24 @@
     </Compile>
     <Compile Include="GameClasses\Battle.cs" />
     <Compile Include="GameClasses\BattleV2.cs" />
+    <Compile Include="NewGameClasses\CharacterClassWrapper.cs" />
     <Compile Include="GameClasses\Game.cs" />
-    <Compile Include="GameClasses\PlayerClass.cs" />
+    <Compile Include="GameClasses\CharacterClass.cs" />
     <Compile Include="NewGameClasses\Ability.cs" />
     <Compile Include="NewGameClasses\DAbilityWrapper.cs" />
     <Compile Include="NewGameClasses\DEffectWrapper.cs" />
     <Compile Include="NewGameClasses\Effect.cs" />
+    <Compile Include="NewGameClasses\MagiElement.cs" />
+    <Compile Include="NewGameClasses\ElementWrapper.cs" />
     <Compile Include="NewGameClasses\Spell.cs" />
     <Compile Include="NewGameClasses\SpellWrapper.cs" />
     <Compile Include="NewGameClasses\WrapperAbstract.cs" />
+    <Compile Include="NewWindows\UpdateCharacterClassWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWindows\UpdateCharacterClassWindow.Designer.cs">
+      <DependentUpon>UpdateCharacterClassWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewWindows\UpdateEffectList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +165,9 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\UpdateCharacterClassWindow.resx">
+      <DependentUpon>UpdateCharacterClassWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewWindows\UpdateEffectList.resx">
       <DependentUpon>UpdateEffectList.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,8 +207,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.CharacterClass.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Spell.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.ItemClasses.Item.datasource" />
+    <None Include="Properties\DataSources\TurnBasedPractice.Windows.ListedAbility.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

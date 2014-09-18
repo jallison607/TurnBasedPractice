@@ -214,7 +214,6 @@
             // 
             // clClasses
             // 
-            this.clClasses.Enabled = false;
             this.clClasses.FormattingEnabled = true;
             this.clClasses.Location = new System.Drawing.Point(6, 16);
             this.clClasses.MultiColumn = true;

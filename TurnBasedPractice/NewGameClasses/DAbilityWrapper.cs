@@ -110,6 +110,19 @@ namespace TurnBasedPractice.GameClasses
             return this._listOfAbilities;
         }
 
+        public Ability getAbility(int tmpID)
+        {
+            Ability tmpResult = null;
+            foreach (Ability tmpAbility in _listOfAbilities)
+            {
+                if (tmpAbility.id == tmpID)
+                {
+                    return tmpAbility;
+                }
+            }
+            return tmpResult;
+        }
+
         private void sortAbilitiesAlphabetically()
         {
             this._listOfAbilities.Sort((a, b) => a.name.CompareTo(b.name));

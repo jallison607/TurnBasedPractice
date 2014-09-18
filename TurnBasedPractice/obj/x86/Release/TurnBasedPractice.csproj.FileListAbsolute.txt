@@ -29,5 +29,6 @@ F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Relea
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateAbilityWindow.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateRaceWindow.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.EffectsBox.resources
-F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.cAvailableInShops.resources
 F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateMagicWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateCharacterClassWindow.resources
+F:\Visual Studio 2010 Projects\TurnBasedPractice\TurnBasedPractice\obj\x86\Release\TurnBasedPractice.Windows.UpdateWeaponsWindow.resources

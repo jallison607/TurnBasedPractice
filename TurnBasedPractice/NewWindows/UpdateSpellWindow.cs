@@ -88,7 +88,7 @@ namespace TurnBasedPractice.Windows
                 }
                 else if (ds == DialogResult.No)
                 {
-                    this._SpellWrapper.reload();
+                    this.Dispose();
                     this.Close();
                 }
             }
@@ -119,8 +119,10 @@ namespace TurnBasedPractice.Windows
                 _SpellWrapper.addSpellToTempCache(selectedSpell);
                 loadPreExsistingSpells();
                 cmbCurrent.SelectedIndex = 0;
+                selectedSpell = newSpell.Clone(-1);
                 changesSaved = false;
                 configureGui();
+                updateSelectedItemsInfo();
             }
             else
             {

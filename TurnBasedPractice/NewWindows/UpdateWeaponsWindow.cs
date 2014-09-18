@@ -14,7 +14,7 @@ namespace TurnBasedPractice.Windows
     public partial class UpdateWeaponsWindow : Form
     {
         private ItemWrapper weaponWrapper = new ItemWrapper("Weapon");
-        //private class Wrapper
+        private CharacterClassWrapper characterClassWrapper = new CharacterClassWrapper();
         private Weapon newWeapon = new Weapon(-1,"New Weapon",0,0,false,new List<int>(),new List<int>());
         private Weapon selectedWeapon = new Weapon(-1, "New Weapon", 0, 0,false, new List<int>(), new List<int>());
         private bool changesSaved = true;
@@ -66,6 +66,10 @@ namespace TurnBasedPractice.Windows
             nudValue.Value = selectedWeapon.value;
             nudPower.Value = selectedWeapon.getPower();
             
+            foreach(CharacterClass tmpClass in characterClassWrapper.getClassList()){
+                clClasses.Items.Add(tmpClass.ClassName, selectedWeapon.ValidClasses.Contains(tmpClass.ClassID));
+            }
+
         }        
 
         private void configureGui()

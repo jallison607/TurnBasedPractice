@@ -14,8 +14,8 @@ namespace TurnBasedPractice.EntityClasses
         private int InstanceID = 0;
         public int attackTry;
         private Weapon equipedWeapon;
-        private PlayerClass activeClass;
-        private Dictionary<PlayerClass, int> playerClassesAndLevels = new Dictionary<PlayerClass, int>();
+        private CharacterClass activeClass;
+        private Dictionary<CharacterClass, int> playerClassesAndLevels = new Dictionary<CharacterClass, int>();
 
         //Constructors
         public Entity(int tmpID, string tmpName, int[] tmpStats, Weapon tmpWeapon)
@@ -125,12 +125,12 @@ namespace TurnBasedPractice.EntityClasses
             return this.equipedWeapon;
         }
 
-        public PlayerClass getActiveClass()
+        public CharacterClass getActiveClass()
         {
             return this.activeClass;
         }
 
-        public void setActiveClass(PlayerClass tmpClass)
+        public void setActiveClass(CharacterClass tmpClass)
         {
             this.activeClass = tmpClass;
         }
@@ -139,7 +139,7 @@ namespace TurnBasedPractice.EntityClasses
         /// Returns a dictionary of all classes this Entity has and what level
         /// </summary>
         /// <returns>playerClassesAndLevels</returns>
-        public Dictionary<PlayerClass, int> getClasses()
+        public Dictionary<CharacterClass, int> getClasses()
         {
             return this.playerClassesAndLevels;
         }

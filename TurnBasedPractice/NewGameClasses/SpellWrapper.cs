@@ -19,27 +19,7 @@ namespace TurnBasedPractice.GameClasses
         public SpellWrapper()
         {
             bLogger = new BasicLogger(slog);
-            OdbcCommand SpellQuery = new OdbcCommand("select * from Spell", dbConnection);
-            dbConnection.ConnectionString = connectionString;
-            dbConnection.Open();
-            OdbcDataReader reader = SpellQuery.ExecuteReader();
-            while (reader.Read())
-            {
-                int SpellID = (int)reader[0];
-                string SpellName = reader[1].ToString();
-                int MagiCost = (int)reader[2];
-                OdbcCommand SpellEffectQuery = new OdbcCommand("select * from SpellEffects where SpellID=" + SpellID, dbConnection);
-                OdbcDataReader spellEffectsReader = SpellEffectQuery.ExecuteReader();
-                List<int> effects = new List<int>();
-                while (spellEffectsReader.Read())
-                {
-                    effects.Add((int)spellEffectsReader[2]);
-                }
-
-                _listOfSpells.Add(new Spell(SpellID, SpellName,MagiCost,effects));
-                _usedIDs.Add(SpellID);
-            }
-            dbConnection.Close();
+            reload();
         }
 
         /// <summary>
@@ -48,6 +28,7 @@ namespace TurnBasedPractice.GameClasses
         override public void reload()
         {
             _listOfSpells.Clear();
+            _usedIDs.Clear();
             OdbcCommand SpellQuery = new OdbcCommand("select * from Spell", dbConnection);
             dbConnection.ConnectionString = connectionString;
             dbConnection.Open();
@@ -99,13 +80,18 @@ namespace TurnBasedPractice.GameClasses
         /// <summary>
         /// Returns alphabetic list of Spells
         /// </summary>
-        /// <returns>List</returns>
+        /// <returns>List of spells</returns>
         public List<Spell> getSpellList()
         {
             sortSpellsAlphabetically();
             return this._listOfSpells;
         }
 
+        /// <summary>
+        /// Returns Spell of specified ID, If none exsists returns null
+        /// </summary>
+        /// <param name="tmpID"></param>
+        /// <returns></returns>
         public Spell getSpell(int tmpID)
         {
             Spell tmpSpell = null;
@@ -138,7 +124,7 @@ namespace TurnBasedPractice.GameClasses
         }
 
         /// <summary>
-        /// Adds a Spell to the wrapper list - Does not commit the addition - Run save() to do this
+        /// Adds a Spell to the wrapper list - Does not commit the addition - Run saveCacheChanges() to do this
         /// </summary>
         /// <param name="tmpNewSpell"></param>
         public void addSpellToTempCache(Spell tmpNewSpell)
