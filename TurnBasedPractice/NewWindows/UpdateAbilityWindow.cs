@@ -34,13 +34,13 @@ namespace TurnBasedPractice.Windows
 
             foreach (Ability tmpAbility in this._abilityWrapper.getAbilityList())
             {
-                cmbCurrent.Items.Add(tmpAbility.name);
+                cmbCurrent.Items.Add(tmpAbility.AbilityName);
             }
         }
 
         private void updateSelectedItemsInfo()
         {
-            txtName.Text = selectedAbility.name;
+            txtName.Text = selectedAbility.AbilityName;
             effectsBox1.setList(selectedAbility.effects);
         }
 
@@ -95,14 +95,20 @@ namespace TurnBasedPractice.Windows
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            selectedAbility.name = txtName.Text;
-            if (selectedAbility.id == -1)
+            string tmpAbilityName = txtName.Text;
+            int tmpAbilityID;
+            if (selectedAbility.AbilityID == -1)
             {
-                selectedAbility.id = _abilityWrapper.NextID();
+                tmpAbilityID = _abilityWrapper.NextID();
             }
-            selectedAbility.effects = effectsBox1.getList().ToList();
+            else
+            {
+                tmpAbilityID = selectedAbility.AbilityID;
+            }
+            selectedAbility = new Ability(tmpAbilityID, tmpAbilityName, effectsBox1.getList().ToList());
             _abilityWrapper.addAbilityToTempCache(selectedAbility);
             loadPreExsistingAbilities();
+            selectedAbility = newAbility.Clone(-1);
             cmbCurrent.SelectedIndex = 0;
             changesSaved = false;
             configureGui();

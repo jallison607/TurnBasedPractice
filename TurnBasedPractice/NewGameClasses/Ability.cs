@@ -8,8 +8,16 @@ namespace TurnBasedPractice.GameClasses
 {
     public class Ability
     {
-        public int id;
-        public string name;
+        private int id;
+        private string name;
+        public int AbilityID
+        {
+            get { return id; }
+        }
+        public string AbilityName
+        {
+            get { return name; }
+        }
         public List<int> effects = new List<int>();
 
         public Ability(int tmpID, string tmpName, List<int> tmpEffects)

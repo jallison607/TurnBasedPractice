@@ -16,11 +16,11 @@ namespace TurnBasedPractice.Windows
         private CharacterClassWrapper _classWrapper = new CharacterClassWrapper();
         private ElementWrapper _elementWrapper = new ElementWrapper();
         private AbilityWrapper _abilityWrapper = new AbilityWrapper();
+        private EffectWrapper _effectWrapper = new EffectWrapper();
         private CharacterClass newCharacterClass = new CharacterClass(-1, "New Class", 0, 0, 0, 0, 0, 0, new List<int>(), new Dictionary<int, int>());
         private CharacterClass selectedCharacterClass = new CharacterClass(-1, "New Class", 0, 0, 0, 0, 0, 0, new List<int>(), new Dictionary<int, int>());
+        private Ability selectedAbility = null;
         private bool changesSaved = true;
-
-        
 
         public UpdateCharacterClassWindow()
         {
@@ -40,6 +40,16 @@ namespace TurnBasedPractice.Windows
             foreach (CharacterClass tmpClass in _classWrapper.getClassList())
             {
                 characterClassBindingSource.Add(tmpClass);
+            }
+
+            abilityBindingSource.Clear();
+            foreach (Ability tmpAbility in _abilityWrapper.getAbilityList())
+            {
+                abilityBindingSource.Add(tmpAbility);
+            }
+            if (abilityBindingSource.List.Count > 0)
+            {
+                selectedAbility = (Ability)abilityBindingSource.List[0];
             }
         }
 
@@ -79,9 +89,10 @@ namespace TurnBasedPractice.Windows
             listedAbilityBindingSource.Clear();
             foreach (KeyValuePair<int, int> tmpAbilityID in selectedCharacterClass.abilitiesLearnedByLevel)
             {
-                ListedAbility tmpEntry = new ListedAbility(tmpAbilityID.Key,"Unlocked at level " + ParseItems.convertToLength(tmpAbilityID.Value,2) + ":  " + _abilityWrapper.getAbility(tmpAbilityID.Key).name, tmpAbilityID.Value);
+                ListedAbility tmpEntry = new ListedAbility(tmpAbilityID.Key,"Unlocked at level " + ParseItems.convertToLength(tmpAbilityID.Value,2) + ":  " + _abilityWrapper.getAbility(tmpAbilityID.Key).AbilityName, tmpAbilityID.Value);
                 listedAbilityBindingSource.Add(tmpEntry);
             }
+            
         }
 
         private void configureGui()
@@ -200,31 +211,123 @@ namespace TurnBasedPractice.Windows
         }
 
         //Class Ability Info
+        //Functional Methods
+        private bool updating = false;
+        private void updateSelectedAbilityInfo()
+        {
+                //Set CMB selection to the selected Ability
+                cmbAbilities.SelectedValue = selectedAbility.AbilityID;
+                cmbAbilities.SelectedIndex = abilityBindingSource.IndexOf(selectedAbility);
 
+                //If selected ability ID is in listed abilities then set listed abilities selection & level nud
+                ListedAbility tmpListed = listedAbilityFromDataSourceValueMember(selectedAbility.AbilityID);
+                if (tmpListed.AbilityID != -1)
+                {
+                    lstAbilities.SelectedValue = tmpListed.AbilityID;
+                    nudLevel.Value = tmpListed.LevelLearned;
+                }
+                else
+                {
+                    lstAbilities.ClearSelected();
+                }
+        }
+
+        private Ability abilityFromDataSourceValueMember(int tmpAbilityID)
+        {
+            foreach(object tmpObject in abilityBindingSource)
+            {
+                Ability tmpAbility = (Ability)tmpObject;
+                if (tmpAbility.AbilityID == tmpAbilityID)
+                {
+                    return tmpAbility;
+                }
+            }
+            return new Ability(-1,"",new List<int>());
+        }
+
+        private ListedAbility listedAbilityFromDataSourceValueMember(int tmpAbilityID)
+        {
+            foreach (object tmpObject in listedAbilityBindingSource)
+            {
+                ListedAbility tmpListedAbility = (ListedAbility)tmpObject;
+                if (tmpListedAbility.AbilityID == tmpAbilityID)
+                {
+                    return tmpListedAbility;
+                }
+            }
+            return new ListedAbility(-1, "", -1); ;
+        }
+
+        //Events
         private void cmbAbilities_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!updating)
+            {
+                selectedAbility = abilityFromDataSourceValueMember((int)cmbAbilities.SelectedValue);
+                updating = true;
+                updateSelectedAbilityInfo();
+                updating = false;
+            }
+        }
 
+        private void lstAbilities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!updating)
+            {
+                if (lstAbilities.SelectedValue != null)
+                {
+                    updating = true;
+                    selectedAbility = abilityFromDataSourceValueMember((int)lstAbilities.SelectedValue);
+                    updateSelectedAbilityInfo();
+                    updating = false;
+                }
+            }
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-
+            string selectedAbilityInfo = string.Empty;
+            selectedAbilityInfo += selectedAbility.AbilityName + " Info";
+            selectedAbilityInfo += "\r\n\r\nEffects:";
+            foreach (int tmpEffectID in selectedAbility.effects)
+            {
+                Effect tmpEffect = _effectWrapper.getEffect(tmpEffectID);
+                if (tmpEffect != null)
+                {
+                    selectedAbilityInfo += "\r\n   " + tmpEffect.name;
+                }
+            }
+            MessageBox.Show(selectedAbilityInfo);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            new UpdateAbilityWindow().ShowDialog();
+            _abilityWrapper.reload();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            if (selectedAbility != null)
+            {
+                if (selectedCharacterClass.abilitiesLearnedByLevel.ContainsKey(selectedAbility.AbilityID))
+                {
+                    selectedCharacterClass.abilitiesLearnedByLevel[selectedAbility.AbilityID] = (int)nudLevel.Value;
+                }
+                else
+                {
+                    selectedCharacterClass.abilitiesLearnedByLevel.Add(selectedAbility.AbilityID, (int)nudLevel.Value);
+                }
+                updateSelectedClassInfo();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            
         }
+
+
 
     }
 

@@ -55,6 +55,7 @@
             this.nudLevel = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbAbilities = new System.Windows.Forms.ComboBox();
+            this.abilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lstAbilities = new System.Windows.Forms.ListBox();
@@ -73,6 +74,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abilityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listedAbilityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,13 +313,20 @@
             // 
             // cmbAbilities
             // 
+            this.cmbAbilities.DataSource = this.abilityBindingSource;
+            this.cmbAbilities.DisplayMember = "AbilityName";
             this.cmbAbilities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAbilities.FormattingEnabled = true;
             this.cmbAbilities.Location = new System.Drawing.Point(15, 134);
             this.cmbAbilities.Name = "cmbAbilities";
             this.cmbAbilities.Size = new System.Drawing.Size(167, 21);
             this.cmbAbilities.TabIndex = 3;
+            this.cmbAbilities.ValueMember = "AbilityID";
             this.cmbAbilities.SelectedIndexChanged += new System.EventHandler(this.cmbAbilities_SelectedIndexChanged);
+            // 
+            // abilityBindingSource
+            // 
+            this.abilityBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.Ability);
             // 
             // btnRemove
             // 
@@ -349,6 +358,7 @@
             this.lstAbilities.Size = new System.Drawing.Size(414, 95);
             this.lstAbilities.TabIndex = 0;
             this.lstAbilities.ValueMember = "AbilityID";
+            this.lstAbilities.SelectedIndexChanged += new System.EventHandler(this.lstAbilities_SelectedIndexChanged);
             // 
             // listedAbilityBindingSource
             // 
@@ -416,6 +426,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abilityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listedAbilityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -457,5 +468,6 @@
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.BindingSource characterClassBindingSource;
         private System.Windows.Forms.BindingSource listedAbilityBindingSource;
+        private System.Windows.Forms.BindingSource abilityBindingSource;
     }
 }

@@ -89,11 +89,11 @@ namespace TurnBasedPractice.GameClasses
             AbilityEffectsClear.ExecuteNonQuery();
             foreach (Ability tmpAbility in _listOfAbilities)
             {
-                OdbcCommand AbilityInsert = new OdbcCommand("insert into Ability(AbilityID, AbilityName) VALUES (" + tmpAbility.id + ",'"+tmpAbility.name+"')", dbConnection);
+                OdbcCommand AbilityInsert = new OdbcCommand("insert into Ability(AbilityID, AbilityName) VALUES (" + tmpAbility.AbilityID + ",'"+tmpAbility.AbilityName +"')", dbConnection);
                 AbilityInsert.ExecuteNonQuery();
                 foreach (int tmpID in tmpAbility.effects)
                 {
-                    OdbcCommand AbilityEffectAdd = new OdbcCommand("insert into AbilityEffects (AbilityID, EffectID) VALUES (" + tmpAbility.id + "," + tmpID + ")",dbConnection);
+                    OdbcCommand AbilityEffectAdd = new OdbcCommand("insert into AbilityEffects (AbilityID, EffectID) VALUES (" + tmpAbility.AbilityID + "," + tmpID + ")",dbConnection);
                     AbilityEffectAdd.ExecuteNonQuery();
                 }   
             }
@@ -115,7 +115,7 @@ namespace TurnBasedPractice.GameClasses
             Ability tmpResult = null;
             foreach (Ability tmpAbility in _listOfAbilities)
             {
-                if (tmpAbility.id == tmpID)
+                if (tmpAbility.AbilityID == tmpID)
                 {
                     return tmpAbility;
                 }
@@ -125,7 +125,7 @@ namespace TurnBasedPractice.GameClasses
 
         private void sortAbilitiesAlphabetically()
         {
-            this._listOfAbilities.Sort((a, b) => a.name.CompareTo(b.name));
+            this._listOfAbilities.Sort((a, b) => a.AbilityName.CompareTo(b.AbilityName));
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace TurnBasedPractice.GameClasses
             if (this._listOfAbilities.Contains(tmpToRemoveAbility))
             {
                 _listOfAbilities.Remove(tmpToRemoveAbility);
-                _usedIDs.Remove(tmpToRemoveAbility.id);
+                _usedIDs.Remove(tmpToRemoveAbility.AbilityID);
             }
         }
 
@@ -150,7 +150,7 @@ namespace TurnBasedPractice.GameClasses
             int index = -1;
             foreach (Ability tmpAbility in _listOfAbilities)
             {
-                if (tmpAbility.id == tmpNewAbility.id)
+                if (tmpAbility.AbilityID == tmpNewAbility.AbilityID)
                 {
                     index = _listOfAbilities.IndexOf(tmpAbility);
                 }

@@ -207,6 +207,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Ability.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.CharacterClass.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Spell.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.ItemClasses.Item.datasource" />
