@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using TurnBasedPractice.GameClasses;
 using TurnBasedPractice.ItemClasses;
+using TurnBasedPractice.GuiClasses;
 
 namespace TurnBasedPractice.Windows
 {
@@ -22,6 +23,9 @@ namespace TurnBasedPractice.Windows
         public UpdateWeaponsWindow()
         {
             InitializeComponent();
+            clClasses.DataSource = listedClassesForWeaponBindingSource;
+            clClasses.DisplayMember = "ClassName";
+            clClasses.ValueMember = "ClassID";
             effectsBox1._effectWrapper = new EffectWrapper();
             effectsBox1.updateData();
             loadPreExsistingWeapons();
@@ -65,9 +69,11 @@ namespace TurnBasedPractice.Windows
             cAvailInShops.Checked = selectedWeapon.canBuy;
             nudValue.Value = selectedWeapon.value;
             nudPower.Value = selectedWeapon.getPower();
-            
-            foreach(CharacterClass tmpClass in characterClassWrapper.getClassList()){
-                clClasses.Items.Add(tmpClass.ClassName, selectedWeapon.ValidClasses.Contains(tmpClass.ClassID));
+
+            listedClassesForWeaponBindingSource.Clear();
+            foreach(CharacterClass tmpClass in characterClassWrapper.getClassList())
+            {
+                listedClassesForWeaponBindingSource.Add(new ListedClassesForWeapon(tmpClass.ClassID, tmpClass.ClassName, selectedWeapon.ValidClasses.Contains(tmpClass.ClassID))); 
             }
 
         }        
@@ -82,6 +88,19 @@ namespace TurnBasedPractice.Windows
             {
                 btnCommit.Enabled = true;
             }
+        }
+
+        private List<int> getListOfClasses()
+        {
+            List<int> tmpAllowedClasses = new List<int>();
+            foreach (ListedClassesForWeapon tmpListed in listedClassesForWeaponBindingSource)
+            {
+                if (tmpListed.IsPermited)
+                {
+                    tmpAllowedClasses.Add(tmpListed.ClassID);
+                }
+            }
+            return tmpAllowedClasses;
         }
 
         private void cmbCurrent_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,7 +148,7 @@ namespace TurnBasedPractice.Windows
                 {
                     selectedWeapon.ItemID = weaponWrapper.NextID();
                 }
-                selectedWeapon = new Weapon(selectedWeapon.ItemID, selectedWeapon.ItemName, (int)nudValue.Value, (int)nudPower.Value, cAvailInShops.Checked, effectsBox1.getList(), clClasses.Items.Cast<int>().ToList());
+                selectedWeapon = new Weapon(selectedWeapon.ItemID, selectedWeapon.ItemName, (int)nudValue.Value, (int)nudPower.Value, cAvailInShops.Checked, effectsBox1.getList(), getListOfClasses());
                 weaponWrapper.AddItem(selectedWeapon);
                 loadPreExsistingWeapons();
                 cmbCurrent.SelectedIndex = 0;
@@ -159,6 +178,28 @@ namespace TurnBasedPractice.Windows
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(selectedWeapon.ItemName);
+        }
+
+        bool checkAll = true;
+
+        private void btnAllClasses_Click(object sender, EventArgs e)
+        {
+            if (checkAll)
+            {
+                for (int i = 0; i < clClasses.Items.Count; i++)
+                {
+                    clClasses.SetItemChecked(i, true);
+                }
+                checkAll = false;
+            }
+            else
+            {
+                for (int i = 0; i < clClasses.Items.Count; i++)
+                {
+                    clClasses.SetItemChecked(i, false);
+                }
+                checkAll = true;
+            }
         }
 
 

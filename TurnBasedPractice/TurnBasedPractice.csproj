@@ -81,6 +81,9 @@
     <Compile Include="NewGameClasses\DAbilityWrapper.cs" />
     <Compile Include="NewGameClasses\DEffectWrapper.cs" />
     <Compile Include="NewGameClasses\Effect.cs" />
+    <Compile Include="NewGameClasses\ListedClassesForWeapon.cs" />
+    <Compile Include="NewGameClasses\ListedClassPreReq.cs" />
+    <Compile Include="NewGameClasses\ListedAbility.cs" />
     <Compile Include="NewGameClasses\MagiElement.cs" />
     <Compile Include="NewGameClasses\ElementWrapper.cs" />
     <Compile Include="NewGameClasses\Spell.cs" />
@@ -209,9 +212,11 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Ability.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.CharacterClass.datasource" />
+    <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.ListedClassesForWeapon.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.GameClasses.Spell.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.ItemClasses.Item.datasource" />
     <None Include="Properties\DataSources\TurnBasedPractice.Windows.ListedAbility.datasource" />
+    <None Include="Properties\DataSources\TurnBasedPractice.Windows.ListedClassPreReq.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

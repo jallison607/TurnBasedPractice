@@ -50,8 +50,6 @@ namespace TurnBasedPractice.Windows
             generatedFoeWrapper = new EntityWrapper("Generated Entity", WepList);
             templateWrapper = new EntityTemplateWrapper("Entity Template");
             updateLocalLists();
-            
-            
             loadEntities();
             updateControlsData();
         }
@@ -108,6 +106,15 @@ namespace TurnBasedPractice.Windows
             cmbPlayerParty.SelectedIndex = cmbPlayerParty.Items.Count - 1;
             cmbFoeParty.SelectedIndex = cmbFoeParty.Items.Count - 1;
 
+        }
+
+        private void loadCharacterClasses()
+        {
+            characterClassBindingSource.Clear();
+            foreach (CharacterClass tmpClass in characterClassWrapper.getClassList())
+            {
+                characterClassBindingSource.Add(tmpClass);
+            }
         }
 
         private void updateControlsData()
@@ -325,6 +332,7 @@ namespace TurnBasedPractice.Windows
             }
 
             updateLocalWeaponList();
+            loadCharacterClasses();
 
             int[] tmpStats = new int[5]{1,1,1,1,1};
 
@@ -383,6 +391,7 @@ namespace TurnBasedPractice.Windows
         {
             new UpdateCharacterClassWindow().ShowDialog();
             characterClassWrapper.reload();
+            loadCharacterClasses();
             abilityWrapper.reload();
             effectWrapper.reload();
 

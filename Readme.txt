@@ -29,6 +29,18 @@ I. Database Layout
 		StrBonus		Bonus to Strength
 		SprBonus		Bonus to Spirit
 		SpdBonus		Bonus to Speed
+		ConPrereq		Class Constitution Prereq
+		MagPrereq		Class Magi Prereq
+		DexPrereq		Class Dexterity Prereq
+		StrPrereq		Class Strength Prereq
+		SprPrereq		Class spirit prereq
+		SpdPrereq		Class speed prereq
+		
+	ClassPrereqClasses
+		autoID
+		ClassID
+		PreReqClassID
+		PreReqLevel
 
 	ClassElements	*Class & Element link table
 		autoID			(PRIMARY KEY)

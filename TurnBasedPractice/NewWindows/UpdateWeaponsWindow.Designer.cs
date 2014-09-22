@@ -43,16 +43,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nudValue = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.clClasses = new System.Windows.Forms.CheckedListBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clClasses = new System.Windows.Forms.CheckedListBox();
+            this.btnAllClasses = new System.Windows.Forms.Button();
+            this.listedClassesForWeaponBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.clbCanUseClasses.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listedClassesForWeaponBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCurrent
@@ -90,7 +93,6 @@
             this.clbCanUseClasses.Controls.Add(this.effectsBox1);
             this.clbCanUseClasses.Controls.Add(this.btnSave);
             this.clbCanUseClasses.Controls.Add(this.groupBox3);
-            this.clbCanUseClasses.Controls.Add(this.groupBox2);
             this.clbCanUseClasses.Controls.Add(this.txtName);
             this.clbCanUseClasses.Controls.Add(this.label1);
             this.clbCanUseClasses.Location = new System.Drawing.Point(13, 51);
@@ -153,9 +155,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.nudValue);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(242, 46);
+            this.groupBox3.Location = new System.Drawing.Point(127, 46);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(129, 100);
+            this.groupBox3.Size = new System.Drawing.Size(129, 108);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stats";
@@ -202,25 +204,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Value:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.clClasses);
-            this.groupBox2.Location = new System.Drawing.Point(10, 46);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 100);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Classes";
-            // 
-            // clClasses
-            // 
-            this.clClasses.FormattingEnabled = true;
-            this.clClasses.Location = new System.Drawing.Point(6, 16);
-            this.clClasses.MultiColumn = true;
-            this.clClasses.Name = "clClasses";
-            this.clClasses.Size = new System.Drawing.Size(209, 79);
-            this.clClasses.TabIndex = 0;
-            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(52, 20);
@@ -237,14 +220,48 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.clClasses);
+            this.groupBox2.Controls.Add(this.btnAllClasses);
+            this.groupBox2.Location = new System.Drawing.Point(407, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(221, 385);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Classes";
+            // 
+            // clClasses
+            // 
+            this.clClasses.FormattingEnabled = true;
+            this.clClasses.Location = new System.Drawing.Point(7, 20);
+            this.clClasses.Name = "clClasses";
+            this.clClasses.Size = new System.Drawing.Size(208, 334);
+            this.clClasses.TabIndex = 2;
+            // 
+            // btnAllClasses
+            // 
+            this.btnAllClasses.Location = new System.Drawing.Point(64, 357);
+            this.btnAllClasses.Name = "btnAllClasses";
+            this.btnAllClasses.Size = new System.Drawing.Size(75, 22);
+            this.btnAllClasses.TabIndex = 1;
+            this.btnAllClasses.Text = "All";
+            this.btnAllClasses.UseVisualStyleBackColor = true;
+            this.btnAllClasses.Click += new System.EventHandler(this.btnAllClasses_Click);
+            // 
+            // listedClassesForWeaponBindingSource
+            // 
+            this.listedClassesForWeaponBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.ListedClassesForWeapon);
+            // 
             // UpdateWeaponsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 536);
+            this.ClientSize = new System.Drawing.Size(648, 536);
             this.Controls.Add(this.clbCanUseClasses);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cmbCurrent);
+            this.Controls.Add(this.groupBox2);
             this.Name = "UpdateWeaponsWindow";
             this.Text = "Modify Weapon List";
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
@@ -255,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listedClassesForWeaponBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,8 +294,10 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCommit;
         private EffectsBox effectsBox1;
-        private System.Windows.Forms.CheckedListBox clClasses;
         private System.Windows.Forms.CheckBox cAvailInShops;
         private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.Button btnAllClasses;
+        private System.Windows.Forms.CheckedListBox clClasses;
+        private System.Windows.Forms.BindingSource listedClassesForWeaponBindingSource;
     }
 }

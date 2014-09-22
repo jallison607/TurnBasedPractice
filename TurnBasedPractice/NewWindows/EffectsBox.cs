@@ -20,7 +20,7 @@ namespace TurnBasedPractice.Windows
         {
             InitializeComponent();
         }
-
+        
         public void updateData()
         {
             updateAllAvailable();

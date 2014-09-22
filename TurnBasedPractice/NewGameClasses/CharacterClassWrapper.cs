@@ -40,12 +40,32 @@ namespace TurnBasedPractice.GameClasses
                 int classID = (int)reader[0];
                 string className = reader[1].ToString();
                 bLogger.Log("Loading stat bonuses for class: " + className, debug);
-                int conBonus = (int)reader[2];
-                int magBonus = (int)reader[3];
-                int dexBonus = (int)reader[4];
-                int strBonus = (int)reader[5];
-                int sprBonus = (int)reader[6];
-                int spdBonus = (int)reader[7];
+
+                Dictionary<string, int> stats = new Dictionary<string, int>();
+                Dictionary<string, int> preReqStats = new Dictionary<string, int>();
+                stats.Add("Con", (int)reader[2]);
+                stats.Add("Mag", (int)reader[3]);
+                stats.Add("Dex", (int)reader[4]);
+                stats.Add("Str", (int)reader[5]);
+                stats.Add("Spr", (int)reader[6]);
+                stats.Add("Spd", (int)reader[7]);
+
+                preReqStats.Add("Con", (int)reader[8]);
+                preReqStats.Add("Mag", (int)reader[9]);
+                preReqStats.Add("Dex", (int)reader[10]);
+                preReqStats.Add("Str", (int)reader[11]);
+                preReqStats.Add("Spr", (int)reader[12]);
+                preReqStats.Add("Spd", (int)reader[13]);
+
+                bLogger.Log("Retreiving Class Pre Req Classes from data source", debug);
+                OdbcCommand classPrereqQuery = new OdbcCommand("select PreReqClassID, PreReqLevel from ClassPrereqClasses where ClassID =" + classID, dbConnection);
+                OdbcDataReader classPrereqReader = classPrereqQuery.ExecuteReader();
+                bLogger.Log("Loading Class Prereq", debug);
+                Dictionary<int, int> preReqClasses = new Dictionary<int, int>();
+                while (classPrereqReader.Read())
+                {
+                    preReqClasses.Add((int)classPrereqReader[0], (int)classPrereqReader[1]);
+                }
 
                 bLogger.Log("Retreiving Class Elements from data source", debug);
                 OdbcCommand classElementQuery = new OdbcCommand("select ElementID from ClassElements where ClassID =" + classID, dbConnection);
@@ -68,7 +88,7 @@ namespace TurnBasedPractice.GameClasses
                 }
 
                 bLogger.Log("Saving class " + className + " into cache.", debug);
-                _listOfClasses.Add(new CharacterClass(classID, className, conBonus, magBonus, dexBonus, strBonus, sprBonus, spdBonus, elements, abilities));
+                _listOfClasses.Add(new CharacterClass(classID, className, stats, elements, abilities, preReqStats, preReqClasses));
                 _usedIDs.Add(classID);
             }
             dbConnection.Close();
@@ -86,19 +106,32 @@ namespace TurnBasedPractice.GameClasses
             OdbcCommand classClear = new OdbcCommand("delete from CharacterClass", dbConnection);
             OdbcCommand classElementsClear = new OdbcCommand("delete from ClassElements", dbConnection);
             OdbcCommand classAbilitiesClear = new OdbcCommand("delete from ClassAbilities", dbConnection);
+            OdbcCommand classPrereqClassesClear = new OdbcCommand("delete from ClassPrereqClasses", dbConnection);
             bLogger.Log("Clearing previous Class Abilities from data source", debug);
             classAbilitiesClear.ExecuteNonQuery();
             bLogger.Log("Clearing previous Class Elements from data source", debug);
             classElementsClear.ExecuteNonQuery();
+            bLogger.Log("Clearing previous class prereq classes from data source", debug);
+            classPrereqClassesClear.ExecuteNonQuery();
             bLogger.Log("Clearing previous Classes from data source", debug);
             classClear.ExecuteNonQuery();
+            
 
             foreach (CharacterClass tmpClass in _listOfClasses)
             {
                 bLogger.Log("Saving " + tmpClass.ClassName + " into data source", debug);
-                OdbcCommand ClassInsert = new OdbcCommand("insert into CharacterClass (ClassID, ClassName, ConBonus, MagBonus, DexBonus, StrBonus, SprBonus, SpdBonus) VALUES "
-                    +"("+ tmpClass.ClassID +",'"+ tmpClass.ClassName +"',"+ tmpClass.constitutionBonus + ","+ tmpClass.magiBonus +","+ tmpClass.dexterityBonus +","+ tmpClass.strengthBonus +","+ tmpClass.spiritBonus +","+ tmpClass.speedBonus +")",dbConnection);
+                OdbcCommand ClassInsert = new OdbcCommand("insert into CharacterClass (ClassID, ClassName, ConBonus, MagBonus, DexBonus, StrBonus, SprBonus, SpdBonus, ConPrereq, MagPrereq, DexPrereq, StrPrereq, SprPrereq, SpdPrereq) VALUES "
+                    +"("+ tmpClass.ClassID +",'"+ tmpClass.ClassName +"',"+ tmpClass.constitutionBonus + ","+ tmpClass.magiBonus +","+ tmpClass.dexterityBonus +","+ tmpClass.strengthBonus +","+ tmpClass.spiritBonus +","+ tmpClass.speedBonus 
+                    +"," + tmpClass.constitutionPrereq + "," + tmpClass.magiPrereq + "," + tmpClass.dexterityPrereq + "," + tmpClass.strengthPrereq + "," + tmpClass.spiritPrereq + "," + tmpClass.speedPrereq + ")",dbConnection);
                 ClassInsert.ExecuteNonQuery();
+
+                bLogger.Log("Saving class prerequisit classes into data source", debug);
+                foreach (KeyValuePair<int, int> tmpClassClassPrereq in tmpClass.preReqClasses)
+                {
+                    OdbcCommand ClassClassPreReq = new OdbcCommand("insert into ClassPrereqClasses (ClassID, PreReqClassID, PreReqLevel) Values (" + tmpClass.ClassID + "," + tmpClassClassPrereq.Key + "," + tmpClassClassPrereq.Value + ")", dbConnection);
+                    ClassClassPreReq.ExecuteNonQuery();
+                }
+
                 bLogger.Log("Saving class Elements into data source", debug);
                 foreach (int tmpElementID in tmpClass.magiElementsCanUse)
                 {

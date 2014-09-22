@@ -32,47 +32,6 @@ namespace TurnBasedPractice.ItemClasses
             if (tmpType == "Weapon")
             {
                 bLogger = new BasicLogger(_WLog);
-                OdbcCommand WeaponQuery = new OdbcCommand("select * from Weapon", dbConnection);
-                dbConnection.ConnectionString = connectionString;
-                dbConnection.Open();
-                OdbcDataReader reader = WeaponQuery.ExecuteReader();
-                while (reader.Read())
-                {
-                    int WeaponID = (int)reader[0];
-                    string WeaponName = reader[1].ToString();
-                    string tmpCanBuy = reader[2].ToString();
-                    bool WeaponCanBuy;
-                    if (tmpCanBuy == "No")
-                    {
-                        WeaponCanBuy = false;
-                    }
-                    else
-                    {
-                        WeaponCanBuy = true;
-                    }
-
-                    int WeaponValue = (int)reader[3];
-                    int WeaponPower = (int)reader[4];
-                    List<int> WeaponEffects = new List<int>();
-                    List<int> WeaponClasses = new List<int>();
-                    bLogger.Log("Loading Item: " + WeaponID, debug);
-                    OdbcCommand WeaponEffectsQuery = new OdbcCommand("select EffectID from WeaponEffects where WeaponID = " + WeaponID, dbConnection);
-                    OdbcDataReader WeaponEffectReader = WeaponEffectsQuery.ExecuteReader();
-
-                    while (WeaponEffectReader.Read())
-                    {
-                        WeaponEffects.Add((int)WeaponEffectReader[0]);
-                    }
-
-                    OdbcCommand WeaponClassesQuery = new OdbcCommand("select ClassID from WeaponClasses where WeaponID = " + WeaponID, dbConnection);
-                    OdbcDataReader WeaponClassesReader = WeaponClassesQuery.ExecuteReader();
-
-
-                    _listOfItems.Add(new Weapon(WeaponID,WeaponName,WeaponValue,WeaponPower,WeaponCanBuy,WeaponEffects, WeaponClasses));
-                    _usedIDs.Add(WeaponID);
-                }
-                dbConnection.Close();
-
             }
             else if (tmpType == "Potion")
             {
@@ -85,7 +44,7 @@ namespace TurnBasedPractice.ItemClasses
                 MessageBox.Show("Critical Error, please see crit.err");
                 Environment.FailFast("Invalid Type");
             }
-
+            reload();
         }
 
         override public void reload()
@@ -125,7 +84,10 @@ namespace TurnBasedPractice.ItemClasses
 
                     OdbcCommand WeaponClassesQuery = new OdbcCommand("select ClassID from WeaponClasses where WeaponID = " + WeaponID, dbConnection);
                     OdbcDataReader WeaponClassesReader = WeaponClassesQuery.ExecuteReader();
-
+                    while (WeaponClassesReader.Read())
+                    {
+                        WeaponClasses.Add((int)WeaponClassesReader[0]);
+                    }
 
                     _listOfItems.Add(new Weapon(WeaponID, WeaponName, WeaponValue, WeaponPower, WeaponCanBuy, WeaponEffects, WeaponClasses));
                     _usedIDs.Add(WeaponID);

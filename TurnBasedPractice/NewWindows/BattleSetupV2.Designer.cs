@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -154,6 +155,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.lstFInventory = new System.Windows.Forms.ListBox();
+            this.characterClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
@@ -187,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).BeginInit();
             this.grpFoeInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -723,13 +726,15 @@
             // 
             // txtAllyClass
             // 
+            this.txtAllyClass.DataSource = this.characterClassBindingSource;
+            this.txtAllyClass.DisplayMember = "ClassName";
             this.txtAllyClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtAllyClass.Enabled = false;
             this.txtAllyClass.FormattingEnabled = true;
             this.txtAllyClass.Location = new System.Drawing.Point(54, 44);
             this.txtAllyClass.Name = "txtAllyClass";
             this.txtAllyClass.Size = new System.Drawing.Size(114, 21);
             this.txtAllyClass.TabIndex = 10;
+            this.txtAllyClass.ValueMember = "ClassID";
             // 
             // label6
             // 
@@ -1585,6 +1590,10 @@
             this.lstFInventory.Size = new System.Drawing.Size(429, 82);
             this.lstFInventory.TabIndex = 0;
             // 
+            // characterClassBindingSource
+            // 
+            this.characterClassBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.CharacterClass);
+            // 
             // BattleSetupV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1635,6 +1644,7 @@
             this.grpFoeInventory.ResumeLayout(false);
             this.grpFoeInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1767,5 +1777,6 @@
         private System.Windows.Forms.RadioButton rGenerated;
         private System.Windows.Forms.Button btnPCommit;
         private System.Windows.Forms.Button btnFCommit;
+        private System.Windows.Forms.BindingSource characterClassBindingSource;
     }
 }
