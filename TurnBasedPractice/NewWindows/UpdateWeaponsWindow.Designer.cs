@@ -49,6 +49,8 @@
             this.clClasses = new System.Windows.Forms.CheckedListBox();
             this.btnAllClasses = new System.Windows.Forms.Button();
             this.listedClassesForWeaponBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nudMagiPower = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.clbCanUseClasses.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listedClassesForWeaponBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMagiPower)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCurrent
@@ -151,33 +154,30 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.nudMagiPower);
             this.groupBox3.Controls.Add(this.nudPower);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.nudValue);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(127, 46);
+            this.groupBox3.Location = new System.Drawing.Point(114, 46);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(129, 108);
+            this.groupBox3.Size = new System.Drawing.Size(142, 108);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stats";
             // 
             // nudPower
             // 
-            this.nudPower.Location = new System.Drawing.Point(73, 58);
+            this.nudPower.Location = new System.Drawing.Point(82, 48);
             this.nudPower.Name = "nudPower";
             this.nudPower.Size = new System.Drawing.Size(44, 20);
             this.nudPower.TabIndex = 6;
-            this.nudPower.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 60);
+            this.label3.Location = new System.Drawing.Point(32, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 5;
@@ -185,20 +185,15 @@
             // 
             // nudValue
             // 
-            this.nudValue.Location = new System.Drawing.Point(73, 31);
+            this.nudValue.Location = new System.Drawing.Point(82, 21);
             this.nudValue.Name = "nudValue";
             this.nudValue.Size = new System.Drawing.Size(44, 20);
             this.nudValue.TabIndex = 4;
-            this.nudValue.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 33);
+            this.label2.Location = new System.Drawing.Point(35, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -233,6 +228,7 @@
             // 
             // clClasses
             // 
+            this.clClasses.CheckOnClick = true;
             this.clClasses.FormattingEnabled = true;
             this.clClasses.Location = new System.Drawing.Point(7, 20);
             this.clClasses.Name = "clClasses";
@@ -252,6 +248,23 @@
             // listedClassesForWeaponBindingSource
             // 
             this.listedClassesForWeaponBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.ListedClassesForWeapon);
+            // 
+            // nudMagiPower
+            // 
+            this.nudMagiPower.Location = new System.Drawing.Point(82, 75);
+            this.nudMagiPower.Name = "nudMagiPower";
+            this.nudMagiPower.Size = new System.Drawing.Size(44, 20);
+            this.nudMagiPower.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Magi Power:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // UpdateWeaponsWindow
             // 
@@ -273,6 +286,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listedClassesForWeaponBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMagiPower)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,5 +313,7 @@
         private System.Windows.Forms.Button btnAllClasses;
         private System.Windows.Forms.CheckedListBox clClasses;
         private System.Windows.Forms.BindingSource listedClassesForWeaponBindingSource;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown nudMagiPower;
     }
 }

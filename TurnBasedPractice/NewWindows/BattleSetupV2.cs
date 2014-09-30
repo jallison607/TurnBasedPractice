@@ -350,57 +350,54 @@ namespace TurnBasedPractice.Windows
 
         //########Events
         //Open New Windows
-        private void btnUpdateAbilityList_Click(object sender, EventArgs e)
+
+        private void ltsmEffect_Click(object sender, EventArgs e)
+        {
+            new UpdateEffectList().ShowDialog();
+            effectWrapper.reload();
+        }
+
+        private void ltsmAbilities_Click(object sender, EventArgs e)
         {
             new UpdateAbilityWindow().ShowDialog();
             effectWrapper.reload();
             abilityWrapper.reload();
         }
 
-        private void btnUpdateEffectList_Click(object sender, EventArgs e)
-        {
-            new UpdateEffectList().ShowDialog();
-            effectWrapper.reload();
-        }
 
-        private void btnUpdateWeaponList_Click(object sender, EventArgs e)
-        {
-            new UpdateWeaponsWindow().ShowDialog();
-            weaponWrapper.reload();
-            
-        }
-
-        private void btnUpdateRaceList_Click(object sender, EventArgs e)
-        {
-            new UpdateRaceWindow().Show();
-        }
-        
-        private void btnUpdateSpellList_Click(object sender, EventArgs e)
+        private void ltsmSpells_Click(object sender, EventArgs e)
         {
             new UpdateMagicWindow().Show();
             effectWrapper.reload();
             spellWrapper.reload();
         }
 
-        private void btnUpdateTypeList_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdateClassList_Click(object sender, EventArgs e)
+        private void ltsmClasses_Click(object sender, EventArgs e)
         {
             new UpdateCharacterClassWindow().ShowDialog();
             characterClassWrapper.reload();
             loadCharacterClasses();
             abilityWrapper.reload();
             effectWrapper.reload();
+        }
 
+
+        private void ltsmWeapons_Click(object sender, EventArgs e)
+        {
+            new UpdateWeaponsWindow().ShowDialog();
+            weaponWrapper.reload();
+        }
+
+
+        private void btnUpdateRaceList_Click(object sender, EventArgs e)
+        {
+            new UpdateRaceWindow().Show();
         }
 
         //Exit
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         //Foe Only Events
@@ -572,6 +569,10 @@ namespace TurnBasedPractice.Windows
             }
         }
 
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
 

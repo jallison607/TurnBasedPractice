@@ -62,6 +62,7 @@
             this.btnUpdateWeaponList = new System.Windows.Forms.Button();
             this.btnUpdateAbilityList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMain = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnFight = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -79,6 +80,7 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.txtAllyClass = new System.Windows.Forms.ComboBox();
+            this.characterClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.nudpMag = new System.Windows.Forms.NumericUpDown();
@@ -155,7 +157,17 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.lstFInventory = new System.Windows.Forms.ListBox();
-            this.characterClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToMainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmEffect = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmAbilities = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmSpells = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmClasses = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmWeapons = new System.Windows.Forms.ToolStripMenuItem();
+            this.ltsmArmor = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
@@ -167,6 +179,7 @@
             this.grpCharInfo.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudpMag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudpStr)).BeginInit();
@@ -189,7 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFoeLevel)).BeginInit();
             this.grpFoeInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -205,13 +218,13 @@
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.grpFoeInventory, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(952, 797);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(952, 773);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -237,9 +250,9 @@
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(3, 439);
+            this.groupBox1.Location = new System.Drawing.Point(3, 424);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(460, 229);
+            this.groupBox1.Size = new System.Drawing.Size(460, 220);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player Inventory";
@@ -428,10 +441,11 @@
             this.panel1.Controls.Add(this.btnUpdateWeaponList);
             this.panel1.Controls.Add(this.btnUpdateAbilityList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(489, 674);
+            this.panel1.Location = new System.Drawing.Point(489, 650);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 120);
             this.panel1.TabIndex = 6;
+            this.panel1.Visible = false;
             // 
             // button18
             // 
@@ -451,7 +465,6 @@
             this.btnUpdateEffectList.TabIndex = 7;
             this.btnUpdateEffectList.Text = "Update Effect List";
             this.btnUpdateEffectList.UseVisualStyleBackColor = true;
-            this.btnUpdateEffectList.Click += new System.EventHandler(this.btnUpdateEffectList_Click);
             // 
             // btnUpdateTypeList
             // 
@@ -462,7 +475,6 @@
             this.btnUpdateTypeList.TabIndex = 6;
             this.btnUpdateTypeList.Text = "Update Type List";
             this.btnUpdateTypeList.UseVisualStyleBackColor = true;
-            this.btnUpdateTypeList.Click += new System.EventHandler(this.btnUpdateTypeList_Click);
             // 
             // btnUpdateTemplateList
             // 
@@ -482,7 +494,6 @@
             this.btnUpdateClassList.TabIndex = 5;
             this.btnUpdateClassList.Text = "Update Class List";
             this.btnUpdateClassList.UseVisualStyleBackColor = true;
-            this.btnUpdateClassList.Click += new System.EventHandler(this.btnUpdateClassList_Click);
             // 
             // btnUpdateRaceList
             // 
@@ -503,7 +514,6 @@
             this.btnUpdateSpellList.TabIndex = 3;
             this.btnUpdateSpellList.Text = "Update Spell List";
             this.btnUpdateSpellList.UseVisualStyleBackColor = true;
-            this.btnUpdateSpellList.Click += new System.EventHandler(this.btnUpdateSpellList_Click);
             // 
             // button7
             // 
@@ -523,7 +533,6 @@
             this.btnUpdateWeaponList.TabIndex = 1;
             this.btnUpdateWeaponList.Text = "Update Weapon List";
             this.btnUpdateWeaponList.UseVisualStyleBackColor = true;
-            this.btnUpdateWeaponList.Click += new System.EventHandler(this.btnUpdateWeaponList_Click);
             // 
             // btnUpdateAbilityList
             // 
@@ -533,21 +542,31 @@
             this.btnUpdateAbilityList.TabIndex = 0;
             this.btnUpdateAbilityList.Text = "Update Ability List";
             this.btnUpdateAbilityList.UseVisualStyleBackColor = true;
-            this.btnUpdateAbilityList.Click += new System.EventHandler(this.btnUpdateAbilityList_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnMain);
             this.panel2.Controls.Add(this.btnQuit);
             this.panel2.Controls.Add(this.btnFight);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 674);
+            this.panel2.Location = new System.Drawing.Point(3, 650);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(460, 120);
             this.panel2.TabIndex = 7;
             // 
+            // btnMain
+            // 
+            this.btnMain.Location = new System.Drawing.Point(180, 47);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Size = new System.Drawing.Size(75, 23);
+            this.btnMain.TabIndex = 2;
+            this.btnMain.Text = "Main Menu";
+            this.btnMain.UseVisualStyleBackColor = true;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(180, 63);
+            this.btnQuit.Location = new System.Drawing.Point(180, 76);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 1;
@@ -557,7 +576,7 @@
             // 
             // btnFight
             // 
-            this.btnFight.Location = new System.Drawing.Point(180, 34);
+            this.btnFight.Location = new System.Drawing.Point(180, 18);
             this.btnFight.Name = "btnFight";
             this.btnFight.Size = new System.Drawing.Size(75, 23);
             this.btnFight.TabIndex = 0;
@@ -572,7 +591,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(460, 430);
+            this.panel3.Size = new System.Drawing.Size(460, 415);
             this.panel3.TabIndex = 9;
             // 
             // groupBox15
@@ -635,7 +654,7 @@
             this.groupBox2.Controls.Add(this.grpCharInfo);
             this.groupBox2.Controls.Add(this.cmbPlayerParty);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 78);
+            this.groupBox2.Location = new System.Drawing.Point(0, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(458, 350);
             this.groupBox2.TabIndex = 3;
@@ -735,6 +754,10 @@
             this.txtAllyClass.Size = new System.Drawing.Size(114, 21);
             this.txtAllyClass.TabIndex = 10;
             this.txtAllyClass.ValueMember = "ClassID";
+            // 
+            // characterClassBindingSource
+            // 
+            this.characterClassBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.CharacterClass);
             // 
             // label6
             // 
@@ -987,7 +1010,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(489, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(460, 430);
+            this.panel4.Size = new System.Drawing.Size(460, 415);
             this.panel4.TabIndex = 10;
             // 
             // groupBox3
@@ -1076,7 +1099,7 @@
             this.groupBox9.Controls.Add(this.grpFoeInfo);
             this.groupBox9.Controls.Add(this.cmbFoeParty);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox9.Location = new System.Drawing.Point(0, 78);
+            this.groupBox9.Location = new System.Drawing.Point(0, 63);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(458, 350);
             this.groupBox9.TabIndex = 3;
@@ -1412,9 +1435,9 @@
             this.grpFoeInventory.Controls.Add(this.lstFInventory);
             this.grpFoeInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpFoeInventory.Enabled = false;
-            this.grpFoeInventory.Location = new System.Drawing.Point(489, 439);
+            this.grpFoeInventory.Location = new System.Drawing.Point(489, 424);
             this.grpFoeInventory.Name = "grpFoeInventory";
-            this.grpFoeInventory.Size = new System.Drawing.Size(460, 229);
+            this.grpFoeInventory.Size = new System.Drawing.Size(460, 220);
             this.grpFoeInventory.TabIndex = 11;
             this.grpFoeInventory.TabStop = false;
             this.grpFoeInventory.Text = "Foe Inventory";
@@ -1590,9 +1613,91 @@
             this.lstFInventory.Size = new System.Drawing.Size(429, 82);
             this.lstFInventory.TabIndex = 0;
             // 
-            // characterClassBindingSource
+            // menuStrip1
             // 
-            this.characterClassBindingSource.DataSource = typeof(TurnBasedPractice.GameClasses.CharacterClass);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.updateToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(952, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnToMainMenuToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // returnToMainMenuToolStripMenuItem
+            // 
+            this.returnToMainMenuToolStripMenuItem.Name = "returnToMainMenuToolStripMenuItem";
+            this.returnToMainMenuToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.returnToMainMenuToolStripMenuItem.Text = "Main Menu";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ltsmEffect,
+            this.ltsmAbilities,
+            this.ltsmSpells,
+            this.ltsmClasses,
+            this.ltsmWeapons,
+            this.ltsmArmor});
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // ltsmEffect
+            // 
+            this.ltsmEffect.Name = "ltsmEffect";
+            this.ltsmEffect.Size = new System.Drawing.Size(152, 22);
+            this.ltsmEffect.Text = "Effect List";
+            this.ltsmEffect.Click += new System.EventHandler(this.ltsmEffect_Click);
+            // 
+            // ltsmAbilities
+            // 
+            this.ltsmAbilities.Name = "ltsmAbilities";
+            this.ltsmAbilities.Size = new System.Drawing.Size(152, 22);
+            this.ltsmAbilities.Text = "Ability List";
+            this.ltsmAbilities.Click += new System.EventHandler(this.ltsmAbilities_Click);
+            // 
+            // ltsmSpells
+            // 
+            this.ltsmSpells.Name = "ltsmSpells";
+            this.ltsmSpells.Size = new System.Drawing.Size(152, 22);
+            this.ltsmSpells.Text = "Spell List";
+            this.ltsmSpells.Click += new System.EventHandler(this.ltsmSpells_Click);
+            // 
+            // ltsmClasses
+            // 
+            this.ltsmClasses.Name = "ltsmClasses";
+            this.ltsmClasses.Size = new System.Drawing.Size(152, 22);
+            this.ltsmClasses.Text = "Class List";
+            this.ltsmClasses.Click += new System.EventHandler(this.ltsmClasses_Click);
+            // 
+            // ltsmWeapons
+            // 
+            this.ltsmWeapons.Name = "ltsmWeapons";
+            this.ltsmWeapons.Size = new System.Drawing.Size(152, 22);
+            this.ltsmWeapons.Text = "Weapon List";
+            this.ltsmWeapons.Click += new System.EventHandler(this.ltsmWeapons_Click);
+            // 
+            // ltsmArmor
+            // 
+            this.ltsmArmor.Name = "ltsmArmor";
+            this.ltsmArmor.Size = new System.Drawing.Size(152, 22);
+            this.ltsmArmor.Text = "Armor List";
             // 
             // BattleSetupV2
             // 
@@ -1600,6 +1705,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 797);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(670, 787);
             this.Name = "BattleSetupV2";
             this.Text = "BattleSetupV2";
@@ -1616,6 +1723,7 @@
             this.grpCharInfo.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudpMag)).EndInit();
@@ -1644,8 +1752,10 @@
             this.grpFoeInventory.ResumeLayout(false);
             this.grpFoeInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.characterClassBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1778,5 +1888,17 @@
         private System.Windows.Forms.Button btnPCommit;
         private System.Windows.Forms.Button btnFCommit;
         private System.Windows.Forms.BindingSource characterClassBindingSource;
+        private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnToMainMenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ltsmEffect;
+        private System.Windows.Forms.ToolStripMenuItem ltsmAbilities;
+        private System.Windows.Forms.ToolStripMenuItem ltsmSpells;
+        private System.Windows.Forms.ToolStripMenuItem ltsmClasses;
+        private System.Windows.Forms.ToolStripMenuItem ltsmWeapons;
+        private System.Windows.Forms.ToolStripMenuItem ltsmArmor;
     }
 }

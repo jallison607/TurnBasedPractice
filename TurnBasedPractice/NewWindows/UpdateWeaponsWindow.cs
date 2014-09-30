@@ -16,8 +16,8 @@ namespace TurnBasedPractice.Windows
     {
         private ItemWrapper weaponWrapper = new ItemWrapper("Weapon");
         private CharacterClassWrapper characterClassWrapper = new CharacterClassWrapper();
-        private Weapon newWeapon = new Weapon(-1,"New Weapon",0,0,false,new List<int>(),new List<int>());
-        private Weapon selectedWeapon = new Weapon(-1, "New Weapon", 0, 0,false, new List<int>(), new List<int>());
+        private Weapon newWeapon = new Weapon(-1,"New Weapon", 0, 0, 0,false,new List<int>(),new List<int>());
+        private Weapon selectedWeapon = new Weapon(-1, "New Weapon", 0, 0, 0,false, new List<int>(), new List<int>());
         private bool changesSaved = true;
 
         public UpdateWeaponsWindow()
@@ -69,14 +69,23 @@ namespace TurnBasedPractice.Windows
             cAvailInShops.Checked = selectedWeapon.canBuy;
             nudValue.Value = selectedWeapon.value;
             nudPower.Value = selectedWeapon.getPower();
+            nudMagiPower.Value = selectedWeapon.getMagiPower();
 
             listedClassesForWeaponBindingSource.Clear();
+
             foreach(CharacterClass tmpClass in characterClassWrapper.getClassList())
             {
-                listedClassesForWeaponBindingSource.Add(new ListedClassesForWeapon(tmpClass.ClassID, tmpClass.ClassName, selectedWeapon.ValidClasses.Contains(tmpClass.ClassID))); 
+                ListedClassesForWeapon listedWeapon = new ListedClassesForWeapon(tmpClass.ClassID, tmpClass.ClassName, selectedWeapon.ValidClasses.Contains(tmpClass.ClassID));
+                listedClassesForWeaponBindingSource.Add(listedWeapon); 
             }
 
-        }        
+            for (int i = 0; i < clClasses.Items.Count; i++)
+            {
+                bool isChecked = ((ListedClassesForWeapon)listedClassesForWeaponBindingSource[i]).IsPermited;
+                clClasses.SetItemChecked(i, isChecked);
+            }
+
+        }
 
         private void configureGui()
         {
@@ -93,6 +102,13 @@ namespace TurnBasedPractice.Windows
         private List<int> getListOfClasses()
         {
             List<int> tmpAllowedClasses = new List<int>();
+            for (int i = 0; i < clClasses.Items.Count; i++)
+            {
+                ListedClassesForWeapon tmpWeapon = (ListedClassesForWeapon)listedClassesForWeaponBindingSource[i];
+                tmpWeapon.IsPermited = clClasses.GetItemChecked(i);
+                listedClassesForWeaponBindingSource[i] = tmpWeapon;
+            }
+
             foreach (ListedClassesForWeapon tmpListed in listedClassesForWeaponBindingSource)
             {
                 if (tmpListed.IsPermited)
@@ -101,6 +117,31 @@ namespace TurnBasedPractice.Windows
                 }
             }
             return tmpAllowedClasses;
+        }
+
+        private void saveChanges()
+        {
+            if (cmbCurrent.SelectedIndex > 0)
+            {
+                selectedWeapon.ItemName = txtName.Text;
+                if (selectedWeapon.ItemName != string.Empty)
+                {
+                    if (selectedWeapon.ItemID == -1)
+                    {
+                        selectedWeapon.ItemID = weaponWrapper.NextID();
+                    }
+                    selectedWeapon = new Weapon(selectedWeapon.ItemID, selectedWeapon.ItemName, (int)nudValue.Value, (int)nudPower.Value, (int)nudMagiPower.Value, cAvailInShops.Checked, effectsBox1.getList(), getListOfClasses());
+                    weaponWrapper.AddItem(selectedWeapon);
+                    loadPreExsistingWeapons();
+                    cmbCurrent.SelectedIndex = 0;
+                    updateCmbInfo();
+                    configureGui();
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter a Spell Name");
+                }
+            }
         }
 
         private void cmbCurrent_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,25 +182,9 @@ namespace TurnBasedPractice.Windows
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            selectedWeapon.ItemName = txtName.Text;
-            if (selectedWeapon.ItemName != string.Empty)
-            {
-                if (selectedWeapon.ItemID == -1)
-                {
-                    selectedWeapon.ItemID = weaponWrapper.NextID();
-                }
-                selectedWeapon = new Weapon(selectedWeapon.ItemID, selectedWeapon.ItemName, (int)nudValue.Value, (int)nudPower.Value, cAvailInShops.Checked, effectsBox1.getList(), getListOfClasses());
-                weaponWrapper.AddItem(selectedWeapon);
-                loadPreExsistingWeapons();
-                cmbCurrent.SelectedIndex = 0;
-                updateCmbInfo();
-                changesSaved = false;
-                configureGui();
-            }
-            else
-            {
-                MessageBox.Show("Please Enter a Spell Name");
-            }
+            saveChanges();
+            changesSaved = false;
+            configureGui();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -170,6 +195,7 @@ namespace TurnBasedPractice.Windows
                 weaponWrapper.removeItem(tmpToRemove);
                 loadPreExsistingWeapons();
                 cmbCurrent.SelectedIndex = 0;
+                updateCmbInfo();
                 changesSaved = false;
                 configureGui();
             }
@@ -180,25 +206,21 @@ namespace TurnBasedPractice.Windows
             MessageBox.Show(selectedWeapon.ItemName);
         }
 
-        bool checkAll = true;
-
         private void btnAllClasses_Click(object sender, EventArgs e)
         {
-            if (checkAll)
-            {
-                for (int i = 0; i < clClasses.Items.Count; i++)
-                {
-                    clClasses.SetItemChecked(i, true);
-                }
-                checkAll = false;
-            }
-            else
+            if (clClasses.CheckedIndices.Count == clClasses.Items.Count)
             {
                 for (int i = 0; i < clClasses.Items.Count; i++)
                 {
                     clClasses.SetItemChecked(i, false);
                 }
-                checkAll = true;
+            }
+            else
+            {
+                for (int i = 0; i < clClasses.Items.Count; i++)
+                {
+                    clClasses.SetItemChecked(i, true);
+                }
             }
         }
 

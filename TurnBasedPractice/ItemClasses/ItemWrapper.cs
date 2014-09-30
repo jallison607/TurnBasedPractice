@@ -61,7 +61,7 @@ namespace TurnBasedPractice.ItemClasses
                     string WeaponName = reader[1].ToString();
                     string tmpCanBuy = reader[2].ToString();
                     bool WeaponCanBuy;
-                    if (tmpCanBuy == "No")
+                    if (tmpCanBuy == "False")
                     {
                         WeaponCanBuy = false;
                     }
@@ -71,6 +71,7 @@ namespace TurnBasedPractice.ItemClasses
                     }
                     int WeaponValue = (int)reader[3];
                     int WeaponPower = (int)reader[4];
+                    int WeaponMagiPower = (int)reader[5];
                     List<int> WeaponEffects = new List<int>();
                     List<int> WeaponClasses = new List<int>();
 
@@ -89,7 +90,7 @@ namespace TurnBasedPractice.ItemClasses
                         WeaponClasses.Add((int)WeaponClassesReader[0]);
                     }
 
-                    _listOfItems.Add(new Weapon(WeaponID, WeaponName, WeaponValue, WeaponPower, WeaponCanBuy, WeaponEffects, WeaponClasses));
+                    _listOfItems.Add(new Weapon(WeaponID, WeaponName, WeaponValue, WeaponPower, WeaponMagiPower, WeaponCanBuy, WeaponEffects, WeaponClasses));
                     _usedIDs.Add(WeaponID);
                 }
                 dbConnection.Close();
@@ -116,8 +117,10 @@ namespace TurnBasedPractice.ItemClasses
                 dbConnection.Open();
                 OdbcCommand WeaponClear = new OdbcCommand("delete from Weapon", dbConnection);
                 OdbcCommand WeaponEffectsClear = new OdbcCommand("delete from WeaponEffects", dbConnection);
+                OdbcCommand WeaponClassClear = new OdbcCommand("delete from WeaponClasses", dbConnection);
                 WeaponClear.ExecuteNonQuery();
                 WeaponEffectsClear.ExecuteNonQuery();
+                WeaponClassClear.ExecuteNonQuery();
                 foreach (Item tmpItem in _listOfItems)
                 {
                     //public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, int tmpAccuracy, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)

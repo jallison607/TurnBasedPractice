@@ -10,6 +10,7 @@ namespace TurnBasedPractice.ItemClasses
     public class Weapon : Item
     {
         private int power;
+        private int magiPower;
         private List<int> classesCanUse = new List<int>();
         public List<int> ValidClasses
         {
@@ -17,12 +18,16 @@ namespace TurnBasedPractice.ItemClasses
         }
         private List<int> magicalEffects = new List<int>();
 
-        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
+        public Weapon(int tmpID, string tmpName, int tmpValue, int tmpPower, int tmpMagiPower, bool tmpCanBuy, List<int> tmpMagicalEffects, List<int> tmpClassesCanUse)
             : base(tmpID, tmpName, tmpValue, tmpCanBuy)
         {
             this.power = tmpPower;
             this.magicalEffects = tmpMagicalEffects;
-            this.classesCanUse = tmpClassesCanUse;
+            foreach (int tmpClassID in tmpClassesCanUse)
+            {
+                this.classesCanUse.Add(tmpClassID);
+            }
+            
         }
 
         /*
@@ -43,6 +48,11 @@ namespace TurnBasedPractice.ItemClasses
             return this.power;
         }
 
+        public int getMagiPower()
+        {
+            return this.magiPower;
+        }
+
         public List<int> getMagicalEffects()
         {
             return this.magicalEffects;
@@ -50,7 +60,7 @@ namespace TurnBasedPractice.ItemClasses
 
         public override Item Clone(int tmpID)
         {
-            Weapon tmpNewWep = new Weapon(tmpID, ItemName, value, power, canBuy, magicalEffects, classesCanUse);
+            Weapon tmpNewWep = new Weapon(tmpID, ItemName, value, power, magiPower, canBuy, magicalEffects, classesCanUse);
             return tmpNewWep;
         }
 

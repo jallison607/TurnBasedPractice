@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="GameClasses\Battle.cs" />
     <Compile Include="GameClasses\BattleV2.cs" />
+    <Compile Include="ItemClasses\Armor.cs" />
     <Compile Include="NewGameClasses\CharacterClassWrapper.cs" />
     <Compile Include="GameClasses\Game.cs" />
     <Compile Include="GameClasses\CharacterClass.cs" />
@@ -89,6 +90,18 @@
     <Compile Include="NewGameClasses\Spell.cs" />
     <Compile Include="NewGameClasses\SpellWrapper.cs" />
     <Compile Include="NewGameClasses\WrapperAbstract.cs" />
+    <Compile Include="NewWindows\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWindows\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWindows\UpdateArmorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWindows\UpdateArmorWindow.Designer.cs">
+      <DependentUpon>UpdateArmorWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewWindows\UpdateCharacterClassWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +180,12 @@
     </Compile>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWindows\UpdateArmorWindow.resx">
+      <DependentUpon>UpdateArmorWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewWindows\UpdateCharacterClassWindow.resx">
       <DependentUpon>UpdateCharacterClassWindow.cs</DependentUpon>

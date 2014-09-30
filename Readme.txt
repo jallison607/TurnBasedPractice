@@ -16,7 +16,7 @@ II. Magi System
 III. Class System
 IV. Combat System
 V. Character System
-
+VI. Other potential features
 
 --------------------------
 I. Database Layout
@@ -36,11 +36,11 @@ I. Database Layout
 		SprPrereq		Class spirit prereq
 		SpdPrereq		Class speed prereq
 		
-	ClassPrereqClasses
-		autoID
-		ClassID
-		PreReqClassID
-		PreReqLevel
+	ClassPrereqClasses	*Table of prerequsit Classes & levels to be this class
+		autoID			(PRIMARY KEY)
+		ClassID			(FORIEGN KEY to PlayerClasses)
+		PreReqClassID		(FORIEGN KEY to PlayerClasses)
+		PreReqLevel		Level of prereq class required
 
 	ClassElements	*Class & Element link table
 		autoID			(PRIMARY KEY)
@@ -74,16 +74,14 @@ I. Database Layout
 		autoID				(PRIMARY KEY)
 		AbilityID			(FORIGN KEY to Ability)
 		EffectID			(FORIGN KEY to Effect)
-		
-v (NOT UPDATED IN DB YET) v
+	
 	Weapon				*Table of Weapons
 		WeaponID			(PRIMARY KEY)
 		WeaponName			Name of Weapon
 		CanBuy				Weapon can be bought in stores
 		WeaponValue			Weapon Value in stores
 		WeaponPower			Weapon effectiveness in physical attacks
-		WeaponMagiPower		Weapon ability to focus Magical attacks
-^ (NOT UPDATED IN DB YET) ^		
+		WeaponMagiPower			Weapon ability to focus Magical attacks
 
 	WeaponEffects		*Weapon & Effect Link table
 		autoID				(PRIMARY KEY)
@@ -93,9 +91,8 @@ v (NOT UPDATED IN DB YET) v
 	WeaponClasses		*Weapon & Class link table
 		autoID				(PRIMARY KEY)
 		WeaponID			(FORIGN KEY to Weapon)
-		ClassID				(FORIGN KEY to PlayerClasses)
+		ClassID				(FORIGN KEY to CharacterClass)
 
-(NOT UPDATED IN DB YET)		
 	Armor					*Table of Armor
 		ArmorID					(PRIMARY KEY)
 		ArmorName				Name of Armor
@@ -103,7 +100,11 @@ v (NOT UPDATED IN DB YET) v
 		ArmorValue				Armor Value in stores
 		ArmorStrength			Armor Strength vs Physical attacks
 		ArmorResistance			Armor Resistance to magical attacks
-^ (NOT UPDATED IN DB YET) ^		
+
+	Armorclasses		*Armor & Class link table
+		autoID				(PRIMARY KEY)
+		ArmorID				(FORIGN KEY to Armor)
+		ClassID				(FoRIGN KEY to CharacterClass)
 		
 	Spell				*Table of Spells
 		SpellID				(PRIMARY KEY)
@@ -159,3 +160,12 @@ IV. Combat System
 V. Character System
 	
 	Not Yet Implemented
+
+--------------------------
+VI. Other potential features
+	- Resistance effects
+		Example: Armor piece may provide resistance to particular magi elements or a spell may provide temporary resistance to particular elements
+
+	- Status effects
+		Example: once your hp = 0 you aquire the status of dead. A particular magi spell may remove the status of Dead and + x HP
+		Example 2: Poision & time may be moved to status instead of elements.

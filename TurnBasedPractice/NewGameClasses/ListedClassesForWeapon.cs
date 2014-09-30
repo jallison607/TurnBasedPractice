@@ -21,6 +21,7 @@ namespace TurnBasedPractice.GameClasses
         public bool IsPermited
         {
             get { return allowed; }
+            set { allowed = value; }
         }
 
         public ListedClassesForWeapon(int tmpID, string tmpName, bool tmpAllowed)
